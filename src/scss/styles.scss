@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    .ant-layout-header {
+        background: transparent;
+    }
+    .ant-layout {
+        background: #fff;
+    }
+    header {
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 40px;
+            .nav-banner {
+                width: 140px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .logo-outter {
+                    width: 40px;
+                    height: 40px;
+                    background: #f1f1f1;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+                h4 {
+                    margin: 0;
+                }
+            }
+            .nav-search-bar {
+                width: 560px;
+                display: flex;
+                align-items: center;
+                input.ant-input {
+                    height: 40px;
+                    border-radius: 6px;
+                }
+                button {
+                    border-radius: 0 6px 6px 0;
+                    height: 40px;
+                    background: #0652dd;
+                    border: 1px solid #0652dd;
+                }
+            }
+            ul {
+                padding: 0;
+                margin: 00;
+                display: flex;
+                align-content: center;
+                li {
+                    margin: 0 16px;
+                    list-style: none;
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    main {
+        height: 100vh;
+    }
+}
