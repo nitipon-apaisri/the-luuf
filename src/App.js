@@ -1,4 +1,5 @@
 import "./styles/styles.css";
+import "antd/dist/antd.less";
 import { Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/landing";
 const App = () => {
