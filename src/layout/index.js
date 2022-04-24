@@ -1,6 +1,6 @@
 import { Layout } from "antd";
 import { Input } from "antd";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import Logo from "../assets/images/logo/logo.svg";
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
@@ -20,16 +20,16 @@ const MainLayout = ({ children }) => {
                     </div>
                     <ul>
                         <li>
-                            <a>Explore</a>
+                            <a href="/">Explore</a>
                         </li>
                         <li>
-                            <a>Marketplace</a>
+                            <a href="/">Marketplace</a>
                         </li>
                         <li>
-                            <a>Stats</a>
+                            <a href="/">Stats</a>
                         </li>
                         <li>
-                            <a>Resources</a>
+                            <a href="/">Resources</a>
                         </li>
                     </ul>
                 </nav>
