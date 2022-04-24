@@ -36,11 +36,30 @@
 }
 .hero .hero-right .token-of-the-day .token .token-img {
   background-color: #888888;
-  width: 100%;
   height: 392px;
   border-radius: 16px 16px 0 0;
 }
-
+.hero .hero-right .token-of-the-day .token .token-short-info {
+  padding: 0 24px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+}
+.hero .hero-right .token-of-the-day .token .token-short-info .creator-pfp {
+  min-width: 40px;
+  height: 40px;
+  background-color: #888888;
+  border-radius: 100%;
+}
+.hero .hero-right .token-of-the-day .token .token-short-info .info {
+  width: 100%;
+  margin-left: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.hero .hero-right .token-of-the-day .token .token-short-info .info h4 {
+  font-weight: bolder;
+}
 h1,
 h2,
 h3,
@@ -50,7 +69,7 @@ h6,
 p,
 a {
   letter-spacing: 0.04rem;
-  margin: 0;
+  margin: 0 !important;
 }
 
 * {
@@ -98,6 +117,7 @@ body header nav .nav-banner .logo-outter img {
   height: 24px;
 }
 body header nav .nav-banner h4 {
+  font-weight: bold;
   margin: 0;
 }
 body header nav .nav-search-bar {
@@ -125,7 +145,9 @@ body header nav ul li {
   margin: 0 16px;
   list-style: none;
 }
-body header nav ul li p {
+body header nav ul li a {
+  color: black;
+  font-weight: bolder;
   margin: 0;
 }
 body main {

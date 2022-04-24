@@ -20,6 +20,19 @@ const LandingPage = () => {
                     <div className="token-of-the-day">
                         <div className="token">
                             <div className="token-img"></div>
+                            <div className="token-short-info">
+                                <div className="creator-pfp"></div>
+                                <div className="info">
+                                    <div className="token-creator-name">
+                                        <h4>Example</h4>
+                                        <h5>Example</h5>
+                                    </div>
+                                    <div className="price-value">
+                                        <h4>Example</h4>
+                                        <h5>Example</h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ h6,
 p,
 a {
     letter-spacing: 0.04rem;
-    margin: 0;
+    margin: 0 !important;
 }
 * {
     box-sizing: border-box;
@@ -53,6 +53,7 @@ body {
                     }
                 }
                 h4 {
+                    font-weight: bold;
                     margin: 0;
                 }
             }
@@ -79,7 +80,9 @@ body {
                 li {
                     margin: 0 16px;
                     list-style: none;
-                    p {
+                    a {
+                        color: black;
+                        font-weight: bolder;
                         margin: 0;
                     }
                 }
