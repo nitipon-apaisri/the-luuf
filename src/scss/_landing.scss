@@ -140,4 +140,24 @@
             }
         }
     }
+    .category-container {
+        text-align: center;
+        .category {
+            margin-top: 50px;
+            .category-row {
+                margin-bottom: 24px;
+                .card-category {
+                    @extend .card;
+                    .card-category-cover {
+                        border-radius: 16px 16px 0 0;
+                        height: 232px;
+                    }
+                    h2 {
+                        font-weight: bolder;
+                        padding: 24px 0;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Category from "../../components/landing-page/Category";
 import FeaturesPreview from "../../components/landing-page/FeaturesPreview";
 import Hero from "../../components/landing-page/Hero";
 import RisingStars from "../../components/landing-page/RisingStars";
@@ -18,6 +19,7 @@ const LandingPage = () => {
                 <TopCollection />
                 <RisingStars />
                 <FeaturesPreview />
+                <Category />
             </section>
         </MainLayout>
     );
