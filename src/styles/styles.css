@@ -197,6 +197,12 @@
 .landing-page .rising-stars .creators .medium-card-block .medium-card-profile .medium-card-name {
   margin-top: 8px;
 }
+.medium-card .medium-card-block .medium-card-profile .medium-card-name h5, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile .medium-card-name h5,
+.landing-page .trending-collections .creators .medium-card-block .medium-card-profile .medium-card-name h5,
+.landing-page .rising-stars .collections .medium-card-block .medium-card-profile .medium-card-name h5,
+.landing-page .rising-stars .creators .medium-card-block .medium-card-profile .medium-card-name h5 {
+  font-weight: bolder;
+}
 
 h1,
 h2,
@@ -217,6 +223,7 @@ a {
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
+  scroll-behavior: smooth;
 }
 body .ant-layout-header {
   background: transparent;
