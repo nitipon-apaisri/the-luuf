@@ -74,37 +74,10 @@
             }
         }
     }
-    .trending-collection {
+    .trending-collections {
         text-align: center;
         .collections {
-            .collection {
-                position: relative;
-                @extend .card;
-                height: 320px;
-                max-height: 320px;
-                overflow: auto;
-                .collection-cover {
-                    border-radius: 16px 16px 0 0;
-                    background-color: #888888;
-                    height: 190px;
-                }
-                .collection-profile {
-                    position: absolute;
-                    top: 62%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    img {
-                        width: 128px;
-                        height: 128px;
-                        border: 10px solid #ffffff;
-                        box-shadow: (0px 4px 20px rgba(168, 168, 168, 0.25));
-                        border-radius: 100px;
-                    }
-                    .collection-name {
-                        margin-top: 8px;
-                    }
-                }
-            }
+            @extend .medium-card;
         }
     }
     .top-collections {
@@ -140,6 +113,12 @@
                     }
                 }
             }
+        }
+    }
+    .rising-stars {
+        text-align: center;
+        .creators {
+            @extend .medium-card;
         }
     }
 }

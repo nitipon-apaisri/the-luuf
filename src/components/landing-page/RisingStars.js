@@ -1,19 +1,19 @@
 import { Col, Row } from "antd";
 import collectionPFP from "../../assets/images/collection-mock-pfp.svg";
-const TrendingCollection = () => {
-    const trendingCollection = [{ name: "example1" }, { name: "example2" }, { name: "example3" }];
+const RisingStars = () => {
+    const risingCreators = [{ name: "example1" }, { name: "example2" }, { name: "example3" }];
     return (
-        <article className="trending-collections">
-            <h1>Trending Collections</h1>
-            <div className="collections block-contents">
+        <article className="rising-stars">
+            <h1>Rising Stars</h1>
+            <div className="creators block-contents">
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                    {trendingCollection.slice(0, 3).map((row, index) => (
+                    {risingCreators.slice(0, 3).map((row, index) => (
                         <Col span={8} key={row.name}>
                             <div className="medium-card-block">
-                                <div className="medium-card-cover"></div>
-                                <div className="medium-card-profile">
+                                <div className=" medium-card-cover"></div>
+                                <div className=" medium-card-profile">
                                     <img src={collectionPFP} alt="pfp" />
-                                    <div className="medium-card-name">
+                                    <div className=" medium-card-name">
                                         <h5>{row.name}</h5>
                                     </div>
                                 </div>
@@ -26,4 +26,4 @@ const TrendingCollection = () => {
     );
 };
 
-export default TrendingCollection;
+export default RisingStars;

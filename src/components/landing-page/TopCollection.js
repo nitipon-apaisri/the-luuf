@@ -36,7 +36,7 @@ const TopCollection = () => {
                         {arr.slice(1, 4).map((row, index) => (
                             <Col key={row.name}>
                                 <div className="top-collection">
-                                    <h5>{index + 1}</h5>
+                                    <h5>{index + 4}</h5>
                                     <div className="collection-details">
                                         <img src={collectionPFP} alt="pfp" />
                                         <div className="details">
@@ -56,7 +56,7 @@ const TopCollection = () => {
                         {arr.slice(1, 4).map((row, index) => (
                             <Col key={row.name}>
                                 <div className="top-collection">
-                                    <h5>{index + 1}</h5>
+                                    <h5>{index + 7}</h5>
                                     <div className="collection-details">
                                         <img src={collectionPFP} alt="pfp" />
                                         <div className="details">

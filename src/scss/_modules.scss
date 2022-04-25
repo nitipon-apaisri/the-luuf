@@ -3,3 +3,33 @@
     border: 1px solid #ebebeb;
     border-radius: 16px;
 }
+.medium-card {
+    .medium-card-block {
+        position: relative;
+        @extend .card;
+        height: 320px;
+        max-height: 320px;
+        overflow: auto;
+        .medium-card-cover {
+            border-radius: 16px 16px 0 0;
+            background-color: #888888;
+            height: 190px;
+        }
+        .medium-card-profile {
+            position: absolute;
+            top: 62%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            img {
+                width: 128px;
+                height: 128px;
+                border: 10px solid #ffffff;
+                box-shadow: (0px 4px 20px rgba(168, 168, 168, 0.25));
+                border-radius: 100px;
+            }
+            .medium-card-name {
+                margin-top: 8px;
+            }
+        }
+    }
+}
