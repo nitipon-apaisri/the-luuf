@@ -1,7 +1,7 @@
 import { Button } from "antd";
 const Hero = () => {
     return (
-        <article className="hero">
+        <article className="hero block-contents">
             <div className="hero-left">
                 <div className="advertisement">
                     <h1>Discover, Collect, and Sell extraordinary NFTs</h1>

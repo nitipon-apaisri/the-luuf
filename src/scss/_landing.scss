@@ -7,7 +7,9 @@
         }
     }
     .block-contents {
-        margin-top: 40px;
+        width: 1280px;
+        max-width: 1280px;
+        margin: 40px auto 0 auto;
     }
     .hero {
         display: flex;
@@ -74,9 +76,11 @@
             }
         }
     }
-    .trending-collections {
+    .trending-collections,
+    .rising-stars {
         text-align: center;
-        .collections {
+        .collections,
+        .creators {
             @extend .medium-card;
         }
     }
@@ -115,10 +119,25 @@
             }
         }
     }
-    .rising-stars {
+    .features-preview {
         text-align: center;
-        .creators {
-            @extend .medium-card;
+        background-color: #fbfdff;
+        padding: 40px 0;
+        .features {
+            margin-top: 50px;
+            .feature {
+                .description {
+                    margin-top: 24px;
+                    h3 {
+                        font-weight: bolder;
+                        margin-bottom: 16px !important;
+                    }
+                    p {
+                        color: #a0a0a0;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
         }
     }
 }
