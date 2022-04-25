@@ -1,6 +1,10 @@
 .landing-page {
     article {
         margin-top: 80px;
+        h1 {
+            font-size: 2rem;
+            font-weight: bolder;
+        }
     }
     .block-contents {
         margin-top: 40px;
@@ -72,10 +76,6 @@
     }
     .trending-collection {
         text-align: center;
-        h1 {
-            font-size: 2rem;
-            font-weight: bolder;
-        }
         .collections {
             .collection {
                 position: relative;
@@ -99,6 +99,44 @@
                         border: 10px solid #ffffff;
                         box-shadow: (0px 4px 20px rgba(168, 168, 168, 0.25));
                         border-radius: 100px;
+                    }
+                    .collection-name {
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+    }
+    .top-collections {
+        h1 {
+            text-align: center;
+        }
+        .top-collection {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            h5,
+            h6 {
+                font-weight: bolder;
+            }
+            .collection-details {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin-left: 24px;
+                img {
+                    width: 64px;
+                    height: 64px;
+                }
+                .details {
+                    width: 100%;
+                    margin-left: 24px;
+                    .values {
+                        display: flex;
+                        justify-content: space-between;
+                        h6 {
+                            color: #aeaeae;
+                        }
                     }
                 }
             }

@@ -2,6 +2,10 @@
 .landing-page article {
   margin-top: 80px;
 }
+.landing-page article h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
 .landing-page .block-contents {
   margin-top: 40px;
 }
@@ -69,10 +73,6 @@
 .landing-page .trending-collection {
   text-align: center;
 }
-.landing-page .trending-collection h1 {
-  font-size: 2rem;
-  font-weight: bolder;
-}
 .landing-page .trending-collection .collections .collection {
   position: relative;
   height: 320px;
@@ -96,6 +96,42 @@
   border: 10px solid #ffffff;
   box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
   border-radius: 100px;
+}
+.landing-page .trending-collection .collections .collection .collection-profile .collection-name {
+  margin-top: 8px;
+}
+.landing-page .top-collections h1 {
+  text-align: center;
+}
+.landing-page .top-collections .top-collection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.landing-page .top-collections .top-collection h5,
+.landing-page .top-collections .top-collection h6 {
+  font-weight: bolder;
+}
+.landing-page .top-collections .top-collection .collection-details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+}
+.landing-page .top-collections .top-collection .collection-details img {
+  width: 64px;
+  height: 64px;
+}
+.landing-page .top-collections .top-collection .collection-details .details {
+  width: 100%;
+  margin-left: 24px;
+}
+.landing-page .top-collections .top-collection .collection-details .details .values {
+  display: flex;
+  justify-content: space-between;
+}
+.landing-page .top-collections .top-collection .collection-details .details .values h6 {
+  color: #aeaeae;
 }
 
 .card, .landing-page .trending-collection .collections .collection {
@@ -133,6 +169,10 @@ body .ant-layout {
 body .ant-btn-primary {
   background: #0652dd;
   border: #0652dd;
+}
+body .ant-btn-primary:hover {
+  background: #0047ca;
+  border: #0047ca;
 }
 body header nav {
   display: flex;
@@ -195,10 +235,12 @@ body header nav ul li a {
   margin: 0;
 }
 body main {
-  height: 100vh;
   width: 1280px;
   max-width: 1280px;
   margin: 0 auto;
+}
+body footer {
+  margin-top: 80px;
 }
 
 /*# sourceMappingURL=styles.css.map */

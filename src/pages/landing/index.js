@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Hero from "../../components/landing-page/Hero";
+import TopCollection from "../../components/landing-page/TopCollection";
 import TrendingCollection from "../../components/landing-page/TrendingCollection";
 import MainLayout from "../../layout";
 
@@ -12,6 +13,7 @@ const LandingPage = () => {
             <section className="landing-page">
                 <Hero />
                 <TrendingCollection />
+                <TopCollection />
             </section>
         </MainLayout>
     );
