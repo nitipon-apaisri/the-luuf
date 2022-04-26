@@ -1,7 +1,7 @@
 import { Col, Row } from "antd";
 import collectionPFP from "../../assets/images/collection-mock-pfp.svg";
+import { risingCreators } from "../../db";
 const RisingStars = () => {
-    const risingCreators = [{ name: "example1" }, { name: "example2" }, { name: "example3" }];
     return (
         <article className="rising-stars">
             <h1>Rising Stars</h1>

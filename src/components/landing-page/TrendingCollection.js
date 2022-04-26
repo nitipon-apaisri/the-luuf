@@ -1,7 +1,7 @@
 import { Col, Row } from "antd";
 import collectionPFP from "../../assets/images/collection-mock-pfp.svg";
+import { trendingCollection } from "../../db";
 const TrendingCollection = () => {
-    const trendingCollection = [{ name: "example1" }, { name: "example2" }, { name: "example3" }];
     return (
         <article className="trending-collections ">
             <h1>Trending Collections</h1>
