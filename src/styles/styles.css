@@ -204,6 +204,26 @@
   font-weight: bolder;
 }
 
+.marketplace {
+  padding: 0 40px;
+  margin: 100px auto 0 auto;
+}
+.marketplace .marketplace-header {
+  display: flex;
+  justify-content: space-between;
+}
+.marketplace .marketplace-header h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.marketplace .marketplace-header button {
+  width: 120px;
+  height: 48px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
 h1,
 h2,
 h3,
@@ -223,7 +243,6 @@ a {
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
-  scroll-behavior: smooth;
 }
 body .ant-layout-header {
   background: transparent;
@@ -294,10 +313,13 @@ body header nav ul li {
   margin: 0 16px;
   list-style: none;
 }
-body header nav ul li a {
+body header nav ul li h4 {
   color: black;
   font-weight: bolder;
   margin: 0;
+}
+body header nav ul li h4:hover {
+  color: #0652dd;
 }
 body main {
   width: 100%;
@@ -306,6 +328,29 @@ body main {
 body footer {
   text-align: center;
   margin-top: 80px;
+}
+body footer .nav-banner {
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body footer .nav-banner .logo-outter {
+  width: 40px;
+  height: 40px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body footer .nav-banner .logo-outter img {
+  width: 24px;
+  height: 24px;
+}
+body footer .nav-banner h4 {
+  font-weight: bold;
+  margin: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
