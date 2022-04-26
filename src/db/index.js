@@ -40,3 +40,159 @@ export const topCollection = [
 ];
 
 export const trendingCollection = [{ name: "example1" }, { name: "example2" }, { name: "example3" }];
+export const tokens = [
+    {
+        id: "1",
+        name: "Example #1",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        creator: "example",
+        owner: "example",
+        collection: "Example 1",
+
+        tradeInfo: {
+            sellStatus: false,
+            price: 0,
+            royalties: {
+                primary: {
+                    user: "example",
+                    value: 10,
+                },
+                contributers: [],
+            },
+        },
+
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [],
+    },
+    {
+        id: "2",
+        name: "Example #1",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        creator: "example",
+        owner: "example",
+        collection: "Example 1",
+
+        tradeInfo: {
+            sellStatus: false,
+            price: 0,
+            royalties: {
+                primary: {
+                    user: "example",
+                    value: 10,
+                },
+                contributers: [],
+            },
+        },
+
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [],
+    },
+    {
+        id: "3",
+        name: "Example #1",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        creator: "example",
+        owner: "example",
+        collection: "Example 1",
+
+        tradeInfo: {
+            sellStatus: false,
+            price: 0,
+            royalties: {
+                primary: {
+                    user: "example",
+                    value: 10,
+                },
+                contributers: [],
+            },
+        },
+
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [],
+    },
+    {
+        id: "4",
+        name: "Example #1",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        creator: "example",
+        owner: "example",
+        collection: "Example 1",
+
+        tradeInfo: {
+            sellStatus: false,
+            price: 0,
+            royalties: {
+                primary: {
+                    user: "example",
+                    value: 10,
+                },
+                contributers: [],
+            },
+        },
+
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [],
+    },
+    {
+        id: "5",
+        name: "Example #1",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        creator: "example",
+        owner: "example",
+        collection: "Example 1",
+
+        tradeInfo: {
+            sellStatus: false,
+            price: 0,
+            royalties: {
+                primary: {
+                    user: "example",
+                    value: 10,
+                },
+                contributers: [],
+            },
+        },
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [],
+    },
+    {
+        id: "6",
+        name: "Example #1",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        creator: "example",
+        owner: "example",
+        collection: "Example 1",
+
+        tradeInfo: {
+            sellStatus: false,
+            price: 0,
+            royalties: {
+                primary: {
+                    user: "example",
+                    value: 10,
+                },
+                contributers: [],
+            },
+        },
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [],
+    },
+];
