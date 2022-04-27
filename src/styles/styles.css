@@ -299,6 +299,7 @@
   font-weight: bolder;
 }
 .token-page .token-contents .token-right .token-info {
+  height: 320px;
   max-height: 320px;
 }
 .token-page .token-contents .token-right .token-info .main-info {
@@ -323,7 +324,7 @@
 }
 .token-page .token-contents .token-right .token-arttributes {
   max-height: 320px;
-  overflow-y: auto;
+  overflow: auto;
 }
 .token-page .token-contents .token-right .token-arttributes .arttributes {
   margin-top: 16px;
@@ -343,6 +344,15 @@
 }
 .token-page .token-contents .token-right .token-arttributes .arttributes .arttribute h4 {
   color: #2e2e2e;
+}
+.token-page .token-contents .social-medias .link button {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #efefef;
+}
+.token-page .token-contents .social-medias .link button .anticon {
+  color: #000;
 }
 
 h1,

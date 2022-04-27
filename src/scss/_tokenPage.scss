@@ -44,6 +44,7 @@
                 }
             }
             .token-info {
+                height: 320px;
                 max-height: 320px;
                 .main-info {
                     height: 100%;
@@ -72,7 +73,7 @@
             }
             .token-arttributes {
                 max-height: 320px;
-                overflow-y: auto;
+                overflow: auto;
                 .arttributes {
                     margin-top: 16px;
                     .arttribute {
@@ -90,6 +91,19 @@
                         h4 {
                             color: #2e2e2e;
                         }
+                    }
+                }
+            }
+        }
+        .social-medias {
+            .link {
+                button {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+                    background-color: #efefef;
+                    .anticon {
+                        color: #000;
                     }
                 }
             }

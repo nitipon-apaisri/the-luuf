@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Button, Col, Divider, Row } from "antd";
 import { useParams } from "react-router-dom";
 import { TokenContext } from "../../store/tokenContext";
+import { FlagOutlined, HeartOutlined, UploadOutlined } from "@ant-design/icons";
 const TokenPage = () => {
     const tokenContext = useContext(TokenContext);
     const [loader, setLoader] = useState(false);
@@ -101,22 +102,45 @@ const TokenPage = () => {
                                                         <h4>Arttributes</h4>
                                                     </div>
                                                     <div className="arttributes">
-                                                        <Row gutter={[8, 8]}>
-                                                            {token.arttributes.map((row, index) => (
-                                                                <Col span={8} key={row.value}>
-                                                                    <div className="arttribute">
-                                                                        <p>{row.type}</p>
-                                                                        <h4>{row.value}</h4>
-                                                                    </div>
-                                                                </Col>
-                                                            ))}
-                                                        </Row>
+                                                        {token.arttributes.length !== 0 ? (
+                                                            <Row gutter={[8, 8]}>
+                                                                {token.arttributes.map((row, index) => (
+                                                                    <Col span={8} key={row.value}>
+                                                                        <div className="arttribute">
+                                                                            <p>{row.type}</p>
+                                                                            <h4>{row.value}</h4>
+                                                                        </div>
+                                                                    </Col>
+                                                                ))}
+                                                            </Row>
+                                                        ) : (
+                                                            "-"
+                                                        )}
                                                     </div>
                                                 </div>
                                             </Col>
                                         </Row>
                                     </div>
                                     <Divider />
+                                    <div className="social-medias">
+                                        <Row gutter={8} justify={"end"}>
+                                            <Col>
+                                                <div className="link">
+                                                    <Button type="primary" icon={<HeartOutlined />}></Button>
+                                                </div>
+                                            </Col>
+                                            <Col>
+                                                <div className="link">
+                                                    <Button type="primary" icon={<UploadOutlined />}></Button>
+                                                </div>
+                                            </Col>
+                                            <Col>
+                                                <div className="link">
+                                                    <Button type="primary" icon={<FlagOutlined />}></Button>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                    </div>
                                 </div>
                             </Col>
                         </Row>
