@@ -42,7 +42,7 @@ export const topCollection = [
 export const trendingCollection = [{ name: "example1" }, { name: "example2" }, { name: "example3" }];
 export const tokens = [
     {
-        id: "1",
+        id: "token1",
         name: "Example #1",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
@@ -68,7 +68,7 @@ export const tokens = [
         arttributes: [],
     },
     {
-        id: "2",
+        id: "token2",
         name: "Example #1",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
@@ -94,7 +94,7 @@ export const tokens = [
         arttributes: [],
     },
     {
-        id: "3",
+        id: "token3",
         name: "Example #1",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
@@ -120,7 +120,7 @@ export const tokens = [
         arttributes: [],
     },
     {
-        id: "4",
+        id: "token4",
         name: "Example #1",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
@@ -146,7 +146,7 @@ export const tokens = [
         arttributes: [],
     },
     {
-        id: "5",
+        id: "token5",
         name: "Example #1",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
@@ -171,7 +171,7 @@ export const tokens = [
         arttributes: [],
     },
     {
-        id: "6",
+        id: "token6",
         name: "Example #1",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",

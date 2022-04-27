@@ -3,6 +3,7 @@
 @import "./modules";
 @import "./marketplace";
 @import "./resposive";
+@import "../../node_modules/spinthatshit/src/loaders.scss";
 h1,
 h2,
 h3,
@@ -34,6 +35,16 @@ body {
     .ant-btn-primary:hover {
         background: #0047ca;
         border: #0047ca;
+    }
+    .loading {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: calc(100vh - 400px);
+        align-items: center;
+        .loader {
+            @include loader05($color: #0652dd);
+        }
     }
     header {
         nav {

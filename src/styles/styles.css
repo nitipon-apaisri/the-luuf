@@ -247,7 +247,7 @@
   font-size: 0.8rem;
   color: #353840;
 }
-.marketplace .tokens .token .token-info h5 {
+.marketplace .tokens .token .token-info h4 {
   font-weight: bolder;
 }
 
@@ -289,6 +289,34 @@ body .ant-btn-primary {
 body .ant-btn-primary:hover {
   background: #0047ca;
   border: #0047ca;
+}
+body .loading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 400px);
+  align-items: center;
+}
+body .loading .loader {
+  width: 56px;
+  height: 56px;
+  border: 8px solid #0652dd;
+  border-radius: 50%;
+  position: relative;
+  animation: loader-scale 1s ease-out infinite;
+}
+@keyframes loader-scale {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }
 body header nav {
   display: flex;
