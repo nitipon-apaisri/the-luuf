@@ -54,7 +54,7 @@ export const tokens = [
         tradeInfo: {
             sellStatus: false,
             price: 0,
-            royalties: {
+            loyalties: {
                 primary: {
                     user: "example",
                     value: 10,
@@ -80,7 +80,7 @@ export const tokens = [
         tradeInfo: {
             sellStatus: false,
             price: 0,
-            royalties: {
+            loyalties: {
                 primary: {
                     user: "example",
                     value: 10,
@@ -106,7 +106,7 @@ export const tokens = [
         tradeInfo: {
             sellStatus: false,
             price: 0,
-            royalties: {
+            loyalties: {
                 primary: {
                     user: "example",
                     value: 10,
@@ -132,7 +132,7 @@ export const tokens = [
         tradeInfo: {
             sellStatus: false,
             price: 0,
-            royalties: {
+            loyalties: {
                 primary: {
                     user: "example",
                     value: 10,
@@ -158,7 +158,7 @@ export const tokens = [
         tradeInfo: {
             sellStatus: false,
             price: 0,
-            royalties: {
+            loyalties: {
                 primary: {
                     user: "example",
                     value: 10,
@@ -183,7 +183,7 @@ export const tokens = [
         tradeInfo: {
             sellStatus: false,
             price: 0,
-            royalties: {
+            loyalties: {
                 primary: {
                     user: "example",
                     value: 10,
