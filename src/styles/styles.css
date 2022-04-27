@@ -146,7 +146,7 @@
   padding: 24px 0;
 }
 
-.card, .marketplace .tokens .token, .medium-card .medium-card-block, .landing-page .trending-collections .collections .medium-card-block,
+.card, .token-page .token-contents .left-content, .marketplace .tokens .token, .medium-card .medium-card-block, .landing-page .trending-collections .collections .medium-card-block,
 .landing-page .trending-collections .creators .medium-card-block,
 .landing-page .rising-stars .collections .medium-card-block,
 .landing-page .rising-stars .creators .medium-card-block, .landing-page .category-container .category .category-row .card-category {
@@ -256,6 +256,31 @@
     width: 1960px;
   }
 }
+.token-page .page-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c4c4c4;
+  width: 100%;
+  height: 400px;
+}
+.token-page .token-contents {
+  width: 1280px;
+  max-width: 1280px;
+  height: 480px;
+  max-height: 480px;
+  margin: 120px auto 0 auto;
+}
+.token-page .token-contents .left-content {
+  padding: 20px;
+}
+.token-page .token-contents .left-content .token-img {
+  width: 100%;
+  padding-top: calc(100% - 8px);
+  background-color: #888888;
+  border-radius: 16px;
+}
+
 h1,
 h2,
 h3,
@@ -318,6 +343,9 @@ body .loading .loader {
     opacity: 0;
   }
 }
+body header {
+  z-index: 1;
+}
 body header nav {
   display: flex;
   justify-content: space-between;
@@ -362,6 +390,9 @@ body header nav .nav-search-bar button {
   height: 40px;
   background: #0652dd;
   border: 1px solid #0652dd;
+}
+body header nav .nav-search-bar .ant-input-group-addon {
+  background: transparent;
 }
 body header nav ul {
   padding: 0;

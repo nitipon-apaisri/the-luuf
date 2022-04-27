@@ -3,6 +3,7 @@
 @import "./modules";
 @import "./marketplace";
 @import "./resposive";
+@import "./tokenPage";
 @import "../../node_modules/spinthatshit/src/loaders.scss";
 h1,
 h2,
@@ -47,6 +48,7 @@ body {
         }
     }
     header {
+        z-index: 1;
         nav {
             display: flex;
             justify-content: space-between;
@@ -89,6 +91,9 @@ body {
                     height: 40px;
                     background: #0652dd;
                     border: 1px solid #0652dd;
+                }
+                .ant-input-group-addon {
+                    background: transparent;
                 }
             }
             ul {

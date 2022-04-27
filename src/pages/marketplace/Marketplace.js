@@ -1,5 +1,6 @@
 import { Button, Col, Row } from "antd";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { tokens } from "../../db";
 import MainLayout from "../../layout";
 const Marketplace = () => {
@@ -10,13 +11,15 @@ const Marketplace = () => {
         setWidth(window.innerWidth);
     };
     useEffect(() => {
+        document.title = "THE LUUF - Marketplace";
+    }, []);
+    useEffect(() => {
         setLoader(true);
         setTimeout(() => {
             setLoader(false);
         }, 1500);
     }, []);
     useEffect(() => {
-        document.title = "THE LUUF - Marketplace";
         window.addEventListener("resize", updateWindowSize);
         if (width < 1440) {
             setColSpan(8);
@@ -41,19 +44,21 @@ const Marketplace = () => {
                         <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                             {tokens.map((row, index) => (
                                 <Col span={colSpan} key={row.id} style={{ marginBottom: 24 }}>
-                                    <div className="token">
-                                        <div className="token-img"></div>
-                                        <div className="token-info">
-                                            <div className="token-name">
-                                                <p>{row.creator}</p>
-                                                <h4>{row.name}</h4>
-                                            </div>
-                                            <div className="token-value">
-                                                <p>Price</p>
-                                                <h4 style={{ textAlign: "right" }}>{row.tradeInfo.price}</h4>
+                                    <Link to={`/token/${row.id}`}>
+                                        <div className="token">
+                                            <div className="token-img"></div>
+                                            <div className="token-info">
+                                                <div className="token-name">
+                                                    <p>{row.creator}</p>
+                                                    <h4>{row.name}</h4>
+                                                </div>
+                                                <div className="token-value">
+                                                    <p>Price</p>
+                                                    <h4 style={{ textAlign: "right" }}>{row.tradeInfo.price}</h4>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </Col>
                             ))}
                         </Row>
