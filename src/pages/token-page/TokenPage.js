@@ -58,7 +58,12 @@ const TokenPage = () => {
                                                 </div>
                                                 <Divider />
                                                 <div className="sub-info">
-                                                    <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                                                    <Row
+                                                        gutter={[
+                                                            { xs: 8, sm: 16, md: 24, lg: 32 },
+                                                            { xs: 8, sm: 16, md: 24, lg: 32 },
+                                                        ]}
+                                                    >
                                                         <Col flex="auto">
                                                             <div className="token-price sub-info-content">
                                                                 <p>Price</p>
@@ -90,8 +95,24 @@ const TokenPage = () => {
                                                 </Button>
                                             </Col>
                                             <Divider type="vertical" style={{ height: "auto" }}></Divider>
-                                            <Col span={12}>
-                                                <div className="info-right"></div>
+                                            <Col flex={"auto"}>
+                                                <div className="token-arttributes">
+                                                    <div className="token-title">
+                                                        <h4>Arttributes</h4>
+                                                    </div>
+                                                    <div className="arttributes">
+                                                        <Row gutter={[8, 8]}>
+                                                            {token.arttributes.map((row, index) => (
+                                                                <Col span={8} key={row.value}>
+                                                                    <div className="arttribute">
+                                                                        <p>{row.type}</p>
+                                                                        <h4>{row.value}</h4>
+                                                                    </div>
+                                                                </Col>
+                                                            ))}
+                                                        </Row>
+                                                    </div>
+                                                </div>
                                             </Col>
                                         </Row>
                                     </div>

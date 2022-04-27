@@ -50,7 +50,6 @@ export const tokens = [
         creator: "example",
         owner: "example",
         collection: "Example 1",
-
         tradeInfo: {
             sellStatus: false,
             price: 0,
@@ -62,10 +61,14 @@ export const tokens = [
                 contributers: [],
             },
         },
-
         metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
         // "tradeHistory": [{...},{...},{...}],
-        arttributes: [],
+        arttributes: [
+            { type: "Head", value: "Black Cap" },
+            { type: "Body", value: "T-Shirt" },
+            { type: "Bottom", value: "Baggy Jean" },
+            { type: "Foot", value: "DC" },
+        ],
     },
     {
         id: "token2",
@@ -88,7 +91,6 @@ export const tokens = [
                 contributers: [],
             },
         },
-
         metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
         // "tradeHistory": [{...},{...},{...}],
         arttributes: [],
@@ -114,7 +116,6 @@ export const tokens = [
                 contributers: [],
             },
         },
-
         metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
         // "tradeHistory": [{...},{...},{...}],
         arttributes: [],
@@ -128,7 +129,6 @@ export const tokens = [
         creator: "example",
         owner: "example",
         collection: "Example 1",
-
         tradeInfo: {
             sellStatus: false,
             price: 0,
@@ -179,7 +179,6 @@ export const tokens = [
         creator: "example",
         owner: "example",
         collection: "Example 1",
-
         tradeInfo: {
             sellStatus: false,
             price: 0,
