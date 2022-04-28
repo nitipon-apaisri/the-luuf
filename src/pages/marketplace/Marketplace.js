@@ -41,9 +41,14 @@ const Marketplace = () => {
                 )}
                 {!loader && (
                     <div className="tokens">
-                        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                        <Row
+                            gutter={[
+                                { xs: 8, sm: 16, md: 24, lg: 32 },
+                                { xs: 8, sm: 16, md: 24, lg: 32 },
+                            ]}
+                        >
                             {tokens.map((row, index) => (
-                                <Col span={colSpan} key={row.id} style={{ marginBottom: 24 }}>
+                                <Col span={colSpan} key={row.id}>
                                     <Link to={`/token/${row.id}`}>
                                         <div className="token">
                                             <div className="token-img"></div>

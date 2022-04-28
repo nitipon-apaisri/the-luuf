@@ -27,8 +27,8 @@
                 width: 100%;
                 margin-top: 16px;
                 text-align: center;
-                padding: 24px 0;
-                border-radius: 16px;
+                padding: 20px 0;
+                border-radius: 12px;
                 background-color: #f9f9f9;
                 h4 {
                     font-weight: bolder;
@@ -81,9 +81,6 @@
                 }
                 .sub-info {
                     .sub-info-content {
-                        .not-for-sell {
-                            text-decoration-line: line-through;
-                        }
                         p {
                             font-size: 0.8rem;
                             font-weight: 500;
@@ -129,6 +126,24 @@
                     .anticon {
                         color: #000;
                     }
+                }
+            }
+        }
+        .second-content {
+            .token-collection,
+            .token-metada {
+                @extend .card;
+                padding: 40px;
+                height: 320px;
+                max-height: 320px;
+                h1 {
+                    font-weight: bolder;
+                }
+            }
+            .token-collection {
+                p {
+                    font-size: 0.8rem;
+                    color: #8d8d8d;
                 }
             }
         }

@@ -9,15 +9,13 @@ const TokenProvider = (props) => {
         const getToken = tokens.find((r) => {
             return r.id === tokenId;
         });
-        setToken(getToken);
-    };
-    const findTokenCollection = (collectionName, creator) => {
         const getCollection = collections.find((r) => {
-            return r.name === collectionName && r.createdBy === creator;
+            return r.name === getToken.collection && r.createdBy === getToken.creator;
         });
+        setToken(getToken);
         setTokenCollection(getCollection);
     };
-    return <TokenContext.Provider value={{ token, tokenCollection, findToken, findTokenCollection }}>{props.children}</TokenContext.Provider>;
+    return <TokenContext.Provider value={{ token, tokenCollection, findToken }}>{props.children}</TokenContext.Provider>;
 };
 
 export { TokenProvider, TokenContext };

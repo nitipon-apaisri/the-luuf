@@ -16,10 +16,7 @@ const TokenPage = () => {
         setTimeout(() => {
             tokenContext.findToken(tokenId);
             setToken(tokenContext.token);
-            if (token !== undefined) {
-                tokenContext.findTokenCollection(token.collection, token.creator);
-                setTokenCollection(tokenContext.tokenCollection);
-            }
+            setTokenCollection(tokenContext.tokenCollection);
         }, 750);
         if (token !== undefined) setLoader(false);
     }, [tokenId, tokenContext, token, tokenCollection]);
@@ -177,6 +174,31 @@ const TokenPage = () => {
                                 </div>
                             </Col>
                         </Row>
+                        <Divider style={{ margin: "40px 0" }} />
+
+                        <div className="second-content">
+                            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                                <Col span={16}>
+                                    <div className="token-collection">
+                                        <h1>About {tokenCollection.name}</h1>
+                                        <Divider style={{ margin: "16px 0" }} />
+                                        <p>{tokenCollection.description}</p>
+                                    </div>
+                                </Col>
+                                <Col span={8}>
+                                    <div className="token-metada">
+                                        <h1>Metada</h1>
+                                        <Divider style={{ margin: "16px 0" }} />
+                                        <div className="data">
+                                            <Row justify={"space-between"}>
+                                                <p>Contract Address</p>
+                                                <p>{token.metadata.contractAddress}</p>
+                                            </Row>
+                                        </div>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
                     </div>
                 </section>
             )}
