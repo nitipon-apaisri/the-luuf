@@ -54,7 +54,15 @@ const Marketplace = () => {
                                                 </div>
                                                 <div className="token-value">
                                                     <p>Price</p>
-                                                    <h4 style={{ textAlign: "right" }}>{row.tradeInfo.price}</h4>
+                                                    {(() => {
+                                                        if (row.tradeInfo.sellStatus === true && row.tradeInfo.price === 0) {
+                                                            return <h4>FREE</h4>;
+                                                        } else if (row.tradeInfo.sellStatus === false) {
+                                                            return <h4 className="not-for-sell">SALE</h4>;
+                                                        } else {
+                                                            return <h4>{row.tradeInfo.price}N</h4>;
+                                                        }
+                                                    })()}
                                                 </div>
                                             </div>
                                         </div>

@@ -8,6 +8,7 @@ const TokenPage = () => {
     const tokenContext = useContext(TokenContext);
     const [loader, setLoader] = useState(false);
     const [token, setToken] = useState();
+    const [tokenCollection, setTokenCollection] = useState();
     const { tokenId } = useParams();
     useEffect(() => {
         document.title = "THE LUUF - Collection";
@@ -15,9 +16,13 @@ const TokenPage = () => {
         setTimeout(() => {
             tokenContext.findToken(tokenId);
             setToken(tokenContext.token);
+            if (token !== undefined) {
+                tokenContext.findTokenCollection(token.collection, token.creator);
+                setTokenCollection(tokenContext.tokenCollection);
+            }
         }, 750);
         if (token !== undefined) setLoader(false);
-    }, [tokenId, tokenContext, token]);
+    }, [tokenId, tokenContext, token, tokenCollection]);
     return (
         <MainLayout>
             {loader && (

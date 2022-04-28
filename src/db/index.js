@@ -42,20 +42,20 @@ export const topCollection = [
 export const trendingCollection = [{ name: "example1" }, { name: "example2" }, { name: "example3" }];
 export const tokens = [
     {
-        id: "token1",
-        name: "Example #1",
+        id: "TK0001",
+        name: "#OK97",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
         image: "...",
-        creator: "example",
-        owner: "example",
-        collection: "Example 1",
+        creator: "kamwoo",
+        owner: "nitipon-apaisri",
+        collection: "It's fine.",
         tradeInfo: {
             sellStatus: false,
             price: 0,
             loyalties: {
                 primary: {
-                    user: "example",
+                    user: "kamwoo",
                     value: 10,
                 },
                 contributers: [],
@@ -64,9 +64,9 @@ export const tokens = [
         metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
         // "tradeHistory": [{...},{...},{...}],
         arttributes: [
-            { type: "Head", value: "Black Cap" },
-            { type: "Body", value: "T-Shirt" },
-            { type: "Bottom", value: "Baggy Jean" },
+            { type: "character", value: "Billie Eilish" },
+            { type: "status", value: "Negative" },
+            { type: "season", value: "1" },
         ],
     },
     {
@@ -196,11 +196,11 @@ export const tokens = [
 ];
 export const collections = [
     {
-        id: "collection1",
-        name: "example",
-        createdBy: "example",
+        id: "LVC0001",
+        name: "It's fine.",
+        createdBy: "kamwoo",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
-        tokens: ["token1", "token2", "token3"],
+        tokens: ["TK0001"],
     },
 ];

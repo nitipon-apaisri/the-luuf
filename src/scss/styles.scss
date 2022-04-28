@@ -50,6 +50,9 @@ body {
             @include loader05($color: #0652dd);
         }
     }
+    .not-for-sell {
+        text-decoration-line: line-through;
+    }
     header {
         z-index: 1;
         nav {
