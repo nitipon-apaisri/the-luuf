@@ -19,6 +19,9 @@ a {
 * {
     box-sizing: border-box;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;

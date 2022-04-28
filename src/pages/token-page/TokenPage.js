@@ -68,7 +68,15 @@ const TokenPage = () => {
                                                         <Col flex="auto">
                                                             <div className="token-price sub-info-content">
                                                                 <p>Price</p>
-                                                                <h4>{token.tradeInfo.price}</h4>
+                                                                {(() => {
+                                                                    if (token.tradeInfo.sellStatus === true && token.tradeInfo.price === 0) {
+                                                                        return <h4>FREE</h4>;
+                                                                    } else if (token.tradeInfo.sellStatus === false) {
+                                                                        return <h4 className="not-for-sell">SALE</h4>;
+                                                                    } else {
+                                                                        return <h4>{token.tradeInfo.price}N</h4>;
+                                                                    }
+                                                                })()}
                                                             </div>
                                                         </Col>
                                                         <Divider type="vertical" style={{ height: "auto" }} />
@@ -88,12 +96,32 @@ const TokenPage = () => {
                                                     </Row>
                                                 </div>
                                                 <Divider />
-                                                <Button
-                                                    type="primary"
-                                                    style={{ height: 40, width: 80, borderRadius: 8 }}
-                                                >
-                                                    BUY
-                                                </Button>
+                                                {(() => {
+                                                    if (token.tradeInfo.sellStatus === true && token.tradeInfo.price === 0) {
+                                                        return (
+                                                            <Button type="primary" className="buy-button">
+                                                                BUY
+                                                            </Button>
+                                                        );
+                                                    } else if (token.tradeInfo.sellStatus === false) {
+                                                        return (
+                                                            <Button className="offer-button" type="text">
+                                                                <h4>Make Offer</h4>
+                                                            </Button>
+                                                        );
+                                                    } else {
+                                                        <div className="button-actions">
+                                                            <Row>
+                                                                <Button type="primary" className="buy-button">
+                                                                    BUY
+                                                                </Button>
+                                                                <Button className="offer-button" type="text">
+                                                                    <h4>Make Offer</h4>
+                                                                </Button>
+                                                            </Row>
+                                                        </div>;
+                                                    }
+                                                })()}
                                             </Col>
                                             <Divider type="vertical" style={{ height: "auto" }}></Divider>
                                             <Col flex={"auto"}>

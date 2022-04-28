@@ -67,7 +67,6 @@ export const tokens = [
             { type: "Head", value: "Black Cap" },
             { type: "Body", value: "T-Shirt" },
             { type: "Bottom", value: "Baggy Jean" },
-            { type: "Foot", value: "DC" },
         ],
     },
     {
@@ -81,8 +80,8 @@ export const tokens = [
         collection: "Example 1",
 
         tradeInfo: {
-            sellStatus: false,
-            price: 0,
+            sellStatus: true,
+            price: 3,
             loyalties: {
                 primary: {
                     user: "example",
@@ -193,5 +192,15 @@ export const tokens = [
         metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
         // "tradeHistory": [{...},{...},{...}],
         arttributes: [],
+    },
+];
+export const collections = [
+    {
+        id: "collection1",
+        name: "example",
+        createdBy: "example",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
+        tokens: ["token1", "token2", "token3"],
     },
 ];

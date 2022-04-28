@@ -273,6 +273,7 @@
 }
 .token-page .token-contents .left-content {
   padding: 20px;
+  max-height: 480px;
 }
 .token-page .token-contents .left-content .token-img {
   width: 100%;
@@ -293,14 +294,30 @@
 }
 .token-page .token-contents .token-right {
   height: 100%;
+  max-height: 480px;
   padding: 40px;
 }
 .token-page .token-contents .token-right .token-title h4 {
   font-weight: bolder;
 }
 .token-page .token-contents .token-right .token-info {
-  height: 320px;
   max-height: 320px;
+}
+.token-page .token-contents .token-right .token-info .action-buttons, .token-page .token-contents .token-right .token-info .offer-button, .token-page .token-contents .token-right .token-info .buy-button {
+  height: 40px;
+  border-radius: 8px;
+}
+.token-page .token-contents .token-right .token-info .offer-button {
+  padding: 0;
+}
+.token-page .token-contents .token-right .token-info .offer-button h4 {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  font-weight: bolder;
+}
+.token-page .token-contents .token-right .token-info .offer-button:hover {
+  background: transparent;
 }
 .token-page .token-contents .token-right .token-info .main-info {
   height: 100%;
@@ -313,6 +330,9 @@
 .token-page .token-contents .token-right .token-info .main-info .token-description p {
   font-size: 0.8rem;
   color: #8d8d8d;
+}
+.token-page .token-contents .token-right .token-info .sub-info .sub-info-content .not-for-sell {
+  text-decoration-line: line-through;
 }
 .token-page .token-contents .token-right .token-info .sub-info .sub-info-content p {
   font-size: 0.8rem;
@@ -369,6 +389,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 body {
