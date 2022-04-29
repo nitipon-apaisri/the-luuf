@@ -1,6 +1,5 @@
 import { Button, Col, Row } from "antd";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { tokens } from "../../db";
 import MainLayout from "../../layout";
 const Marketplace = () => {
@@ -49,7 +48,7 @@ const Marketplace = () => {
                         >
                             {tokens.map((row, index) => (
                                 <Col span={colSpan} key={row.id}>
-                                    <Link to={`/token/${row.id}`}>
+                                    <a href={`/token/${row.id}`}>
                                         <div className="token">
                                             <div className="token-img"></div>
                                             <div className="token-info">
@@ -71,7 +70,7 @@ const Marketplace = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </Link>
+                                    </a>
                                 </Col>
                             ))}
                         </Row>

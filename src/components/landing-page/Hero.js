@@ -10,8 +10,8 @@ const Hero = () => {
                 <Button type="primary"> Explore</Button>
             </div>
             <div className="hero-right">
-                <div className="token-of-the-day">
-                    <div className="token">
+                <div className="content-wrapper">
+                    <div className="token-of-the-day">
                         <div className="token-img"></div>
                         <div className="token-short-info">
                             <div className="creator-pfp"></div>

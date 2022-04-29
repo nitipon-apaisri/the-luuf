@@ -2,7 +2,6 @@ import MainLayout from "../../layout";
 import { useContext, useEffect, useState } from "react";
 import { Button, Col, Divider, Row } from "antd";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { TokenContext } from "../../store/tokenContext";
 import { FlagOutlined, HeartOutlined, UploadOutlined } from "@ant-design/icons";
 import TransactionHistoryTable from "./table/TransactionTable";
@@ -256,7 +255,7 @@ const TokenPage = () => {
                             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                                 {tokenContext.relateTokens.map((row, index) => (
                                     <Col flex={"auto"} key={row.id}>
-                                        <Link to={`/token/${row.id}`}>
+                                        <a href={`/token/${row.id}`}>
                                             <div className="token">
                                                 <div className="token-img"></div>
                                                 <div className="token-info">
@@ -278,7 +277,7 @@ const TokenPage = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </Link>
+                                        </a>
                                     </Col>
                                 ))}
                             </Row>
