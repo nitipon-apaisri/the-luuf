@@ -4,12 +4,18 @@ import { Button, Col, Divider, Row } from "antd";
 import { useParams } from "react-router-dom";
 import { TokenContext } from "../../store/tokenContext";
 import { FlagOutlined, HeartOutlined, UploadOutlined } from "@ant-design/icons";
+import TransactionHistoryTable from "./table/TransactionTable";
 const TokenPage = () => {
     const tokenContext = useContext(TokenContext);
     const [loader, setLoader] = useState(false);
     const [token, setToken] = useState();
     const [tokenCollection, setTokenCollection] = useState();
     const { tokenId } = useParams();
+    const data = [
+        {
+            eventTitle: "Sale",
+        },
+    ];
     useEffect(() => {
         document.title = "THE LUUF - Collection";
         setLoader(true);
@@ -85,7 +91,19 @@ const TokenPage = () => {
                                                         <Col flex="auto">
                                                             <div className="token-Loyalty sub-info-content">
                                                                 <p>Loyalty</p>
-                                                                <h4>{token.tradeInfo.loyalties.primary.value}%</h4>
+                                                                <h4>
+                                                                    {(() => {
+                                                                        if (token.tradeInfo.loyalties.length > 1) {
+                                                                            const royaltiesSummarizedtoken = token.tradeInfo.loyalties.reduce((a, b) => {
+                                                                                return a + b.value;
+                                                                            }, 0);
+                                                                            return royaltiesSummarizedtoken;
+                                                                        } else {
+                                                                            return token.tradeInfo.loyalties[0].value;
+                                                                        }
+                                                                    })()}
+                                                                    %
+                                                                </h4>
                                                             </div>
                                                         </Col>
                                                         <Divider type="vertical" style={{ height: "auto" }} />
@@ -135,7 +153,7 @@ const TokenPage = () => {
                                                         {token.arttributes.length !== 0 ? (
                                                             <Row gutter={[8, 8]}>
                                                                 {token.arttributes.map((row, index) => (
-                                                                    <Col span={8} key={row.value}>
+                                                                    <Col flex={"auto"} key={row.value}>
                                                                         <div className="arttribute">
                                                                             <p>{row.type}</p>
                                                                             <h4>{row.value}</h4>
@@ -175,30 +193,62 @@ const TokenPage = () => {
                             </Col>
                         </Row>
                         <Divider style={{ margin: "40px 0" }} />
-
                         <div className="second-content">
                             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                                 <Col span={16}>
-                                    <div className="token-collection">
+                                    <article className="token-collection">
                                         <h1>About {tokenCollection.name}</h1>
                                         <Divider style={{ margin: "16px 0" }} />
                                         <p>{tokenCollection.description}</p>
-                                    </div>
+                                    </article>
                                 </Col>
                                 <Col span={8}>
-                                    <div className="token-metada">
-                                        <h1>Metada</h1>
+                                    <article className="token-metadata">
+                                        <h1>Metadata</h1>
                                         <Divider style={{ margin: "16px 0" }} />
-                                        <div className="data">
+                                        <div className="data contract-address">
                                             <Row justify={"space-between"}>
                                                 <p>Contract Address</p>
-                                                <p>{token.metadata.contractAddress}</p>
+                                                <p className="link">{token.metadata.contractAddress}</p>
                                             </Row>
                                         </div>
-                                    </div>
+                                        <div className="data token-name">
+                                            <Row justify={"space-between"}>
+                                                <p>Token</p>
+                                                <p>{token.name}</p>
+                                            </Row>
+                                        </div>
+                                        <div className="data token-edition">
+                                            <Row justify={"space-between"}>
+                                                <p>Edition</p>
+                                                <p>#{token.edition}</p>
+                                            </Row>
+                                        </div>
+                                        <div className="data chain">
+                                            <Row justify={"space-between"}>
+                                                <p>Blockchain</p>
+                                                <p>{token.chain}</p>
+                                            </Row>
+                                        </div>
+                                        <Divider style={{ margin: "16px 0" }} />
+                                        <div className="data ipfs">
+                                            <Row justify={"space-between"}>
+                                                <p>IPFS</p>
+                                                <p className="link">{token.image}</p>
+                                            </Row>
+                                        </div>
+                                    </article>
                                 </Col>
                             </Row>
                         </div>
+                        <article className="transaction-history">
+                            <div className="transactions">
+                                <h1>History</h1>
+                                <div className="table">
+                                    <TransactionHistoryTable data={data} />
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </section>
             )}
