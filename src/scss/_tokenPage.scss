@@ -189,5 +189,16 @@
                 }
             }
         }
+        .relate-tokens {
+            @extend .card;
+            margin-top: 40px;
+            padding: 40px;
+            background: #fbfdff;
+            h1 {
+                font-weight: bolder;
+                font-size: 1.25rem;
+            }
+            @extend .token;
+        }
     }
 }

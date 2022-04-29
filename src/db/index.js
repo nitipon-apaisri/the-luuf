@@ -151,6 +151,3 @@ export const collections = [
         tokens: ["TK0001", "TK0002", "TK0003", "TK0004"],
     },
 ];
-collections[0].tokens.forEach((r) => {
-    if (r !== "TK0001") console.log(r);
-});

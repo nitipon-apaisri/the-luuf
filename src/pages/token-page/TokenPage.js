@@ -2,6 +2,7 @@ import MainLayout from "../../layout";
 import { useContext, useEffect, useState } from "react";
 import { Button, Col, Divider, Row } from "antd";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { TokenContext } from "../../store/tokenContext";
 import { FlagOutlined, HeartOutlined, UploadOutlined } from "@ant-design/icons";
 import TransactionHistoryTable from "./table/TransactionTable";
@@ -20,7 +21,7 @@ const TokenPage = () => {
         document.title = "THE LUUF - Collection";
         setLoader(true);
         setTimeout(() => {
-            tokenContext.findToken(tokenId);
+            tokenContext.fetchTokenData(tokenId);
             setToken(tokenContext.token);
             setTokenCollection(tokenContext.tokenCollection);
         }, 750);
@@ -248,6 +249,39 @@ const TokenPage = () => {
                                     <TransactionHistoryTable data={data} />
                                 </div>
                             </div>
+                        </article>
+                        <article className="relate-tokens">
+                            <h1>More from this collection</h1>
+                            <Divider style={{ margin: "16px 0" }} />
+                            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                                {tokenContext.relateTokens.map((row, index) => (
+                                    <Col flex={"auto"} key={row.id}>
+                                        <Link to={`/token/${row.id}`}>
+                                            <div className="token">
+                                                <div className="token-img"></div>
+                                                <div className="token-info">
+                                                    <div className="token-name">
+                                                        <p>{row.creator}</p>
+                                                        <h4>{row.name}</h4>
+                                                    </div>
+                                                    <div className="token-value">
+                                                        <p>Price</p>
+                                                        {(() => {
+                                                            if (row.tradeInfo.sellStatus === true && row.tradeInfo.price === 0) {
+                                                                return <h4>FREE</h4>;
+                                                            } else if (row.tradeInfo.sellStatus === false) {
+                                                                return <h4 className="not-for-sell">SALE</h4>;
+                                                            } else {
+                                                                return <h4>{row.tradeInfo.price}N</h4>;
+                                                            }
+                                                        })()}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </Col>
+                                ))}
+                            </Row>
                         </article>
                     </div>
                 </section>
