@@ -45,7 +45,9 @@ const TokenPage = () => {
                                 <div className="left-content">
                                     <div className="token-img"></div>
                                     <div className="creator">
-                                        <h4>{token.creator}</h4>
+                                        <h4>
+                                            <a href={`/account/${token.creator}`}>{token.creator}</a>
+                                        </h4>
                                     </div>
                                 </div>
                             </Col>

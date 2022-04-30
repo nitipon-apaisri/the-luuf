@@ -199,3 +199,23 @@ export const collections = [
         tokens: ["TK0001", "TK0002", "TK0003", "TK0004", "TK0005", "TK0006"],
     },
 ];
+export const accounts = [
+    {
+        id: "ACC0001",
+        name: "kamwoo",
+        about: "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
+        medias: {
+            pfp: "...",
+            banner: "...",
+        },
+        links: {
+            universal: "...",
+            twitter: "...",
+            discord: "...",
+        },
+        collections: ["LVC0001"],
+        // creation: ["...", "...", "..."],
+        collectibles: [],
+        favorited: [],
+    },
+];

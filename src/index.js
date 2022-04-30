@@ -4,12 +4,15 @@ import Main from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { TokenProvider } from "./store/tokenContext";
+import { AccountProvider } from "./store/accountContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
-        <TokenProvider>
-            <Main />
-        </TokenProvider>
+        <AccountProvider>
+            <TokenProvider>
+                <Main />
+            </TokenProvider>
+        </AccountProvider>
     </BrowserRouter>
 );
 
