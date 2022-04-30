@@ -1,5 +1,6 @@
 import { Button, Col, Row } from "antd";
 import { useEffect, useState } from "react";
+import Token from "../../components/globally/Token";
 import { tokens } from "../../db";
 import MainLayout from "../../layout";
 const Marketplace = () => {
@@ -49,27 +50,7 @@ const Marketplace = () => {
                             {tokens.map((row, index) => (
                                 <Col span={colSpan} key={row.id}>
                                     <a href={`/token/${row.id}`}>
-                                        <div className="token">
-                                            <div className="token-img"></div>
-                                            <div className="token-info">
-                                                <div className="token-name">
-                                                    <p>{row.creator}</p>
-                                                    <h4>{row.name}</h4>
-                                                </div>
-                                                <div className="token-value">
-                                                    <p>Price</p>
-                                                    {(() => {
-                                                        if (row.tradeInfo.sellStatus === true && row.tradeInfo.price === 0) {
-                                                            return <h4>FREE</h4>;
-                                                        } else if (row.tradeInfo.sellStatus === false) {
-                                                            return <h4 className="not-for-sell">SALE</h4>;
-                                                        } else {
-                                                            return <h4>{row.tradeInfo.price}N</h4>;
-                                                        }
-                                                    })()}
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <Token data={row} />
                                     </a>
                                 </Col>
                             ))}
