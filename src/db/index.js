@@ -77,8 +77,8 @@ export const tokens = [
         collection: "It's fine.",
         chain: "Near",
         tradeInfo: {
-            sellStatus: false,
-            price: 0,
+            sellStatus: true,
+            price: 12.35,
             loyalties: [
                 { account: "kamwoo", value: 5 },
                 { account: "optp", value: 5 },
@@ -128,8 +128,8 @@ export const tokens = [
         collection: "It's fine.",
         chain: "Near",
         tradeInfo: {
-            sellStatus: false,
-            price: 0,
+            sellStatus: true,
+            price: 6,
             loyalties: [{ account: "kamwoo", value: 10 }],
         },
         metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
@@ -140,6 +140,54 @@ export const tokens = [
             { type: "season", value: "2" },
         ],
     },
+    {
+        id: "TK0005",
+        name: "#OK176",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        edition: 1,
+        creator: "kamwoo",
+        owner: "nitipon-apaisri",
+        collection: "It's fine.",
+        chain: "Near",
+        tradeInfo: {
+            sellStatus: true,
+            price: 8,
+            loyalties: [{ account: "kamwoo", value: 10 }],
+        },
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [
+            { type: "character", value: "Joker" },
+            { type: "status", value: "Positive" },
+            { type: "season", value: "2" },
+        ],
+    },
+    {
+        id: "TK0006",
+        name: "#OK0000",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        edition: 1,
+        creator: "kamwoo",
+        owner: "nitipon-apaisri",
+        collection: "It's fine.",
+        chain: "Near",
+        tradeInfo: {
+            sellStatus: true,
+            price: 8,
+            loyalties: [{ account: "kamwoo", value: 10 }],
+        },
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [
+            { type: "character", value: "Kamwoo" },
+            { type: "status", value: "none" },
+            { type: "season", value: "0" },
+        ],
+    },
 ];
 export const collections = [
     {
@@ -148,6 +196,6 @@ export const collections = [
         createdBy: "kamwoo",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
-        tokens: ["TK0001", "TK0002", "TK0003", "TK0004"],
+        tokens: ["TK0001", "TK0002", "TK0003", "TK0004", "TK0005", "TK0006"],
     },
 ];

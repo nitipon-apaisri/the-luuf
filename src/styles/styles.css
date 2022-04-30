@@ -147,7 +147,7 @@
 }
 
 .card, .token-page .token-contents .relate-tokens, .token-page .token-contents .transaction-history .transactions, .token-page .token-contents .transaction-history, .token-page .token-contents .second-content .token-collection,
-.token-page .token-contents .second-content .token-metadata, .token-page .token-contents .token-right, .token-page .token-contents .left-content, .token, .medium-card .medium-card-block, .landing-page .trending-collections .collections .medium-card-block,
+.token-page .token-contents .second-content .token-metadata, .token-page .token-contents .token-right, .token-page .token-contents .left-content, .token, .token-page .token-contents .relate-tokens .token, .medium-card .medium-card-block, .landing-page .trending-collections .collections .medium-card-block,
 .landing-page .trending-collections .creators .medium-card-block,
 .landing-page .rising-stars .collections .medium-card-block,
 .landing-page .rising-stars .creators .medium-card-block, .landing-page .category-container .category .category-row .card-category {
@@ -205,16 +205,16 @@
   font-weight: bolder;
 }
 
-.token, .token-page .token-contents .relate-tokens {
+.token, .token-page .token-contents .relate-tokens .token {
   padding: 24px;
 }
-.token .token-img, .token-page .token-contents .relate-tokens .token-img {
+.token .token-img, .token-page .token-contents .relate-tokens .token .token-img {
   width: 100%;
   padding-top: 100%;
   background-color: #888888;
   border-radius: 16px;
 }
-.token .token-info, .token-page .token-contents .relate-tokens .token-info {
+.token .token-info, .token-page .token-contents .relate-tokens .token .token-info {
   background-color: #f9f9f9;
   padding: 16px 24px;
   margin-top: 16px;
@@ -222,15 +222,19 @@
   justify-content: space-between;
   border-radius: 16px;
 }
-.token .token-info p, .token-page .token-contents .relate-tokens .token-info p {
+.token .token-info p, .token-page .token-contents .relate-tokens .token .token-info p {
   font-weight: 500;
   font-size: 0.8rem;
   color: #353840;
 }
-.token .token-info h4, .token-page .token-contents .relate-tokens .token-info h4 {
+.token .token-info h4, .token-page .token-contents .relate-tokens .token .token-info h4 {
   font-weight: bolder;
 }
-.token .token-info .token-value h4, .token-page .token-contents .relate-tokens .token-info .token-value h4 {
+.token .token-info .token-value p, .token-page .token-contents .relate-tokens .token .token-info .token-value p {
+  letter-spacing: normal;
+  text-align: right;
+}
+.token .token-info .token-value h4, .token-page .token-contents .relate-tokens .token .token-info .token-value h4 {
   letter-spacing: normal;
   text-align: right;
 }
@@ -437,6 +441,9 @@
 .token-page .token-contents .relate-tokens h1 {
   font-weight: bolder;
   font-size: 1.25rem;
+}
+.token-page .token-contents .relate-tokens .token h4 {
+  font-size: 0.65rem;
 }
 
 h1,

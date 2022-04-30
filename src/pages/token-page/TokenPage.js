@@ -254,8 +254,8 @@ const TokenPage = () => {
                             <h1>More from this collection</h1>
                             <Divider style={{ margin: "16px 0" }} />
                             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                                {tokenContext.relateTokens.map((row, index) => (
-                                    <Col flex={"auto"} key={row.id}>
+                                {tokenContext.relateTokens.slice(0, 4).map((row, index) => (
+                                    <Col span={6} key={row.id}>
                                         <a href={`/token/${row.id}`}>
                                             <Token data={row} />
                                         </a>
