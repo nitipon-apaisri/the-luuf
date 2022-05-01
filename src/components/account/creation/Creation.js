@@ -8,12 +8,13 @@ const Creation = ({ accountName }) => {
     const [loader, setLoader] = useState(false);
     const fetchMoreData = () => {
         setTimeout(() => {
-            const findCreatedTokens = tokens.slice(createdTokens.length + 2, createdTokens.length + 5).filter((r) => {
+            const findCreatedTokens = tokens.slice(createdTokens.length, createdTokens.length + 3).filter((r) => {
                 return r.creator === accountName;
             });
-            createdTokens[0].concat(findCreatedTokens);
-            console.log(createdTokens);
-        }, 100);
+            findCreatedTokens.forEach((token) => {
+                setCreatedToken((preData) => [...preData, token]);
+            });
+        }, 1500);
     };
     useEffect(() => {
         setLoader(true);
@@ -21,7 +22,9 @@ const Creation = ({ accountName }) => {
             return r.creator === accountName;
         });
         if (createdTokens.length === 0) {
-            setCreatedToken((tokens) => [...tokens, findCreatedTokens]);
+            findCreatedTokens.forEach((token) => {
+                setCreatedToken((tokens) => [...tokens, token]);
+            });
         }
         if (createdTokens.length !== 0) setLoader(false);
     }, [accountName, createdTokens]);
@@ -35,28 +38,28 @@ const Creation = ({ accountName }) => {
                 loader
             ) : (
                 <div className="created-tokens">
-                    <Row
+                    {/* <Row
                         gutter={[
                             { xs: 8, sm: 16, md: 24, lg: 32 },
                             { xs: 8, sm: 16, md: 24, lg: 32 },
                         ]}
                     >
-                        {createdTokens[0].map((row, index) => (
+                        {createdTokens.map((row, index) => (
                             <Col span={8} key={row.id}>
                                 <a href={`/token/${row.id}`}>
                                     <Token data={row} />
                                 </a>
                             </Col>
                         ))}
-                    </Row>
-                    {/* <InfiniteScroll dataLength={createdTokens[0].length} next={fetchMoreData} hasMore={true} loader={<h4>Loading...</h4>}>
+                    </Row> */}
+                    <InfiniteScroll dataLength={createdTokens.length} next={fetchMoreData} hasMore={true}>
                         <Row
                             gutter={[
                                 { xs: 8, sm: 16, md: 24, lg: 32 },
                                 { xs: 8, sm: 16, md: 24, lg: 32 },
                             ]}
                         >
-                            {createdTokens[0].map((row, index) => (
+                            {createdTokens.map((row, index) => (
                                 <Col span={8} key={row.id}>
                                     <a href={`/token/${row.id}`}>
                                         <Token data={row} />
@@ -64,7 +67,7 @@ const Creation = ({ accountName }) => {
                                 </Col>
                             ))}
                         </Row>
-                    </InfiniteScroll> */}
+                    </InfiniteScroll>
                 </div>
             )}
         </section>
