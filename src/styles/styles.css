@@ -529,6 +529,7 @@
 .account-page .account-contents .favorited-container .title {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 .account-page .account-contents .creation-container .title h1,
 .account-page .account-contents .collectible-container .title h1,

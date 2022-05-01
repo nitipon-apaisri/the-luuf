@@ -98,7 +98,7 @@ const AccountPage = () => {
                         <Divider />
                         {(() => {
                             if (tokenCategory === "creation") {
-                                return <Creation />;
+                                return <Creation accountName={account.name} />;
                             }
                             if (tokenCategory === "collectible") {
                                 return <Collectible />;
