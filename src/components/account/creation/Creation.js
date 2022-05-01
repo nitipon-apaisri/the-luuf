@@ -38,20 +38,6 @@ const Creation = ({ accountName }) => {
                 loader
             ) : (
                 <div className="created-tokens">
-                    {/* <Row
-                        gutter={[
-                            { xs: 8, sm: 16, md: 24, lg: 32 },
-                            { xs: 8, sm: 16, md: 24, lg: 32 },
-                        ]}
-                    >
-                        {createdTokens.map((row, index) => (
-                            <Col span={8} key={row.id}>
-                                <a href={`/token/${row.id}`}>
-                                    <Token data={row} />
-                                </a>
-                            </Col>
-                        ))}
-                    </Row> */}
                     <InfiniteScroll dataLength={createdTokens.length} next={fetchMoreData} hasMore={true}>
                         <Row
                             gutter={[
