@@ -23,7 +23,7 @@ const AccountPage = () => {
     };
     const getActiveClass = (index, className) => (toggleState === index ? className : "");
     useEffect(() => {
-        document.title = accountName;
+        document.title = `${accountName} - creation`;
         setLoader(true);
         setTimeout(() => {
             accountContext.fetchAccount(accountName);
@@ -107,7 +107,7 @@ const AccountPage = () => {
                                 return <Collection accountName={account.name} />;
                             }
                             if (tokenCategory === "favorited") {
-                                return <Favorited accountName={account.name} />;
+                                return <Favorited account={account} />;
                             }
                         })()}
                     </div>

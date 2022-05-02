@@ -28,9 +28,9 @@ const MainLayout = ({ children }) => {
                             </Link>
                         </li>
                         <li>
-                            <Link to={"/marketplace"}>
+                            <a href={"/marketplace"}>
                                 <h4>Marketplace</h4>
-                            </Link>
+                            </a>
                         </li>
                         <li>
                             <Link to={"/"}>

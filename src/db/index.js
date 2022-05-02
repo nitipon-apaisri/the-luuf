@@ -124,7 +124,7 @@ export const tokens = [
         image: "...",
         edition: 1,
         creator: "kamwoo",
-        owner: "nitipon-apaisri",
+        owner: "kamwoo",
         collection: "It's fine.",
         chain: "Near",
         tradeInfo: {
@@ -188,6 +188,102 @@ export const tokens = [
             { type: "season", value: "0" },
         ],
     },
+    {
+        id: "TK0007",
+        name: "#OK0000",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        edition: 1,
+        creator: "kamwoo",
+        owner: "nitipon-apaisri",
+        collection: "It's fine.",
+        chain: "Near",
+        tradeInfo: {
+            sellStatus: true,
+            price: 8,
+            loyalties: [{ account: "kamwoo", value: 10 }],
+        },
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [
+            { type: "character", value: "Kamwoo" },
+            { type: "status", value: "none" },
+            { type: "season", value: "0" },
+        ],
+    },
+    {
+        id: "TK0008",
+        name: "#OK0000",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        edition: 1,
+        creator: "kamwoo",
+        owner: "nitipon-apaisri",
+        collection: "It's fine.",
+        chain: "Near",
+        tradeInfo: {
+            sellStatus: true,
+            price: 8,
+            loyalties: [{ account: "kamwoo", value: 10 }],
+        },
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [
+            { type: "character", value: "Kamwoo" },
+            { type: "status", value: "none" },
+            { type: "season", value: "0" },
+        ],
+    },
+    {
+        id: "TK0009",
+        name: "#OK0000",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        edition: 1,
+        creator: "kamwoo",
+        owner: "nitipon-apaisri",
+        collection: "It's fine.",
+        chain: "Near",
+        tradeInfo: {
+            sellStatus: true,
+            price: 8,
+            loyalties: [{ account: "kamwoo", value: 10 }],
+        },
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [
+            { type: "character", value: "Kamwoo" },
+            { type: "status", value: "none" },
+            { type: "season", value: "0" },
+        ],
+    },
+    {
+        id: "TK00010",
+        name: "#OK0000",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "...",
+        edition: 1,
+        creator: "kamwoo",
+        owner: "nitipon-apaisri",
+        collection: "It's fine.",
+        chain: "Near",
+        tradeInfo: {
+            sellStatus: true,
+            price: 8,
+            loyalties: [{ account: "kamwoo", value: 10 }],
+        },
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [
+            { type: "character", value: "Kamwoo" },
+            { type: "status", value: "none" },
+            { type: "season", value: "0" },
+        ],
+    },
 ];
 export const collections = [
     {
@@ -215,7 +311,7 @@ export const accounts = [
         },
         collections: ["LVC0001"],
         // creation: ["...", "...", "..."],
-        collectibles: [],
+        collectibles: ["TK0004"],
         favorited: [],
     },
 ];
