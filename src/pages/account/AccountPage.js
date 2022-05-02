@@ -101,13 +101,13 @@ const AccountPage = () => {
                                 return <Creation accountName={account.name} />;
                             }
                             if (tokenCategory === "collectible") {
-                                return <Collectible />;
+                                return <Collectible accountName={account.name} />;
                             }
                             if (tokenCategory === "collection") {
-                                return <Collection />;
+                                return <Collection accountName={account.name} />;
                             }
                             if (tokenCategory === "favorited") {
-                                return <Favorited />;
+                                return <Favorited accountName={account.name} />;
                             }
                         })()}
                     </div>

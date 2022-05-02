@@ -104,5 +104,9 @@
                 }
             }
         }
+        .created-collections {
+            @extend .medium-card;
+            text-align: center;
+        }
     }
 }

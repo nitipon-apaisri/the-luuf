@@ -60,7 +60,7 @@ const Marketplace = () => {
                                 ]}
                             >
                                 {getTokens.map((row, index) => (
-                                    <Col span={6} key={row.id}>
+                                    <Col span={colSpan} key={row.id}>
                                         <a href={`/token/${row.id}`}>
                                             <Token data={row} />
                                         </a>
@@ -68,20 +68,6 @@ const Marketplace = () => {
                                 ))}
                             </Row>
                         </InfiniteScroll>
-                        {/* <Row
-                            gutter={[
-                                { xs: 8, sm: 16, md: 24, lg: 32 },
-                                { xs: 8, sm: 16, md: 24, lg: 32 },
-                            ]}
-                        >
-                            {getTokens.map((row, index) => (
-                                <Col span={colSpan} key={row.id}>
-                                    <a href={`/token/${row.id}`}>
-                                        <Token data={row} />
-                                    </a>
-                                </Col>
-                            ))}
-                        </Row> */}
                     </div>
                 )}
             </section>
