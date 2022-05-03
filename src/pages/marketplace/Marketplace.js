@@ -27,7 +27,11 @@ const Marketplace = () => {
         setLoader(true);
         if (getTokens.length === 0) {
             for (let token = 0; token < 8; token++) {
-                setGetTokens((addTokens) => [...addTokens, tokens[token]]);
+                if (tokens[token] === undefined) {
+                    break;
+                } else {
+                    setGetTokens((addTokens) => [...addTokens, tokens[token]]);
+                }
             }
         }
         if (getTokens.length !== 0) setLoader(false);

@@ -113,7 +113,10 @@ const TokenPage = () => {
                                                         <Col flex="auto">
                                                             <div className="token-owner sub-info-content">
                                                                 <p>Owner</p>
-                                                                <h4>{token.owner}</h4>
+                                                                <h4>
+                                                                    {" "}
+                                                                    <a href={`/account/${token.owner}`}>{token.owner}</a>
+                                                                </h4>
                                                             </div>
                                                         </Col>
                                                     </Row>

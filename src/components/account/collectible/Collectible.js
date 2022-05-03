@@ -7,11 +7,11 @@ const Collectible = ({ accountName }) => {
     const [collectibles, setCollectibles] = useState([]);
     const fetchMoreData = () => {
         setTimeout(() => {
-            const findCreatedTokens = tokens.filter((r) => {
+            const findCreatedTokens = tokens.slice(collectibles.length, collectibles.length + 3).filter((r) => {
                 return r.owner === accountName;
             });
             findCreatedTokens.forEach((token) => {
-                console.log(token);
+                setCollectibles((prevData) => [...prevData, token]);
             });
         }, 750);
     };
@@ -22,10 +22,15 @@ const Collectible = ({ accountName }) => {
         const findAccountCollectibles = tokens.filter((token) => {
             return token.owner === accountName;
         });
+
         if (collectibles.length === 0) {
-            findAccountCollectibles.forEach((token) => {
-                setCollectibles((tokens) => [...tokens, token]);
-            });
+            for (let token = 0; token < 3; token++) {
+                if (findAccountCollectibles[token] === undefined) {
+                    break;
+                } else {
+                    setCollectibles((addTokens) => [...addTokens, findAccountCollectibles[token]]);
+                }
+            }
         }
     }, [accountName, collectibles]);
     return (
@@ -44,7 +49,7 @@ const Collectible = ({ accountName }) => {
                             { xs: 8, sm: 16, md: 24, lg: 32 },
                         ]}
                     >
-                        {collectibles.map((row, index) => (
+                        {Array.from(new Set(collectibles)).map((row, index) => (
                             <Col span={8} key={row.id}>
                                 <a href={`/token/${row.id}`}>
                                     <Token data={row} />
