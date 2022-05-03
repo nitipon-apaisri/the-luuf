@@ -22,13 +22,15 @@ const Marketplace = () => {
     };
     useEffect(() => {
         document.title = "THE LUUF - Marketplace";
+    }, []);
+    useEffect(() => {
         setLoader(true);
         if (getTokens.length === 0) {
-            tokens.forEach((token) => {
-                setGetTokens((tokens) => [...tokens, token]);
-            });
+            for (let token = 0; token < 8; token++) {
+                setGetTokens((addTokens) => [...addTokens, tokens[token]]);
+            }
         }
-        if (tokens.length !== 0) setLoader(false);
+        if (getTokens.length !== 0) setLoader(false);
     }, [getTokens]);
     useEffect(() => {
         window.addEventListener("resize", updateWindowSize);
