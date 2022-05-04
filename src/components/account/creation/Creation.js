@@ -42,7 +42,7 @@ const Creation = ({ accountName }) => {
                             { xs: 8, sm: 16, md: 24, lg: 32 },
                         ]}
                     >
-                        {createdTokens.map((row, index) => (
+                        {Array.from(new Set(createdTokens)).map((row, index) => (
                             <Col span={8} key={row.id}>
                                 <a href={`/token/${row.id}`}>
                                     <Token data={row} />

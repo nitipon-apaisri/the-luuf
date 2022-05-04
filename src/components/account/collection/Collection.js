@@ -49,7 +49,7 @@ const Collection = ({ accountName }) => {
                     >
                         {createdCollections.map((row, index) => (
                             <Col span={8} key={row.id}>
-                                <a href={`/token/${row.id}`}>
+                                <a href={`/collection/${row.name}`}>
                                     <div className="medium-card-block">
                                         <div className="medium-card-cover"></div>
                                         <div className="medium-card-profile">

@@ -44,12 +44,12 @@ const AccountPage = () => {
                 <section className="account-page">
                     <div className="page-cover"></div>
                     <div className="account-contents">
-                        <div className="account-profile">
+                        <div className="account-profile main-profile">
                             <div className="profile">
-                                <div className="account-pfp"></div>
+                                <div className="account-pfp main-pfp"></div>
                                 <h3>{account.name}</h3>
                             </div>
-                            <div className="account-info">
+                            <div className="account-info main-content-info">
                                 <div className="external-links">
                                     <div className="links">
                                         <div className="link">
@@ -63,7 +63,7 @@ const AccountPage = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="account-description">
+                                <div className="account-description main-content-description">
                                     <p>{account.about}</p>
                                 </div>
                             </div>
