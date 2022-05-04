@@ -20,13 +20,17 @@ const Collection = ({ accountName }) => {
         document.title = `${accountName} - collection`;
     }, [accountName]);
     useEffect(() => {
-        const findCreatedCollections = collections.slice(0, 3).filter((r) => {
+        const findCreatedCollections = collections.filter((r) => {
             return r.createdBy === accountName;
         });
         if (createdCollections.length === 0) {
-            findCreatedCollections.forEach((collection) => {
-                setCreatedCollections((collections) => [...collections, collection]);
-            });
+            for (let collection = 0; collection < 3; collection++) {
+                if (findCreatedCollections[collection] === undefined) {
+                    break;
+                } else {
+                    setCreatedCollections((collections) => [...collections, findCreatedCollections[collection]]);
+                }
+            }
         }
     }, [accountName, createdCollections]);
     return (

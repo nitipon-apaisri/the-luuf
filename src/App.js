@@ -1,9 +1,9 @@
 import "./styles/styles.css";
 import { Route, Routes } from "react-router-dom";
-import LandingPage from "./pages/landing/Landing";
-import Marketplace from "./pages/marketplace/Marketplace";
-import TokenPage from "./pages/token-page/TokenPage";
-import AccountPage from "./pages/account/AccountPage";
+import LandingPage from "./pages/landing/LandingView";
+import Marketplace from "./pages/marketplace/MarketplaceView";
+import TokenPage from "./pages/token/TokenView";
+import AccountPage from "./pages/account/AccountView";
 const App = () => {
     return (
         <div className="App">
