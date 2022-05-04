@@ -571,6 +571,23 @@
   max-width: 1280px;
   margin: 210px auto 0 auto;
 }
+.collection-view-container .collection-contents .sub-navigator .active {
+  transition-duration: 700ms;
+  color: #000;
+}
+.collection-view-container .collection-contents .sub-navigator nav ul {
+  display: flex;
+  justify-content: center;
+}
+.collection-view-container .collection-contents .sub-navigator nav ul li {
+  margin: 0 16px;
+  list-style: none;
+}
+.collection-view-container .collection-contents .sub-navigator nav ul li h4 {
+  cursor: pointer;
+  color: #efefef;
+  font-weight: bolder;
+}
 
 h1,
 h2,
