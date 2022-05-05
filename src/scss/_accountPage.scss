@@ -14,26 +14,8 @@
         max-width: 1280px;
         margin: 210px auto 0 auto;
         @extend .main-content-style;
-        .sub-navigator {
-            .active {
-                transition-duration: 700ms;
-                color: #000;
-            }
-            nav {
-                ul {
-                    display: flex;
-                    justify-content: center;
-                    li {
-                        margin: 0 16px;
-                        list-style: none;
-                        h4 {
-                            cursor: pointer;
-                            color: #efefef;
-                            font-weight: bolder;
-                        }
-                    }
-                }
-            }
+        .tabs {
+            @extend .sub-navigator;
         }
         .creation-container,
         .collectible-container,

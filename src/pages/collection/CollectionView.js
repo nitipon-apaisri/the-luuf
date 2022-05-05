@@ -7,11 +7,12 @@ import linkIcon from "../../assets/images/icons/Link.svg";
 import { useState } from "react";
 import { collections } from "../../db";
 import { Divider } from "antd";
+import ItemsInCollection from "../../components/collection/items/ItemsInCollection";
 const CollectionView = () => {
     const { collectionName } = useParams();
     const [collection, setCollection] = useState();
     const [toggleState, setToggleState] = useState(1);
-    const [collectionCategory, setCollectionCategory] = useState("Items");
+    const [collectionCategory, setCollectionCategory] = useState("items");
     const [loader, setLoader] = useState(false);
     const toggleTab = (index, category) => {
         setToggleState(index);
@@ -68,18 +69,28 @@ const CollectionView = () => {
                             </div>
                         </div>
                         <Divider />
-                        <div className="sub-navigator">
+                        <div className="tabs">
                             <nav>
                                 <ul>
                                     <li>
-                                        <h4 className={` ${getActiveClass(1, "active")}`} onClick={() => toggleTab(1, "Items")}>
-                                            {collectionCategory}
+                                        <h4 className={` ${getActiveClass(1, "active")}`} onClick={() => toggleTab(1, "items")}>
+                                            Items
+                                        </h4>
+                                    </li>
+                                    <li>
+                                        <h4 className={` ${getActiveClass(2, "active")}`} onClick={() => toggleTab(1, "activity")}>
+                                            Activity
                                         </h4>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                         <Divider />
+                        {(() => {
+                            if (collectionCategory === "items") {
+                                return <ItemsInCollection collection={collection} />;
+                            }
+                        })()}
                     </div>
                 </div>
             )}

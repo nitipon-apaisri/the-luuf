@@ -69,7 +69,7 @@ const AccountPage = () => {
                             </div>
                         </div>
                         <Divider />
-                        <div className="sub-navigator">
+                        <div className="tabs">
                             <nav>
                                 <ul>
                                     <li>

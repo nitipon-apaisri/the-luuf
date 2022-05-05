@@ -123,3 +123,27 @@
         }
     }
 }
+.sub-navigator {
+    .active {
+        transition-duration: 700ms;
+        color: #000;
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 3px;
+    }
+    nav {
+        ul {
+            display: flex;
+            justify-content: center;
+            li {
+                margin: 0 16px;
+                list-style: none;
+                h4 {
+                    cursor: pointer;
+                    color: #efefef;
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+}

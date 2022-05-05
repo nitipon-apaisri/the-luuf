@@ -286,6 +286,27 @@
   color: #a0a0a0;
 }
 
+.sub-navigator .active, .collection-view-container .collection-contents .tabs .active, .account-page .account-contents .tabs .active {
+  transition-duration: 700ms;
+  color: #000;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+.sub-navigator nav ul, .collection-view-container .collection-contents .tabs nav ul, .account-page .account-contents .tabs nav ul {
+  display: flex;
+  justify-content: center;
+}
+.sub-navigator nav ul li, .collection-view-container .collection-contents .tabs nav ul li, .account-page .account-contents .tabs nav ul li {
+  margin: 0 16px;
+  list-style: none;
+}
+.sub-navigator nav ul li h4, .collection-view-container .collection-contents .tabs nav ul li h4, .account-page .account-contents .tabs nav ul li h4 {
+  cursor: pointer;
+  color: #efefef;
+  font-weight: bolder;
+}
+
 .marketplace {
   padding: 0 80px;
   margin: 100px auto 0 auto;
@@ -508,23 +529,6 @@
   max-width: 1280px;
   margin: 210px auto 0 auto;
 }
-.account-page .account-contents .sub-navigator .active {
-  transition-duration: 700ms;
-  color: #000;
-}
-.account-page .account-contents .sub-navigator nav ul {
-  display: flex;
-  justify-content: center;
-}
-.account-page .account-contents .sub-navigator nav ul li {
-  margin: 0 16px;
-  list-style: none;
-}
-.account-page .account-contents .sub-navigator nav ul li h4 {
-  cursor: pointer;
-  color: #efefef;
-  font-weight: bolder;
-}
 .account-page .account-contents .creation-container .title,
 .account-page .account-contents .collectible-container .title,
 .account-page .account-contents .collection-container .title,
@@ -571,22 +575,23 @@
   max-width: 1280px;
   margin: 210px auto 0 auto;
 }
-.collection-view-container .collection-contents .sub-navigator .active {
-  transition-duration: 700ms;
-  color: #000;
-}
-.collection-view-container .collection-contents .sub-navigator nav ul {
+.collection-view-container .collection-contents .items-collection-container .title {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
-.collection-view-container .collection-contents .sub-navigator nav ul li {
-  margin: 0 16px;
-  list-style: none;
+.collection-view-container .collection-contents .items-collection-container .title h1 {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
-.collection-view-container .collection-contents .sub-navigator nav ul li h4 {
-  cursor: pointer;
-  color: #efefef;
-  font-weight: bolder;
+.collection-view-container .collection-contents .items-collection-container .title button {
+  border-radius: 8px;
+  width: 100px;
+  height: 48px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
 }
 
 h1,
