@@ -200,7 +200,7 @@ const TokenPage = () => {
                         </Row>
                         <Divider style={{ margin: "40px 0" }} />
                         <div className="second-content">
-                            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                            <Row gutter={[32, 32]}>
                                 <Col span={16}>
                                     <article className="token-collection">
                                         <h1>About {tokenCollection.name}</h1>
@@ -258,7 +258,7 @@ const TokenPage = () => {
                         <article className="relate-tokens">
                             <h1>More from this collection</h1>
                             <Divider style={{ margin: "16px 0" }} />
-                            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                            <Row gutter={[32, 32]}>
                                 {tokenContext.relateTokens.slice(0, 4).map((row, index) => (
                                     <Col span={6} key={row.id}>
                                         <a href={`/token/${row.id}`}>

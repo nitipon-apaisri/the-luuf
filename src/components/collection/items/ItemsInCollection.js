@@ -34,12 +34,7 @@ const ItemsInCollection = ({ collection }) => {
             </div>
             <div className="items-collection">
                 <InfiniteScroll dataLength={items.length} next={fetchMoreData} hasMore={true}>
-                    <Row
-                        gutter={[
-                            { xs: 8, sm: 16, md: 24, lg: 32 },
-                            { xs: 8, sm: 16, md: 24, lg: 32 },
-                        ]}
-                    >
+                    <Row gutter={[32, 32]}>
                         {Array.from(new Set(items)).map((row, index) => (
                             <Col span={8} key={row.id}>
                                 <a href={`/token/${row.id}`}>

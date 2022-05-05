@@ -59,12 +59,7 @@ const Marketplace = () => {
                 {!loader && (
                     <div className="tokens">
                         <InfiniteScroll dataLength={getTokens.length} next={fetchMoreData} hasMore={true}>
-                            <Row
-                                gutter={[
-                                    { xs: 8, sm: 16, md: 24, lg: 32 },
-                                    { xs: 8, sm: 16, md: 24, lg: 32 },
-                                ]}
-                            >
+                            <Row gutter={[32, 32]}>
                                 {getTokens.map((row, index) => (
                                     <Col span={colSpan} key={row.id}>
                                         <a href={`/token/${row.id}`}>

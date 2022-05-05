@@ -78,7 +78,7 @@ const CollectionView = () => {
                                         </h4>
                                     </li>
                                     <li>
-                                        <h4 className={` ${getActiveClass(2, "active")}`} onClick={() => toggleTab(1, "activity")}>
+                                        <h4 className={` ${getActiveClass(2, "active")}`} onClick={() => toggleTab(2, "activity")}>
                                             Activity
                                         </h4>
                                     </li>

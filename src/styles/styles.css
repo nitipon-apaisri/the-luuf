@@ -239,6 +239,11 @@
   text-align: right;
 }
 
+.token:hover, .token-page .token-contents .relate-tokens .token:hover {
+  box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
+  transition: 500ms;
+}
+
 .main-content-style .main-profile, .collection-view-container .collection-contents .main-profile, .account-page .account-contents .main-profile {
   display: flex;
 }
@@ -411,9 +416,10 @@
 .token-page .token-contents .token-right .token-info .sub-info .sub-info-content p {
   font-size: 0.8rem;
   font-weight: 500;
-  color: #6d6d6d;
+  color: #000;
 }
 .token-page .token-contents .token-right .token-info .sub-info .sub-info-content h4 {
+  color: #353840;
   font-weight: bolder;
 }
 .token-page .token-contents .token-right .token-arttributes {
@@ -631,6 +637,10 @@ body .ant-btn-primary {
 body .ant-btn-primary:hover {
   background: #0047ca;
   border: #0047ca;
+}
+body .ant-row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 body .loading {
   width: 100%;

@@ -41,12 +41,7 @@ const Collection = ({ accountName }) => {
             </div>
             <div className="created-collections">
                 <InfiniteScroll dataLength={createdCollections.length} next={fetchMoreData} hasMore={true}>
-                    <Row
-                        gutter={[
-                            { xs: 8, sm: 16, md: 24, lg: 32 },
-                            { xs: 8, sm: 16, md: 24, lg: 32 },
-                        ]}
-                    >
+                    <Row gutter={[32, 32]}>
                         {createdCollections.map((row, index) => (
                             <Col span={8} key={row.id}>
                                 <a href={`/collection/${row.name}`}>
