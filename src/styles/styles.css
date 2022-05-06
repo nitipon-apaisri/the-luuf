@@ -319,6 +319,8 @@
 .marketplace .marketplace-header {
   display: flex;
   justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 30px;
 }
 .marketplace .marketplace-header h1 {
   font-size: 2rem;
@@ -330,9 +332,6 @@
   letter-spacing: 0.06em;
   font-weight: 600;
   border-radius: 8px;
-}
-.marketplace .tokens {
-  margin-top: 40px;
 }
 
 @media only screen and (min-width: 1960px) {
@@ -541,7 +540,8 @@
 .account-page .account-contents .favorited-container .title {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  padding: 0 20px;
 }
 .account-page .account-contents .creation-container .title h1,
 .account-page .account-contents .collectible-container .title h1,
@@ -584,7 +584,8 @@
 .collection-view-container .collection-contents .items-collection-container .title {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  padding: 0 20px;
 }
 .collection-view-container .collection-contents .items-collection-container .title h1 {
   color: #000;
@@ -637,10 +638,6 @@ body .ant-btn-primary {
 body .ant-btn-primary:hover {
   background: #0047ca;
   border: #0047ca;
-}
-body .ant-row {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
 }
 body .loading {
   width: 100%;

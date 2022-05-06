@@ -257,7 +257,7 @@ const TokenPage = () => {
                         </article>
                         <article className="relate-tokens">
                             <h1>More from this collection</h1>
-                            <Divider style={{ margin: "16px 0" }} />
+                            <Divider style={{ margin: "16px 0 40px 0" }} />
                             <Row gutter={[32, 32]}>
                                 {tokenContext.relateTokens.slice(0, 4).map((row, index) => (
                                     <Col span={6} key={row.id}>
