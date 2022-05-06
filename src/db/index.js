@@ -333,3 +333,10 @@ export const accounts = [
         favorited: [],
     },
 ];
+export const wallets = [
+    {
+        walletId: "ACC0001",
+        walletAddress: "kamwoo.luuf",
+        password: "1234",
+    },
+];

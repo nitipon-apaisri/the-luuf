@@ -1,13 +1,127 @@
-import { Layout } from "antd";
-import { Input } from "antd";
+import { UserOutlined } from "@ant-design/icons";
+import { Button, Input, Layout, Modal, Form } from "antd";
 import "antd/dist/antd.min.css";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo/logo.svg";
+import { AccountContext } from "../store/accountContext";
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 const MainLayout = ({ children }) => {
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selectAction, setSelectAction] = useState(true);
+    const [connectWallet, setConnectWallet] = useState(false);
+    const [createWallet, setCreateWallet] = useState(false);
+    const accountContext = useContext(AccountContext);
+    const [form] = Form.useForm();
+    const layout = {
+        labelCol: { span: 8 },
+        wrapperCol: { span: 24 },
+    };
+    const showModal = () => {
+        setModalVisible(true);
+    };
+    const connectAWallet = (e) => {
+        setModalVisible(false);
+    };
+    const onCancel = () => {
+        setModalVisible(false);
+    };
+    const onCancelSubmit = () => {
+        setSelectAction(true);
+        setConnectWallet(false);
+        setCreateWallet(false);
+    };
+    const NotAuthenticated = () => (
+        <div className="wallet-actions">
+            <Button
+                type="primary"
+                onClick={() => {
+                    setSelectAction(false);
+                    setConnectWallet(true);
+                }}
+            >
+                {" "}
+                Connect wallet
+            </Button>
+            <Button
+                onClick={() => {
+                    setSelectAction(false);
+                    setCreateWallet(true);
+                }}
+            >
+                {" "}
+                Create a Wallet
+            </Button>
+        </div>
+    );
+    const ConnectWalletForm = () => (
+        <div className="connect-wallet">
+            <Form {...layout} form={form} name="basic" initialValues={{ remember: true }} layout={"vertical"} onFinish={connectAWallet}>
+                <Form.Item label="Wallet Address" name="walletAddress" rules={[{ required: true, message: "Please input wallet address!" }]}>
+                    <Input />
+                </Form.Item>
+                <Form.Item label="Password" name="walletPassword" rules={[{ required: true, message: "Please input password!" }]}>
+                    <Input />
+                </Form.Item>
+            </Form>
+        </div>
+    );
+    const CreateWalletForm = () => (
+        <div className="create-wallet">
+            <Form {...layout} form={form} name="basic" initialValues={{ remember: true }} layout={"vertical"} onFinish={connectAWallet}>
+                <Form.Item label="Wallet Address" name="walletAddress" rules={[{ required: true, message: "Please input wallet address!" }]}>
+                    <Input />
+                </Form.Item>
+                <Form.Item label="Password" name="walletPassword" rules={[{ required: true, message: "Please input password!" }]}>
+                    <Input />
+                </Form.Item>
+            </Form>
+        </div>
+    );
     return (
         <Layout style={{ minHeight: "100vh" }}>
+            <Modal
+                title={(() => {
+                    if (selectAction === true && connectWallet === false && createWallet === false) {
+                        return "Wallet";
+                    }
+                    if (selectAction === false && connectWallet === true && createWallet === false) {
+                        return "Connect Wallet";
+                    }
+                    if (selectAction === false && connectWallet === false && createWallet === true) {
+                        return "Create a Wallet";
+                    }
+                })()}
+                visible={modalVisible}
+                onCancel={onCancel}
+                footer={[
+                    <Button key="back" onClick={onCancelSubmit}>
+                        Cancel
+                    </Button>,
+                    <Button
+                        key="submit"
+                        type="primary"
+                        onClick={() => {
+                            form.submit();
+                        }}
+                    >
+                        Submit
+                    </Button>,
+                ]}
+            >
+                {(() => {
+                    if (selectAction === true && connectWallet === false && createWallet === false) {
+                        return <NotAuthenticated />;
+                    }
+                    if (selectAction === false && connectWallet === true && createWallet === false) {
+                        return <ConnectWalletForm />;
+                    }
+                    if (selectAction === false && connectWallet === false && createWallet === true) {
+                        return <CreateWalletForm />;
+                    }
+                })()}
+            </Modal>
             <Header>
                 <nav>
                     <Link to={"/"}>
@@ -42,6 +156,9 @@ const MainLayout = ({ children }) => {
                                 <h4>Resources</h4>
                             </Link>
                         </li>
+                        <div className="authenticate-actions">
+                            <Button icon={<UserOutlined />} shape="circle" onClick={showModal}></Button>
+                        </div>
                     </ul>
                 </nav>
             </Header>

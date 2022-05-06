@@ -55,6 +55,30 @@ body {
     .not-for-sell {
         text-decoration-line: line-through;
     }
+    .ant-popover-arrow {
+        display: none;
+    }
+    .wallet-actions {
+        display: flex;
+        flex-flow: column;
+        button {
+            border-radius: 8px;
+            font-weight: bolder;
+            height: 48px;
+            margin: 8px 0;
+        }
+    }
+    .ant-modal-content {
+        border-radius: 12px;
+    }
+    .ant-modal-header {
+        border-radius: 12px 12px 0 0;
+    }
+    .ant-modal-footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 24px;
+    }
     header {
         z-index: 1;
         nav {
@@ -113,16 +137,32 @@ body {
                     margin: 0 16px;
                     list-style: none;
                     h4 {
-                        color: black;
+                        color: rgb(50, 50, 50);
                         font-weight: bolder;
                         margin: 0;
                     }
                     h4:hover {
-                        color: #0652dd;
+                        color: #101010;
                     }
                 }
             }
+            .authenticate-actions {
+                margin-left: 32px;
+                button {
+                    background: #efefef;
+                    width: 40px;
+                    height: 40px;
+                }
+                button:hover {
+                    background: rgb(40, 40, 40);
+                    border-color: rgb(40, 40, 40);
+                    color: rgb(236, 236, 236);
+                }
+            }
         }
+    }
+    .ant-popover {
+        width: 240px;
     }
     main {
         width: 100%;
