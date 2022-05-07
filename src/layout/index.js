@@ -4,15 +4,15 @@ import "antd/dist/antd.min.css";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo/logo.svg";
-import { AccountContext } from "../store/accountContext";
+import { WalletContext } from "../store/walletContext";
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 const MainLayout = ({ children }) => {
+    const walletContext = useContext(WalletContext);
     const [modalVisible, setModalVisible] = useState(false);
     const [selectAction, setSelectAction] = useState(true);
     const [connectWallet, setConnectWallet] = useState(false);
     const [createWallet, setCreateWallet] = useState(false);
-    const accountContext = useContext(AccountContext);
     const [form] = Form.useForm();
     const layout = {
         labelCol: { span: 8 },
@@ -22,7 +22,11 @@ const MainLayout = ({ children }) => {
         setModalVisible(true);
     };
     const connectAWallet = (e) => {
-        setModalVisible(false);
+        walletContext.authentication(e);
+        setTimeout(() => {
+            form.resetFields();
+            setModalVisible(false);
+        }, 300);
     };
     const onCancel = () => {
         setModalVisible(false);
@@ -161,9 +165,17 @@ const MainLayout = ({ children }) => {
                                 <h4>Resources</h4>
                             </Link>
                         </li>
-                        <div className="authenticate-actions">
-                            <Button icon={<UserOutlined />} shape="circle" onClick={showModal}></Button>
-                        </div>
+                        {walletContext.wallet ? (
+                            <div className="authenticate-actions">
+                                <div className="profile">
+                                    <div className="mock-pfp"></div>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="authenticate-actions">
+                                <Button icon={<UserOutlined />} shape="circle" onClick={showModal}></Button>
+                            </div>
+                        )}
                     </ul>
                 </nav>
             </Header>
