@@ -42,6 +42,7 @@ body {
         background: #0047ca;
         border: #0047ca;
     }
+
     .loading {
         width: 100%;
         display: flex;
@@ -68,6 +69,28 @@ body {
             margin: 8px 0;
         }
     }
+    .connect-wallet,
+    .create-wallet {
+        height: 0;
+        overflow: hidden;
+        -moz-animation: slide 1s ease 320ms forwards;
+        -webkit-animation: slide 1s ease 320ms forwards;
+        -o-animation: slide 1s ease 320ms forwards;
+        -ms-animation: slide 1s ease 320ms forwards;
+        animation: slide 1s ease 320ms forwards;
+        input {
+            height: 40px;
+            border-radius: 6px;
+        }
+    }
+    @keyframes slide {
+        from {
+            height: 0;
+        }
+        to {
+            height: 164px;
+        }
+    }
     .ant-modal-content {
         border-radius: 12px;
     }
@@ -78,6 +101,11 @@ body {
         display: flex;
         justify-content: space-between;
         padding: 16px 24px;
+        button {
+            min-width: 80px;
+            height: 40px;
+            border-radius: 8px;
+        }
     }
     header {
         z-index: 1;

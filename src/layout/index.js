@@ -26,6 +26,9 @@ const MainLayout = ({ children }) => {
     };
     const onCancel = () => {
         setModalVisible(false);
+        setSelectAction(true);
+        setConnectWallet(false);
+        setCreateWallet(false);
     };
     const onCancelSubmit = () => {
         setSelectAction(true);
@@ -83,41 +86,43 @@ const MainLayout = ({ children }) => {
         <Layout style={{ minHeight: "100vh" }}>
             <Modal
                 title={(() => {
-                    if (selectAction === true && connectWallet === false && createWallet === false) {
+                    if (selectAction) {
                         return "Wallet";
                     }
-                    if (selectAction === false && connectWallet === true && createWallet === false) {
+                    if (connectWallet) {
                         return "Connect Wallet";
                     }
-                    if (selectAction === false && connectWallet === false && createWallet === true) {
+                    if (createWallet) {
                         return "Create a Wallet";
                     }
                 })()}
                 visible={modalVisible}
                 onCancel={onCancel}
-                footer={[
-                    <Button key="back" onClick={onCancelSubmit}>
-                        Cancel
-                    </Button>,
-                    <Button
-                        key="submit"
-                        type="primary"
-                        onClick={() => {
-                            form.submit();
-                        }}
-                    >
-                        Submit
-                    </Button>,
-                ]}
+                footer={
+                    !selectAction && [
+                        <Button key="back" onClick={connectWallet === true || createWallet === true ? onCancelSubmit : onCancel}>
+                            Cancel
+                        </Button>,
+                        <Button
+                            key="submit"
+                            type="primary"
+                            onClick={() => {
+                                form.submit();
+                            }}
+                        >
+                            {connectWallet ? "Connect" : "Create"}
+                        </Button>,
+                    ]
+                }
             >
                 {(() => {
-                    if (selectAction === true && connectWallet === false && createWallet === false) {
+                    if (selectAction) {
                         return <NotAuthenticated />;
                     }
-                    if (selectAction === false && connectWallet === true && createWallet === false) {
+                    if (connectWallet) {
                         return <ConnectWalletForm />;
                     }
-                    if (selectAction === false && connectWallet === false && createWallet === true) {
+                    if (createWallet) {
                         return <CreateWalletForm />;
                     }
                 })()}

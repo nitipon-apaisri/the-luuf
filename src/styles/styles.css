@@ -683,6 +683,29 @@ body .wallet-actions button {
   height: 48px;
   margin: 8px 0;
 }
+body .connect-wallet,
+body .create-wallet {
+  height: 0;
+  overflow: hidden;
+  -moz-animation: slide 1s ease 320ms forwards;
+  -webkit-animation: slide 1s ease 320ms forwards;
+  -o-animation: slide 1s ease 320ms forwards;
+  -ms-animation: slide 1s ease 320ms forwards;
+  animation: slide 1s ease 320ms forwards;
+}
+body .connect-wallet input,
+body .create-wallet input {
+  height: 40px;
+  border-radius: 6px;
+}
+@keyframes slide {
+  from {
+    height: 0;
+  }
+  to {
+    height: 164px;
+  }
+}
 body .ant-modal-content {
   border-radius: 12px;
 }
@@ -693,6 +716,11 @@ body .ant-modal-footer {
   display: flex;
   justify-content: space-between;
   padding: 16px 24px;
+}
+body .ant-modal-footer button {
+  min-width: 80px;
+  height: 40px;
+  border-radius: 8px;
 }
 body header {
   z-index: 1;
