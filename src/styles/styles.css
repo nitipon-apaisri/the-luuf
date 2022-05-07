@@ -730,7 +730,6 @@ body header nav {
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  padding: 0 40px;
 }
 body header nav .nav-banner {
   width: 140px;
@@ -793,6 +792,8 @@ body header nav ul li h4:hover {
 }
 body header nav .authenticate-actions {
   margin-left: 32px;
+  display: flex;
+  align-items: center;
 }
 body header nav .authenticate-actions button {
   background: #efefef;
@@ -803,6 +804,12 @@ body header nav .authenticate-actions button:hover {
   background: #282828;
   border-color: #282828;
   color: #ececec;
+}
+body header nav .authenticate-actions .profile .mock-pfp {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  background-color: #2a2a2a;
 }
 body .ant-popover {
   width: 240px;
