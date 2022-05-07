@@ -5,17 +5,14 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { TokenProvider } from "./store/tokenContext";
 import { AccountProvider } from "./store/accountContext";
-import { WalletProvider } from "./store/walletContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
-        <WalletProvider>
-            <AccountProvider>
-                <TokenProvider>
-                    <Main />
-                </TokenProvider>
-            </AccountProvider>
-        </WalletProvider>
+        <AccountProvider>
+            <TokenProvider>
+                <Main />
+            </TokenProvider>
+        </AccountProvider>
     </BrowserRouter>
 );
 
