@@ -299,6 +299,10 @@ export const accounts = [
     {
         id: "ACC0001",
         name: "kamwoo",
+        signInInfo: {
+            walletAddress: "kamwoo.luuf",
+            password: "1234",
+        },
         about: "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         medias: {
             pfp: "...",
@@ -317,6 +321,10 @@ export const accounts = [
     {
         id: "ACC0002",
         name: "nitipon-apaisri",
+        signInInfo: {
+            walletAddress: "nitipon-apaisri.luuf",
+            password: "1234",
+        },
         about: "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         medias: {
             pfp: "...",
@@ -331,12 +339,5 @@ export const accounts = [
         // creation: ["...", "...", "..."],
         collectibles: ["TK0004"],
         favorited: [],
-    },
-];
-export const wallets = [
-    {
-        walletId: "ACC0001",
-        walletAddress: "kamwoo.luuf",
-        password: "1234",
     },
 ];

@@ -3,13 +3,13 @@ import { accounts } from "../db";
 const AccountContext = createContext();
 const AccountProvider = (props) => {
     const [account, setAccount] = useState();
-    const fetchAccount = (accountName) => {
-        const findAccount = accounts.find((r) => {
-            return r.name === accountName;
+    const signIn = (signInInfo) => {
+        const findAccount = accounts.find((acc) => {
+            return acc.signInInfo.walletAddress === signInInfo.walletAddress && acc.signInInfo.password === signInInfo.walletPassword;
         });
         setAccount(findAccount);
     };
-    return <AccountContext.Provider value={{ account, fetchAccount }}>{props.children}</AccountContext.Provider>;
+    return <AccountContext.Provider value={{ account, signIn }}>{props.children}</AccountContext.Provider>;
 };
 
 export { AccountProvider, AccountContext };

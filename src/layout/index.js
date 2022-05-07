@@ -4,11 +4,11 @@ import "antd/dist/antd.min.css";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo/logo.svg";
-import { WalletContext } from "../store/walletContext";
+import { AccountContext } from "../store/accountContext";
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 const MainLayout = ({ children }) => {
-    const walletContext = useContext(WalletContext);
+    const accountContext = useContext(AccountContext);
     const [modalVisible, setModalVisible] = useState(false);
     const [selectAction, setSelectAction] = useState(true);
     const [connectWallet, setConnectWallet] = useState(false);
@@ -22,7 +22,7 @@ const MainLayout = ({ children }) => {
         setModalVisible(true);
     };
     const connectAWallet = (e) => {
-        walletContext.authentication(e);
+        accountContext.signIn(e);
         setTimeout(() => {
             form.resetFields();
             setModalVisible(false);
@@ -165,7 +165,7 @@ const MainLayout = ({ children }) => {
                                 <h4>Resources</h4>
                             </Link>
                         </li>
-                        {walletContext.wallet ? (
+                        {accountContext.account ? (
                             <div className="authenticate-actions">
                                 <div className="profile">
                                     <div className="mock-pfp"></div>
