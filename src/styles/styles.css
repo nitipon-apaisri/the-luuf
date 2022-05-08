@@ -670,8 +670,16 @@ body .loading .loader {
 body .not-for-sell {
   text-decoration-line: line-through;
 }
-body .ant-popover-arrow {
-  display: none;
+body .ant-popover .ant-popover-content {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.04rem;
+}
+body .ant-popover .ant-popover-content .ant-popover-inner {
+  border-radius: 8px;
+}
+body .ant-popover .ant-popover-content .ant-popover-inner .ant-popover-title {
+  font-weight: bolder;
+  padding: 12px 16px;
 }
 body .wallet-actions {
   display: flex;
@@ -813,6 +821,10 @@ body header nav .authenticate-actions .profile .mock-pfp {
 }
 body .ant-popover {
   width: 240px;
+}
+body .popover-content .account-info .account-balance {
+  display: flex;
+  justify-content: space-between;
 }
 body main {
   width: 100%;

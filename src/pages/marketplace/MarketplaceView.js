@@ -25,7 +25,7 @@ const Marketplace = () => {
     }, []);
     useEffect(() => {
         setLoader(true);
-        if (getTokens.length === 0) {
+        if (getTokens.length === 0 && getTokens.length === tokens.length) {
             for (let token = 0; token < 8; token++) {
                 if (tokens[token] === undefined) {
                     break;

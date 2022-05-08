@@ -56,8 +56,21 @@ body {
     .not-for-sell {
         text-decoration-line: line-through;
     }
-    .ant-popover-arrow {
-        display: none;
+    // .ant-popover-arrow {
+    //     display: none;
+    // }
+    .ant-popover {
+        .ant-popover-content {
+            font-family: "Poppins", sans-serif;
+            letter-spacing: 0.04rem;
+            .ant-popover-inner {
+                border-radius: 8px;
+                .ant-popover-title {
+                    font-weight: bolder;
+                    padding: 12px 16px;
+                }
+            }
+        }
     }
     .wallet-actions {
         display: flex;
@@ -201,6 +214,14 @@ body {
     }
     .ant-popover {
         width: 240px;
+    }
+    .popover-content {
+        .account-info {
+            .account-balance {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
     }
     main {
         width: 100%;
