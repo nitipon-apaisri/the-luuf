@@ -5,6 +5,7 @@ import { AccountContext } from "../../store/accountContext";
 import instagramLogo from "../../assets/images/icons/InstagramLogo.svg";
 import twitterLogo from "../../assets/images/icons/TwitterLogo.svg";
 import linkIcon from "../../assets/images/icons/Link.svg";
+import gearIcon from "../../assets/images/icons/Gear.svg";
 import { Divider } from "antd";
 import Creation from "../../components/account/creation/Creation";
 import Collectible from "../../components/account/collectible/Collectible";
@@ -65,6 +66,15 @@ const AccountPage = () => {
                                             <img src={linkIcon} alt="external-link" />
                                         </div>
                                     </div>
+                                    {accountName === accountContext.account.name && (
+                                        <div className="owner-action" style={{ marginLeft: 16 }}>
+                                            <div className="links" style={{ width: "100%", padding: 12 }}>
+                                                <div className="link">
+                                                    <img src={gearIcon} alt="twitter" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="account-description main-content-description">
                                     <p>{account.about}</p>

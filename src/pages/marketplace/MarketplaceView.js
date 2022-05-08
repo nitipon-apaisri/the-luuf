@@ -18,14 +18,14 @@ const Marketplace = () => {
             loadMoreTokens.forEach((token) => {
                 setGetTokens((prevData) => [...prevData, token]);
             });
-        }, 1500);
+        }, 750);
     };
     useEffect(() => {
         document.title = "THE LUUF - Marketplace";
     }, []);
     useEffect(() => {
         setLoader(true);
-        if (getTokens.length === 0 && getTokens.length === tokens.length) {
+        if (getTokens.length === 0) {
             for (let token = 0; token < 8; token++) {
                 if (tokens[token] === undefined) {
                     break;

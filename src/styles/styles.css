@@ -268,6 +268,7 @@
 }
 .main-content-style .main-profile .main-content-info .external-links, .collection-view-container .collection-contents .main-profile .main-content-info .external-links, .account-page .account-contents .main-profile .main-content-info .external-links {
   align-self: end;
+  display: flex;
   margin-top: 95px;
 }
 .main-content-style .main-profile .main-content-info .external-links .links, .collection-view-container .collection-contents .main-profile .main-content-info .external-links .links, .account-page .account-contents .main-profile .main-content-info .external-links .links {
@@ -387,6 +388,10 @@
 .token-page .token-contents .token-right .token-info .action-buttons, .token-page .token-contents .token-right .token-info .offer-button, .token-page .token-contents .token-right .token-info .buy-button {
   height: 40px;
   border-radius: 8px;
+}
+.token-page .token-contents .token-right .token-info .buy-button {
+  font-weight: 500;
+  letter-spacing: 0.04rem;
 }
 .token-page .token-contents .token-right .token-info .offer-button {
   padding: 0;
@@ -674,6 +679,9 @@ body .ant-popover .ant-popover-content {
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.04rem;
 }
+body .ant-popover .ant-popover-content h4 {
+  font-weight: 600;
+}
 body .ant-popover .ant-popover-content .ant-popover-inner {
   border-radius: 8px;
 }
@@ -812,6 +820,9 @@ body header nav .authenticate-actions button:hover {
   background: #282828;
   border-color: #282828;
   color: #ececec;
+}
+body header nav .authenticate-actions .profile {
+  cursor: pointer;
 }
 body header nav .authenticate-actions .profile .mock-pfp {
   border-radius: 100%;

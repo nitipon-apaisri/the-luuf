@@ -100,6 +100,7 @@
             flex-flow: column;
             .external-links {
                 align-self: end;
+                display: flex;
                 margin-top: 95px;
                 .links {
                     display: flex;

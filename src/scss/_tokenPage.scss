@@ -50,6 +50,8 @@
                     border-radius: 8px;
                 }
                 .buy-button {
+                    font-weight: 500;
+                    letter-spacing: 0.04rem;
                     @extend .action-buttons;
                 }
                 .offer-button {

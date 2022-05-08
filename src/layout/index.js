@@ -1,5 +1,5 @@
 import { UserOutlined } from "@ant-design/icons";
-import { Button, Input, Layout, Modal, Form, Popover } from "antd";
+import { Button, Input, Layout, Modal, Form, Popover, Divider } from "antd";
 import "antd/dist/antd.min.css";
 import { useEffect } from "react";
 import { useState, useContext } from "react";
@@ -25,8 +25,14 @@ const MainLayout = ({ children }) => {
                 <div className="account-info">
                     <div className="account-balance">
                         <h4>Balance:</h4>
-                        <h4>{accountContext.account.balance}</h4>
+                        <h4>{accountContext.account.balance}N</h4>
                     </div>
+                    <Divider style={{ margin: "8px 0" }} />
+                    <a href={`/account/${accountContext.account.name}`}>
+                        <h4>My Profile</h4>
+                    </a>
+                    <Divider style={{ margin: "8px 0" }} />
+                    <h4>Log Out</h4>
                 </div>
             </div>
         );
@@ -169,9 +175,9 @@ const MainLayout = ({ children }) => {
                             </Link>
                         </li>
                         <li>
-                            <Link to={"/marketplace"}>
+                            <a href={"/marketplace"}>
                                 <h4>Marketplace</h4>
-                            </Link>
+                            </a>
                         </li>
                         <li>
                             <Link to={"/"}>
@@ -185,11 +191,11 @@ const MainLayout = ({ children }) => {
                         </li>
                         {accountContext.account ? (
                             <div className="authenticate-actions">
-                                <div className="profile">
-                                    <Popover placement="bottomRight" title={accountContext.account.name} content={popOverContent} trigger="click">
+                                <Popover placement="bottomRight" title={accountContext.account.name} content={popOverContent} trigger="click">
+                                    <div className="profile">
                                         <div className="mock-pfp"></div>
-                                    </Popover>
-                                </div>
+                                    </div>
+                                </Popover>
                             </div>
                         ) : (
                             <div className="authenticate-actions">
