@@ -22,9 +22,9 @@ const Marketplace = () => {
     };
     useEffect(() => {
         document.title = "THE LUUF - Marketplace";
+        setLoader(true);
     }, []);
     useEffect(() => {
-        setLoader(true);
         setTimeout(() => {
             if (getTokens.length === 0) {
                 for (let token = 0; token < 8; token++) {
