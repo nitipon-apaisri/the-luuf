@@ -44,7 +44,7 @@ const Collection = ({ accountName }) => {
                     <Row gutter={[32, 32]} style={{ padding: 20 }}>
                         {createdCollections.map((row, index) => (
                             <Col span={8} key={row.id}>
-                                <a href={`/collection/${row.name}`}>
+                                <a href={`/${accountName}/collection/${row.name}`}>
                                     <div className="medium-card-block">
                                         <div className="medium-card-cover"></div>
                                         <div className="medium-card-profile">

@@ -13,7 +13,7 @@ const App = () => {
                 <Route path="/marketplace" element={<Marketplace />} />
                 <Route path="/token/:tokenId" element={<TokenPage />} />
                 <Route path="/account/:accountName" element={<AccountPage />} />
-                <Route path="/collection/:collectionName" element={<CollectionView />} />
+                <Route path="/:accountName/collection/:collectionName" element={<CollectionView />} />
             </Routes>
         </div>
     );
