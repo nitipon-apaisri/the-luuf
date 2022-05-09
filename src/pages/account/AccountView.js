@@ -63,7 +63,7 @@ const AccountPage = () => {
                                             <Button icon={<LinkOutlined />} shape="circle"></Button>
                                         </div>
                                     </div>
-                                    {accountName === accountContext.account.name && (
+                                    {accountContext.authStatus && (
                                         <div className="owner-action" style={{ marginLeft: 16 }}>
                                             <div className="links" style={{ width: "100%", padding: 12 }}>
                                                 <div className="link">

@@ -35,7 +35,7 @@ const Creation = ({ accountName }) => {
             <div className="title">
                 <h1>Creation</h1>
                 <div className="action-buttons">
-                    {accountName === accountContext.account.name && <Button type="primary">Create Card</Button>}
+                    {accountContext.authStatus && <Button type="primary">Create Card</Button>}
                     <Button type="primary">Filter</Button>
                 </div>
             </div>
