@@ -93,7 +93,7 @@ const MainLayout = ({ children }) => {
                     <Input />
                 </Form.Item>
                 <Form.Item label="Password" name="walletPassword" rules={[{ required: true, message: "Please input password!" }]}>
-                    <Input />
+                    <Input.Password />
                 </Form.Item>
             </Form>
         </div>
@@ -105,7 +105,7 @@ const MainLayout = ({ children }) => {
                     <Input />
                 </Form.Item>
                 <Form.Item label="Password" name="walletPassword" rules={[{ required: true, message: "Please input password!" }]}>
-                    <Input />
+                    <Input.Password />
                 </Form.Item>
             </Form>
         </div>

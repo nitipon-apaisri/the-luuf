@@ -5,8 +5,9 @@ import Token from "../../globally/Token";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { AccountContext } from "../../../store/accountContext";
 const Creation = ({ accountName }) => {
-    const [createdTokens, setCreatedToken] = useState([]);
     const accountContext = useContext(AccountContext);
+    const [createdTokens, setCreatedToken] = useState([]);
+    const [isAuth, setAuth] = useState(false);
     const fetchMoreData = () => {
         setTimeout(() => {
             const findCreatedTokens = tokens.slice(createdTokens.length, createdTokens.length + 3).filter((r) => {
@@ -19,7 +20,10 @@ const Creation = ({ accountName }) => {
     };
     useEffect(() => {
         document.title = `${accountName} - creation`;
-    }, [accountName]);
+        if (accountContext.account !== undefined) {
+            if (accountContext.account.name === accountName) setAuth(true);
+        }
+    }, [accountName, accountContext]);
     useEffect(() => {
         const findCreatedTokens = tokens.slice(0, 3).filter((r) => {
             return r.creator === accountName;
@@ -35,7 +39,7 @@ const Creation = ({ accountName }) => {
             <div className="title">
                 <h1>Creation</h1>
                 <div className="action-buttons">
-                    {accountContext.authStatus && <Button type="primary">Create Card</Button>}
+                    {isAuth && <Button type="primary">Create Card</Button>}
                     <Button type="primary">Filter</Button>
                 </div>
             </div>

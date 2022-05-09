@@ -12,6 +12,7 @@ const CollectionView = () => {
     const accountContext = useContext(AccountContext);
     const [collection, setCollection] = useState();
     const [toggleState, setToggleState] = useState(1);
+    const [isAuth, setAuth] = useState(false);
     const [collectionCategory, setCollectionCategory] = useState("items");
     const [loader, setLoader] = useState(false);
     const toggleTab = (index, category) => {
@@ -30,7 +31,11 @@ const CollectionView = () => {
         }, 750);
         if (collection !== undefined) setLoader(false);
     }, [collection, collectionName]);
-    useEffect(() => {});
+    useEffect(() => {
+        if (accountContext.account !== undefined) {
+            if (accountContext.account.name === accountName) setAuth(true);
+        }
+    }, [accountContext, accountName]);
     return (
         <MainLayout>
             {loader && (
@@ -62,7 +67,7 @@ const CollectionView = () => {
                                             <Button icon={<LinkOutlined />} shape="circle"></Button>
                                         </div>
                                     </div>
-                                    {accountName === accountContext.account.name && (
+                                    {isAuth && (
                                         <div className="owner-action" style={{ marginLeft: 16 }}>
                                             <div className="links" style={{ width: "100%", padding: 12 }}>
                                                 <div className="link">

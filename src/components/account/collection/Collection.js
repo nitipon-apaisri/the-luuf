@@ -6,8 +6,9 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import collectionPFP from "../../../assets/images/collection-mock-pfp.svg";
 import { AccountContext } from "../../../store/accountContext";
 const Collection = ({ accountName }) => {
-    const [createdCollections, setCreatedCollections] = useState([]);
     const accountContext = useContext(AccountContext);
+    const [createdCollections, setCreatedCollections] = useState([]);
+    const [isAuth, setAuth] = useState(false);
     const fetchMoreData = () => {
         setTimeout(() => {
             const findCreatedTokens = collections.slice(createdCollections.length, createdCollections.length + 3).filter((r) => {
@@ -20,7 +21,10 @@ const Collection = ({ accountName }) => {
     };
     useEffect(() => {
         document.title = `${accountName} - collection`;
-    }, [accountName]);
+        if (accountContext.account !== undefined) {
+            if (accountContext.account.name === accountName) setAuth(true);
+        }
+    }, [accountName, accountContext]);
     useEffect(() => {
         const findCreatedCollections = collections.filter((r) => {
             return r.createdBy === accountName;
@@ -40,7 +44,7 @@ const Collection = ({ accountName }) => {
             <div className="title">
                 <h1>Collections</h1>
                 <div className="action-buttons">
-                    {accountContext.authStatus && <Button type="primary">Create Collection</Button>}
+                    {isAuth && <Button type="primary">Create Collection</Button>}
                     <Button type="primary">Filter</Button>
                 </div>
             </div>
