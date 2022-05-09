@@ -18,14 +18,16 @@ const TokenPage = () => {
         },
     ];
     useEffect(() => {
-        document.title = "THE LUUF - Collection";
         setLoader(true);
         setTimeout(() => {
             tokenContext.fetchTokenData(tokenId);
             setToken(tokenContext.token);
             setTokenCollection(tokenContext.tokenCollection);
         }, 750);
-        if (token !== undefined) setLoader(false);
+        if (token !== undefined) {
+            setLoader(false);
+            document.title = `${token.collection} ${token.name} | THE LUUF`;
+        }
     }, [tokenId, tokenContext, token, tokenCollection]);
     return (
         <MainLayout>
@@ -129,23 +131,28 @@ const TokenPage = () => {
                                                                 BUY
                                                             </Button>
                                                         );
-                                                    } else if (token.tradeInfo.sellStatus === false) {
+                                                    }
+                                                    if (token.tradeInfo.sellStatus === false && token.tradeInfo.price === 0) {
                                                         return (
                                                             <Button className="offer-button" type="text">
                                                                 <h4>Make Offer</h4>
                                                             </Button>
                                                         );
-                                                    } else {
-                                                        <div className="button-actions">
-                                                            <Row>
-                                                                <Button type="primary" className="buy-button">
-                                                                    BUY
-                                                                </Button>
-                                                                <Button className="offer-button" type="text">
-                                                                    <h4>Make Offer</h4>
-                                                                </Button>
-                                                            </Row>
-                                                        </div>;
+                                                    }
+
+                                                    if (token.tradeInfo.sellStatus === true && token.tradeInfo.price !== 0) {
+                                                        return (
+                                                            <div className="button-actions">
+                                                                <Row align="middle">
+                                                                    <Button type="primary" className="buy-button">
+                                                                        BUY
+                                                                    </Button>
+                                                                    <Button className="offer-button" type="text" style={{ marginLeft: 16 }}>
+                                                                        <h4>Make Offer</h4>
+                                                                    </Button>
+                                                                </Row>
+                                                            </div>
+                                                        );
                                                     }
                                                 })()}
                                             </Col>

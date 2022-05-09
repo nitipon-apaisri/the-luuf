@@ -1,6 +1,7 @@
 import { UserOutlined } from "@ant-design/icons";
-import { Button, Input, Layout, Modal, Form } from "antd";
+import { Button, Input, Layout, Modal, Form, Popover, Divider } from "antd";
 import "antd/dist/antd.min.css";
+import { useEffect } from "react";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo/logo.svg";
@@ -17,6 +18,24 @@ const MainLayout = ({ children }) => {
     const layout = {
         labelCol: { span: 8 },
         wrapperCol: { span: 24 },
+    };
+    const popOverContent = () => {
+        return (
+            <div className="popover-content">
+                <div className="account-info">
+                    <div className="account-balance">
+                        <h4>Balance:</h4>
+                        <h4>{accountContext.account.balance}N</h4>
+                    </div>
+                    <Divider style={{ margin: "8px 0" }} />
+                    <a href={`/account/${accountContext.account.name}`}>
+                        <h4>My Profile</h4>
+                    </a>
+                    <Divider style={{ margin: "8px 0" }} />
+                    <h4 style={{ cursor: "pointer" }}>Log Out</h4>
+                </div>
+            </div>
+        );
     };
     const showModal = () => {
         setModalVisible(true);
@@ -86,6 +105,11 @@ const MainLayout = ({ children }) => {
             </Form>
         </div>
     );
+    useEffect(() => {
+        if (accountContext.account === undefined && localStorage.getItem("auth")) {
+            accountContext.signIn(JSON.parse(localStorage.getItem("auth")));
+        }
+    }, [accountContext]);
     return (
         <Layout style={{ minHeight: "100vh" }}>
             <Modal
@@ -167,9 +191,11 @@ const MainLayout = ({ children }) => {
                         </li>
                         {accountContext.account ? (
                             <div className="authenticate-actions">
-                                <div className="profile">
-                                    <div className="mock-pfp"></div>
-                                </div>
+                                <Popover placement="bottomRight" title={accountContext.account.name} content={popOverContent} trigger="click">
+                                    <div className="profile">
+                                        <div className="mock-pfp"></div>
+                                    </div>
+                                </Popover>
                             </div>
                         ) : (
                             <div className="authenticate-actions">

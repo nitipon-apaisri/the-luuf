@@ -1,15 +1,15 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MainLayout from "../../layout";
-import instagramLogo from "../../assets/images/icons/InstagramLogo.svg";
-import twitterLogo from "../../assets/images/icons/TwitterLogo.svg";
-import linkIcon from "../../assets/images/icons/Link.svg";
 import { useState } from "react";
 import { collections } from "../../db";
-import { Divider } from "antd";
+import { Button, Divider } from "antd";
 import ItemsInCollection from "../../components/collection/items/ItemsInCollection";
+import { InstagramFilled, LinkOutlined, SettingFilled, TwitterOutlined } from "@ant-design/icons";
+import { AccountContext } from "../../store/accountContext";
 const CollectionView = () => {
-    const { collectionName } = useParams();
+    const { accountName, collectionName } = useParams();
+    const accountContext = useContext(AccountContext);
     const [collection, setCollection] = useState();
     const [toggleState, setToggleState] = useState(1);
     const [collectionCategory, setCollectionCategory] = useState("items");
@@ -53,15 +53,24 @@ const CollectionView = () => {
                                 <div className="external-links">
                                     <div className="links">
                                         <div className="link">
-                                            <img src={twitterLogo} alt="twitter" />
+                                            <Button icon={<TwitterOutlined />} shape="circle"></Button>
+                                        </div>
+                                        <div className="link ig">
+                                            <Button icon={<InstagramFilled />} shape="circle"></Button>
                                         </div>
                                         <div className="link">
-                                            <img src={instagramLogo} alt="ig" />
-                                        </div>
-                                        <div className="link">
-                                            <img src={linkIcon} alt="external-link" />
+                                            <Button icon={<LinkOutlined />} shape="circle"></Button>
                                         </div>
                                     </div>
+                                    {accountName === accountContext.account.name && (
+                                        <div className="owner-action" style={{ marginLeft: 16 }}>
+                                            <div className="links" style={{ width: "100%", padding: 12 }}>
+                                                <div className="link">
+                                                    <Button icon={<SettingFilled />} shape="circle"></Button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="account-description main-content-description">
                                     <p>{collection.description}</p>

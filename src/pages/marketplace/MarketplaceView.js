@@ -18,23 +18,25 @@ const Marketplace = () => {
             loadMoreTokens.forEach((token) => {
                 setGetTokens((prevData) => [...prevData, token]);
             });
-        }, 1500);
+        }, 750);
     };
     useEffect(() => {
         document.title = "THE LUUF - Marketplace";
+        setLoader(true);
     }, []);
     useEffect(() => {
-        setLoader(true);
-        if (getTokens.length === 0) {
-            for (let token = 0; token < 8; token++) {
-                if (tokens[token] === undefined) {
-                    break;
-                } else {
-                    setGetTokens((addTokens) => [...addTokens, tokens[token]]);
+        setTimeout(() => {
+            if (getTokens.length === 0) {
+                for (let token = 0; token < 8; token++) {
+                    if (tokens[token] === undefined) {
+                        break;
+                    } else {
+                        setGetTokens((addTokens) => [...addTokens, tokens[token]]);
+                    }
                 }
             }
-        }
-        if (getTokens.length !== 0) setLoader(false);
+            if (getTokens.length !== 0) setLoader(false);
+        }, 750);
     }, [getTokens]);
     useEffect(() => {
         window.addEventListener("resize", updateWindowSize);

@@ -303,6 +303,7 @@ export const accounts = [
             walletAddress: "kamwoo.luuf",
             password: "1234",
         },
+        balance: 1000,
         about: "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         medias: {
             pfp: "...",
@@ -314,7 +315,6 @@ export const accounts = [
             discord: "...",
         },
         collections: ["LVC0001"],
-        // creation: ["...", "...", "..."],
         collectibles: ["TK0004"],
         favorited: [],
     },
@@ -325,6 +325,7 @@ export const accounts = [
             walletAddress: "nitipon-apaisri.luuf",
             password: "1234",
         },
+        balance: 666,
         about: "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         medias: {
             pfp: "...",
@@ -336,7 +337,6 @@ export const accounts = [
             discord: "...",
         },
         collections: ["LVC0001"],
-        // creation: ["...", "...", "..."],
         collectibles: ["TK0004"],
         favorited: [],
     },
