@@ -40,7 +40,7 @@ const Collection = ({ accountName }) => {
             <div className="title">
                 <h1>Collections</h1>
                 <div className="action-buttons">
-                    {accountName === accountContext.account.name && <Button type="primary">Create Collection</Button>}
+                    {accountContext.authStatus && <Button type="primary">Create Collection</Button>}
                     <Button type="primary">Filter</Button>
                 </div>
             </div>

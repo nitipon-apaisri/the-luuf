@@ -32,13 +32,18 @@ const MainLayout = ({ children }) => {
                         <h4>My Profile</h4>
                     </a>
                     <Divider style={{ margin: "8px 0" }} />
-                    <h4 style={{ cursor: "pointer" }}>Log Out</h4>
+                    <h4 style={{ cursor: "pointer" }} onClick={signOut}>
+                        Log Out
+                    </h4>
                 </div>
             </div>
         );
     };
     const showModal = () => {
         setModalVisible(true);
+    };
+    const signOut = () => {
+        accountContext.signOut();
     };
     const connectAWallet = (e) => {
         accountContext.signIn(e);
