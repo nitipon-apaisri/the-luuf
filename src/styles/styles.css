@@ -281,10 +281,9 @@
   margin-bottom: 40px;
   box-shadow: 0px 4px 20px -4px rgba(168, 168, 168, 0.25);
 }
-.main-content-style .main-profile .main-content-info .external-links .links .link, .collection-view-container .collection-contents .main-profile .main-content-info .external-links .links .link, .account-page .account-contents .main-profile .main-content-info .external-links .links .link {
+.main-content-style .main-profile .main-content-info .external-links .links .link button, .collection-view-container .collection-contents .main-profile .main-content-info .external-links .links .link button, .account-page .account-contents .main-profile .main-content-info .external-links .links .link button {
   background-color: #efefef;
-  border-radius: 100%;
-  padding: 6px 8px;
+  border-color: transparent;
 }
 .main-content-style .main-profile .main-content-info .main-content-description p, .collection-view-container .collection-contents .main-profile .main-content-info .main-content-description p, .account-page .account-contents .main-profile .main-content-info .main-content-description p {
   font-size: 0.8rem;
