@@ -1,10 +1,12 @@
 import { Button, Col, Row } from "antd";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { tokens } from "../../../db";
 import Token from "../../globally/Token";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { AccountContext } from "../../../store/accountContext";
 const Creation = ({ accountName }) => {
     const [createdTokens, setCreatedToken] = useState([]);
+    const accountContext = useContext(AccountContext);
     const fetchMoreData = () => {
         setTimeout(() => {
             const findCreatedTokens = tokens.slice(createdTokens.length, createdTokens.length + 3).filter((r) => {
@@ -32,7 +34,10 @@ const Creation = ({ accountName }) => {
         <section className="creation-container">
             <div className="title">
                 <h1>Creation</h1>
-                <Button type="primary">Filter</Button>
+                <div className="action-buttons">
+                    {accountName === accountContext.account.name && <Button type="primary">Create Card</Button>}
+                    <Button type="primary">Filter</Button>
+                </div>
             </div>
             <div className="created-tokens">
                 <InfiniteScroll dataLength={createdTokens.length} next={fetchMoreData} hasMore={true}>

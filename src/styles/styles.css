@@ -561,9 +561,10 @@
 .account-page .account-contents .collection-container .title button,
 .account-page .account-contents .favorited-container .title button {
   border-radius: 8px;
-  width: 100px;
+  min-width: 100px;
   height: 48px;
   font-weight: 700;
+  margin-left: 16px;
   letter-spacing: 0.06em;
 }
 .account-page .account-contents .created-collections {
