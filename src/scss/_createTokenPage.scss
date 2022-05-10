@@ -1,4 +1,4 @@
-.token-page {
+.create-token-page {
     .page-cover {
         position: absolute;
         top: 0;
@@ -44,7 +44,6 @@
                 }
             }
             .token-info {
-                height: 320px;
                 max-height: 320px;
                 .action-buttons {
                     height: 40px;
@@ -95,6 +94,7 @@
                 }
             }
             .token-arttributes {
+                height: 320px;
                 max-height: 320px;
                 overflow: auto;
                 .arttributes {
@@ -132,80 +132,24 @@
                 }
             }
         }
-        .second-content {
-            .token-collection,
-            .token-metadata {
-                @extend .card;
-                padding: 40px;
-                height: 320px;
-                max-height: 320px;
-                h1 {
-                    font-weight: bolder;
-                    font-size: 1.25rem;
-                }
-            }
-            .token-collection {
-                p {
-                    font-size: 0.8rem;
-                    color: #8d8d8d;
-                }
-            }
-            .token-metadata {
-                .data {
-                    margin: 8px 0;
-                    font-weight: 500;
-                    font-size: 0.8rem;
-                    .link {
-                        cursor: pointer;
-                        color: #0652dd;
-                    }
-                }
-            }
-        }
-        .transaction-history {
-            @extend .card;
-            margin-top: 40px;
-            background: #fbfdff;
-            padding: 40px;
-
-            .transactions {
-                @extend .card;
-                padding: 40px;
-                h1 {
-                    font-weight: bolder;
-                    font-size: 1.25rem;
-                }
-                .table {
-                    margin-top: 16px;
-                    .ant-table-thead > tr > th {
-                        border-top: 1px solid #f0f0f0;
-                        background: transparent;
-                    }
-                    .ant-table-cell::before {
-                        background-color: transparent;
-                    }
-                    .ant-table-tbody > tr > td,
-                    .ant-table-thead > tr > th,
-                    .ant-table tfoot > tr > td,
-                    .ant-table tfoot > tr > th {
-                        padding: 16px 0;
-                    }
-                }
-            }
-        }
-        .relate-tokens {
+        .token-form {
             @extend .card;
             margin-top: 40px;
             padding: 40px;
             background: #fbfdff;
-            h1 {
-                font-weight: bolder;
-                font-size: 1.25rem;
-            }
-            .token {
-                @extend .token;
-                h4 {
-                    font-size: 0.65rem;
+            .inner-form {
+                padding: 24px;
+                background-color: #fff;
+                border: 1px solid #f0f0f0;
+                border-radius: 16px;
+                display: flex;
+                h1 {
+                    font-weight: bolder;
+                    font-size: 1.25rem;
+                }
+                .left-form,
+                .right-form {
+                    width: 50%;
                 }
             }
         }

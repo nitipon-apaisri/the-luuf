@@ -5,6 +5,7 @@ import Marketplace from "./pages/marketplace/MarketplaceView";
 import TokenPage from "./pages/token/TokenView";
 import AccountPage from "./pages/account/AccountView";
 import CollectionView from "./pages/collection/CollectionView";
+import CreateToken from "./pages/createToken/CreateToken";
 const App = () => {
     return (
         <div className="App">
@@ -14,6 +15,7 @@ const App = () => {
                 <Route path="/token/:tokenId" element={<TokenPage />} />
                 <Route path="/account/:accountName" element={<AccountPage />} />
                 <Route path="/:accountName/collection/:collectionName" element={<CollectionView />} />
+                <Route path="/:accountName/createToken" element={<CreateToken />} />
             </Routes>
         </div>
     );

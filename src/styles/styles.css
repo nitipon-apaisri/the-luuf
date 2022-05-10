@@ -146,7 +146,7 @@
   padding: 24px 0;
 }
 
-.card, .token-page .token-contents .relate-tokens, .token-page .token-contents .transaction-history .transactions, .token-page .token-contents .transaction-history, .token-page .token-contents .second-content .token-collection,
+.card, .create-token-page .token-contents .token-form, .create-token-page .token-contents .token-right, .create-token-page .token-contents .left-content, .token-page .token-contents .relate-tokens, .token-page .token-contents .transaction-history .transactions, .token-page .token-contents .transaction-history, .token-page .token-contents .second-content .token-collection,
 .token-page .token-contents .second-content .token-metadata, .token-page .token-contents .token-right, .token-page .token-contents .left-content, .token, .token-page .token-contents .relate-tokens .token, .medium-card .medium-card-block, .account-page .account-contents .created-collections .medium-card-block, .landing-page .trending-collections .collections .medium-card-block,
 .landing-page .trending-collections .creators .medium-card-block,
 .landing-page .rising-stars .collections .medium-card-block,
@@ -285,6 +285,9 @@
   background-color: #efefef;
   border-color: transparent;
 }
+.main-content-style .main-profile .main-content-info .external-links .links .link button:hover, .collection-view-container .collection-contents .main-profile .main-content-info .external-links .links .link button:hover, .account-page .account-contents .main-profile .main-content-info .external-links .links .link button:hover {
+  color: #000;
+}
 .main-content-style .main-profile .main-content-info .main-content-description p, .collection-view-container .collection-contents .main-profile .main-content-info .main-content-description p, .account-page .account-contents .main-profile .main-content-info .main-content-description p {
   font-size: 0.8rem;
   font-weight: 500;
@@ -382,6 +385,7 @@
   font-weight: bolder;
 }
 .token-page .token-contents .token-right .token-info {
+  height: 320px;
   max-height: 320px;
 }
 .token-page .token-contents .token-right .token-info .action-buttons, .token-page .token-contents .token-right .token-info .offer-button, .token-page .token-contents .token-right .token-info .buy-button {
@@ -604,6 +608,147 @@
   height: 48px;
   font-weight: 700;
   letter-spacing: 0.06em;
+}
+
+.create-token-page .page-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c4c4c4;
+  width: 100%;
+  height: 400px;
+}
+.create-token-page .token-contents {
+  width: 1280px;
+  max-width: 1280px;
+  margin: 120px auto 0 auto;
+}
+.create-token-page .token-contents .left-content {
+  padding: 20px;
+  max-height: 480px;
+}
+.create-token-page .token-contents .left-content .token-img {
+  width: 100%;
+  padding-top: calc(100% - 8px);
+  background-color: #888888;
+  border-radius: 12px;
+}
+.create-token-page .token-contents .left-content .creator {
+  width: 100%;
+  margin-top: 16px;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+.create-token-page .token-contents .left-content .creator h4 {
+  font-weight: bolder;
+}
+.create-token-page .token-contents .token-right {
+  height: 100%;
+  max-height: 480px;
+  padding: 40px;
+}
+.create-token-page .token-contents .token-right .token-title h4 {
+  font-weight: bolder;
+}
+.create-token-page .token-contents .token-right .token-info {
+  max-height: 320px;
+}
+.create-token-page .token-contents .token-right .token-info .action-buttons, .create-token-page .token-contents .token-right .token-info .offer-button, .create-token-page .token-contents .token-right .token-info .buy-button {
+  height: 40px;
+  border-radius: 8px;
+}
+.create-token-page .token-contents .token-right .token-info .buy-button {
+  font-weight: 500;
+  letter-spacing: 0.04rem;
+}
+.create-token-page .token-contents .token-right .token-info .offer-button {
+  padding: 0;
+}
+.create-token-page .token-contents .token-right .token-info .offer-button h4 {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  font-weight: bolder;
+}
+.create-token-page .token-contents .token-right .token-info .offer-button:hover {
+  background: transparent;
+}
+.create-token-page .token-contents .token-right .token-info .main-info {
+  height: 100%;
+  max-height: 120px;
+  overflow: scroll;
+}
+.create-token-page .token-contents .token-right .token-info .main-info .token-description {
+  margin-top: 16px;
+}
+.create-token-page .token-contents .token-right .token-info .main-info .token-description p {
+  font-size: 0.8rem;
+  color: #8d8d8d;
+}
+.create-token-page .token-contents .token-right .token-info .sub-info .sub-info-content p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #000;
+}
+.create-token-page .token-contents .token-right .token-info .sub-info .sub-info-content h4 {
+  color: #353840;
+  font-weight: bolder;
+}
+.create-token-page .token-contents .token-right .token-arttributes {
+  height: 320px;
+  max-height: 320px;
+  overflow: auto;
+}
+.create-token-page .token-contents .token-right .token-arttributes .arttributes {
+  margin-top: 16px;
+}
+.create-token-page .token-contents .token-right .token-arttributes .arttributes .arttribute {
+  background-color: #f9f9f9;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  text-align: center;
+  padding: 16px 8px;
+  overflow: auto;
+}
+.create-token-page .token-contents .token-right .token-arttributes .arttributes .arttribute p {
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: #0652dd;
+}
+.create-token-page .token-contents .token-right .token-arttributes .arttributes .arttribute h4 {
+  color: #2e2e2e;
+}
+.create-token-page .token-contents .social-medias .link button {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #efefef;
+}
+.create-token-page .token-contents .social-medias .link button .anticon {
+  color: #000;
+}
+.create-token-page .token-contents .token-form {
+  margin-top: 40px;
+  padding: 40px;
+  background: #fbfdff;
+}
+.create-token-page .token-contents .token-form .inner-form {
+  padding: 24px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  display: flex;
+}
+.create-token-page .token-contents .token-form .inner-form h1 {
+  font-weight: bolder;
+  font-size: 1.25rem;
+}
+.create-token-page .token-contents .token-form .inner-form .left-form,
+.create-token-page .token-contents .token-form .inner-form .right-form {
+  width: 50%;
 }
 
 h1,

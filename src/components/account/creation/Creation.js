@@ -39,7 +39,11 @@ const Creation = ({ accountName }) => {
             <div className="title">
                 <h1>Creation</h1>
                 <div className="action-buttons">
-                    {isAuth && <Button type="primary">Create Card</Button>}
+                    {isAuth && (
+                        <Button type="primary">
+                            <a href={`/${accountName}/createToken`}>Create Card</a>
+                        </Button>
+                    )}
                     <Button type="primary">Filter</Button>
                 </div>
             </div>
