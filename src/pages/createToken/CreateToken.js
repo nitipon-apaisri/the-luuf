@@ -24,6 +24,7 @@ const CreateToken = () => {
         // "tradeHistory": [{...},{...},{...}],
         arttributes: [],
     });
+    const { TextArea } = Input;
     useEffect(() => {
         document.title = `${accountName} | Create Card`;
         setTokenInfo((preState) => ({ ...preState, creator: `${accountName}` }));
@@ -198,14 +199,29 @@ const CreateToken = () => {
                         <div className="inner-form">
                             <div className="left-form">
                                 <h1>Card Details</h1>
-                                <Divider style={{ margin: "8px 0" }} />
+                                <Divider style={{ margin: "8px 0 16px 0" }} />
                                 <Form form={form} layout="vertical" autoComplete="off" onValuesChange={onChange}>
-                                    <Form.Item name="name" label="Name (Watch to trigger rerender)">
+                                    <Form.Item name="name" label="Name">
                                         <Input />
                                     </Form.Item>
+                                    <Form.Item name="description" label="Description">
+                                        <TextArea maxLength={100} style={{ height: 120 }} onChange={onChange} />
+                                    </Form.Item>
+                                    <Row gutter={16}>
+                                        <Col span={12}>
+                                            <Form.Item name="price" label="Price" style={{ marginBottom: 0 }}>
+                                                <Input />
+                                            </Form.Item>
+                                        </Col>
+                                        <Col span={12}>
+                                            <Form.Item name="supply" label="Supply" style={{ marginBottom: 0 }}>
+                                                <Input />
+                                            </Form.Item>
+                                        </Col>
+                                    </Row>
                                 </Form>
                             </div>
-                            <Divider style={{ margin: "0 16px ", height: "auto" }} type="vertical" />
+                            <Divider style={{ margin: "0 24px ", height: "auto" }} type="vertical" />
                             <div className="right-form">
                                 <h1>Royalties</h1>
                                 <Divider style={{ margin: "8px 0" }} />

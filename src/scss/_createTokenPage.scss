@@ -151,6 +151,23 @@
                 .right-form {
                     width: 50%;
                 }
+                .left-form {
+                    input {
+                        height: 48px;
+                        border-radius: 8px;
+                        background-color: #f9f9f9;
+                        border: 1px solid #f0f0f0;
+                    }
+                    input:focus,
+                    textarea:focus {
+                        background-color: #ffffff;
+                    }
+                    textarea {
+                        border-radius: 8px;
+                        background-color: #f9f9f9;
+                        border: 1px solid #f0f0f0;
+                    }
+                }
             }
         }
     }

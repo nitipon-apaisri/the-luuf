@@ -750,6 +750,21 @@
 .create-token-page .token-contents .token-form .inner-form .right-form {
   width: 50%;
 }
+.create-token-page .token-contents .token-form .inner-form .left-form input {
+  height: 48px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #f0f0f0;
+}
+.create-token-page .token-contents .token-form .inner-form .left-form input:focus,
+.create-token-page .token-contents .token-form .inner-form .left-form textarea:focus {
+  background-color: #ffffff;
+}
+.create-token-page .token-contents .token-form .inner-form .left-form textarea {
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #f0f0f0;
+}
 
 h1,
 h2,
@@ -882,6 +897,13 @@ body .ant-modal-footer button {
   min-width: 80px;
   height: 40px;
   border-radius: 8px;
+}
+body label {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.04rem;
+}
+body textarea {
+  resize: none;
 }
 body header {
   z-index: 1;
