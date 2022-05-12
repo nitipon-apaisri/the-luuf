@@ -740,30 +740,36 @@
   background-color: #fff;
   border: 1px solid #f0f0f0;
   border-radius: 16px;
-  display: flex;
 }
 .create-token-page .token-contents .token-form .inner-form h1 {
   font-weight: bolder;
   font-size: 1.25rem;
 }
-.create-token-page .token-contents .token-form .inner-form .left-form,
-.create-token-page .token-contents .token-form .inner-form .right-form {
+.create-token-page .token-contents .token-form .inner-form .top-content {
+  display: flex;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .left-form,
+.create-token-page .token-contents .token-form .inner-form .top-content .right-form {
   width: 50%;
 }
-.create-token-page .token-contents .token-form .inner-form .left-form input {
+.create-token-page .token-contents .token-form .inner-form .top-content .left-form input {
   height: 48px;
   border-radius: 8px;
   background-color: #f9f9f9;
   border: 1px solid #f0f0f0;
 }
-.create-token-page .token-contents .token-form .inner-form .left-form input:focus,
-.create-token-page .token-contents .token-form .inner-form .left-form textarea:focus {
+.create-token-page .token-contents .token-form .inner-form .top-content .left-form input:focus,
+.create-token-page .token-contents .token-form .inner-form .top-content .left-form textarea:focus {
   background-color: #ffffff;
 }
-.create-token-page .token-contents .token-form .inner-form .left-form textarea {
+.create-token-page .token-contents .token-form .inner-form .top-content .left-form textarea {
   border-radius: 8px;
   background-color: #f9f9f9;
   border: 1px solid #f0f0f0;
+}
+.create-token-page .token-contents .token-form .inner-form .bottom-content {
+  margin-top: 24px;
+  min-height: 160px;
 }
 
 h1,

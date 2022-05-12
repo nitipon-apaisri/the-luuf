@@ -1,6 +1,6 @@
 import MainLayout from "../../layout";
 import { Button, Col, Divider, Row, Form, Input } from "antd";
-import { FlagOutlined, HeartOutlined, UploadOutlined } from "@ant-design/icons";
+import { FlagOutlined, HeartOutlined, PlusOutlined, UploadOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 const CreateToken = () => {
@@ -197,33 +197,53 @@ const CreateToken = () => {
                     <Divider />
                     <div className="token-form">
                         <div className="inner-form">
-                            <div className="left-form">
-                                <h1>Card Details</h1>
-                                <Divider style={{ margin: "8px 0 16px 0" }} />
-                                <Form form={form} layout="vertical" autoComplete="off" onValuesChange={onChange}>
-                                    <Form.Item name="name" label="Name">
-                                        <Input />
-                                    </Form.Item>
-                                    <Form.Item name="description" label="Description">
-                                        <TextArea maxLength={100} style={{ height: 120 }} onChange={onChange} />
-                                    </Form.Item>
-                                    <Row gutter={16}>
-                                        <Col span={12}>
-                                            <Form.Item name="price" label="Price" style={{ marginBottom: 0 }}>
-                                                <Input />
-                                            </Form.Item>
+                            <div className="top-content">
+                                <div className="left-form">
+                                    <h1>Card Details</h1>
+                                    <Divider style={{ margin: "8px 0 16px 0" }} />
+                                    <Form form={form} layout="vertical" autoComplete="off" onValuesChange={onChange}>
+                                        <Form.Item name="name" label="Name">
+                                            <Input />
+                                        </Form.Item>
+                                        <Form.Item name="description" label="Description">
+                                            <TextArea maxLength={100} style={{ height: 120 }} onChange={onChange} />
+                                        </Form.Item>
+                                        <Row gutter={16}>
+                                            <Col span={12}>
+                                                <Form.Item name="price" label="Price" style={{ marginBottom: 0 }}>
+                                                    <Input />
+                                                </Form.Item>
+                                            </Col>
+                                            <Col span={12}>
+                                                <Form.Item name="supply" label="Supply" style={{ marginBottom: 0 }}>
+                                                    <Input />
+                                                </Form.Item>
+                                            </Col>
+                                        </Row>
+                                    </Form>
+                                </div>
+                                <Divider style={{ margin: "0 24px ", height: "auto" }} type="vertical" />
+                                <div className="right-form">
+                                    <Row justify="space-between">
+                                        <Col>
+                                            <h1>Royalties</h1>
                                         </Col>
-                                        <Col span={12}>
-                                            <Form.Item name="supply" label="Supply" style={{ marginBottom: 0 }}>
-                                                <Input />
-                                            </Form.Item>
+                                        <Col>
+                                            <Button type="primary" icon={<PlusOutlined />} style={{ borderRadius: 8 }}></Button>
                                         </Col>
                                     </Row>
-                                </Form>
+                                    <Divider style={{ margin: "8px 0" }} />
+                                </div>
                             </div>
-                            <Divider style={{ margin: "0 24px ", height: "auto" }} type="vertical" />
-                            <div className="right-form">
-                                <h1>Royalties</h1>
+                            <div className="bottom-content">
+                                <Row justify="space-between">
+                                    <Col>
+                                        <h1>Arttributes</h1>
+                                    </Col>
+                                    <Col>
+                                        <Button type="primary" icon={<PlusOutlined />} style={{ borderRadius: 8 }}></Button>
+                                    </Col>
+                                </Row>
                                 <Divider style={{ margin: "8px 0" }} />
                             </div>
                         </div>
