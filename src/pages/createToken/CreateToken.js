@@ -6,32 +6,15 @@ import { useParams } from "react-router-dom";
 const CreateToken = () => {
     const { accountName } = useParams();
     const [form] = Form.useForm();
-    const [tokenInfo, setTokenInfo] = useState({
-        name: "",
-        description: "",
-        image: "...",
-        edition: 1,
-        creator: "",
-        owner: "",
-        collection: "",
-        chain: "Near",
-        tradeInfo: {
-            sellStatus: false,
-            price: 0,
-            loyalties: [],
-        },
-        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
-        // "tradeHistory": [{...},{...},{...}],
-        arttributes: [],
-    });
+    const [tokenName, setTokenName] = useState("");
+    const [tokenDescription, setTokenDescription] = useState("");
+    const [tokenPrice, setTokenPrice] = useState(0);
+    const [tokenRoyalty, setTokenRoyalty] = useState(0);
+    const [tokenSupply, setTokenSupply] = useState(0);
     const { TextArea } = Input;
     useEffect(() => {
         document.title = `${accountName} | Create Card`;
-        setTokenInfo((preState) => ({ ...preState, creator: `${accountName}` }));
     }, [accountName]);
-    const onChange = (e) => {
-        setTokenInfo((prevState) => ({ ...prevState, name: `${e.name}` }));
-    };
     return (
         <MainLayout>
             <section className="create-token-page">
@@ -42,7 +25,7 @@ const CreateToken = () => {
                             <div className="left-content">
                                 <div className="token-img"></div>
                                 <div className="creator">
-                                    <h4>{tokenInfo.creator}</h4>
+                                    <h4>{accountName}</h4>
                                 </div>
                             </div>
                         </Col>
@@ -54,12 +37,14 @@ const CreateToken = () => {
                                             <div className="main-info">
                                                 <div className="token-title">
                                                     <Row align="middle">
-                                                        <h4>{tokenInfo.name !== "" ? tokenInfo.name : "Example"}</h4>
+                                                        <h4>{tokenName !== "" ? tokenName : "Example"}</h4>
                                                         <Divider type="vertical" />
                                                         {/* <h4>{token.collection}</h4> */}
                                                     </Row>
                                                 </div>
-                                                <div className="token-description">{/* <p>{token.description}</p> */}</div>
+                                                <div className="token-description">
+                                                    <p>{tokenDescription}</p>
+                                                </div>
                                             </div>
                                             <Divider />
                                             <div className="sub-info">
@@ -72,15 +57,7 @@ const CreateToken = () => {
                                                     <Col flex="auto">
                                                         <div className="token-price sub-info-content">
                                                             <p>Price</p>
-                                                            {/* {(() => {
-                                                                    if (token.tradeInfo.sellStatus === true && token.tradeInfo.price === 0) {
-                                                                        return <h4>FREE</h4>;
-                                                                    } else if (token.tradeInfo.sellStatus === false) {
-                                                                        return <h4 className="not-for-sell">SALE</h4>;
-                                                                    } else {
-                                                                        return <h4>{token.tradeInfo.price}N</h4>;
-                                                                    }
-                                                                })()} */}
+                                                            <h4>{tokenPrice}</h4>
                                                         </div>
                                                     </Col>
                                                     <Divider type="vertical" style={{ height: "auto" }} />
@@ -107,43 +84,21 @@ const CreateToken = () => {
                                                         <div className="token-owner sub-info-content">
                                                             <p>Owner</p>
                                                             <h4> - </h4>
-                                                            {/* <h4> <a href={`/account/${token.owner}`}>{token.owner}</a></h4> */}
                                                         </div>
                                                     </Col>
                                                 </Row>
                                             </div>
                                             <Divider />
-                                            {/* {(() => {
-                                                    if (token.tradeInfo.sellStatus === true && token.tradeInfo.price === 0) {
-                                                        return (
-                                                            <Button type="primary" className="buy-button">
-                                                                BUY
-                                                            </Button>
-                                                        );
-                                                    }
-                                                    if (token.tradeInfo.sellStatus === false && token.tradeInfo.price === 0) {
-                                                        return (
-                                                            <Button className="offer-button" type="text">
-                                                                <h4>Make Offer</h4>
-                                                            </Button>
-                                                        );
-                                                    }
-
-                                                    if (token.tradeInfo.sellStatus === true && token.tradeInfo.price !== 0) {
-                                                        return (
-                                                            <div className="button-actions">
-                                                                <Row align="middle">
-                                                                    <Button type="primary" className="buy-button">
-                                                                        BUY
-                                                                    </Button>
-                                                                    <Button className="offer-button" type="text" style={{ marginLeft: 16 }}>
-                                                                        <h4>Make Offer</h4>
-                                                                    </Button>
-                                                                </Row>
-                                                            </div>
-                                                        );
-                                                    }
-                                                })()} */}
+                                            <div className="button-actions">
+                                                <Row align="middle">
+                                                    <Button type="primary" className="buy-button">
+                                                        BUY
+                                                    </Button>
+                                                    <Button className="offer-button" type="text" style={{ marginLeft: 16 }}>
+                                                        <h4>Make Offer</h4>
+                                                    </Button>
+                                                </Row>
+                                            </div>
                                         </Col>
                                         <Divider type="vertical" style={{ height: "auto" }}></Divider>
                                         <Col flex={"auto"}>
@@ -201,22 +156,41 @@ const CreateToken = () => {
                                 <div className="left-form">
                                     <h1>Card Details</h1>
                                     <Divider style={{ margin: "8px 0 16px 0" }} />
-                                    <Form form={form} layout="vertical" autoComplete="off" onValuesChange={onChange}>
+                                    <Form form={form} layout="vertical" autoComplete="off">
                                         <Form.Item name="name" label="Name">
-                                            <Input />
+                                            <Input
+                                                onChange={(e) => {
+                                                    setTokenName(e.target.value);
+                                                }}
+                                            />
                                         </Form.Item>
                                         <Form.Item name="description" label="Description">
-                                            <TextArea maxLength={100} style={{ height: 120 }} onChange={onChange} />
+                                            <TextArea
+                                                maxLength={100}
+                                                style={{ height: 120 }}
+                                                onChange={(e) => {
+                                                    setTokenDescription(e.setTokenDescription);
+                                                    console.log(e.target.value);
+                                                }}
+                                            />
                                         </Form.Item>
                                         <Row gutter={16}>
                                             <Col span={12}>
                                                 <Form.Item name="price" label="Price" style={{ marginBottom: 0 }}>
-                                                    <Input />
+                                                    <Input
+                                                        onChange={(e) => {
+                                                            setTokenPrice(e.target.value);
+                                                        }}
+                                                    />
                                                 </Form.Item>
                                             </Col>
                                             <Col span={12}>
                                                 <Form.Item name="supply" label="Supply" style={{ marginBottom: 0 }}>
-                                                    <Input />
+                                                    <Input
+                                                        onChange={(e) => {
+                                                            setTokenSupply(e.target.value);
+                                                        }}
+                                                    />
                                                 </Form.Item>
                                             </Col>
                                         </Row>
