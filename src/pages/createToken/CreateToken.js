@@ -1,5 +1,5 @@
 import MainLayout from "../../layout";
-import { Button, Col, Divider, Row, Form, Input } from "antd";
+import { Button, Col, Divider, Row, Form, Input, Modal } from "antd";
 import { FlagOutlined, HeartOutlined, PlusOutlined, UploadOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -7,16 +7,52 @@ const CreateToken = () => {
     const { accountName } = useParams();
     const [form] = Form.useForm();
     const [tokenName, setTokenName] = useState("");
+    const [visibleModal, setVisibleModal] = useState(false);
+    const [toggleModal, setToggleModal] = useState("");
     const [tokenDescription, setTokenDescription] = useState("");
     const [tokenPrice, setTokenPrice] = useState(0);
     const [tokenRoyalty, setTokenRoyalty] = useState(0);
     const [tokenSupply, setTokenSupply] = useState(0);
     const { TextArea } = Input;
+    const RoyaltyForm = () => (
+        <>
+            <h1>Royalty</h1>
+        </>
+    );
+    const ArttributeForm = () => (
+        <>
+            <h1>Arttribute</h1>
+        </>
+    );
+    const toggleRoyaltyModal = () => {
+        setVisibleModal(true);
+        setToggleModal("royalty");
+    };
+    const toggleArttributeModal = () => {
+        setVisibleModal(true);
+        setToggleModal("arttribute");
+    };
     useEffect(() => {
         document.title = `${accountName} | Create Card`;
     }, [accountName]);
     return (
         <MainLayout>
+            <Modal
+                title="Royalties"
+                visible={visibleModal}
+                onCancel={() => {
+                    setVisibleModal(false);
+                }}
+            >
+                {(() => {
+                    if (toggleModal === "royalty") {
+                        return <RoyaltyForm />;
+                    }
+                    if (toggleModal === "arttribute") {
+                        return <ArttributeForm />;
+                    }
+                })()}
+            </Modal>
             <section className="create-token-page">
                 <div className="page-cover"></div>
                 <div className="token-contents">
@@ -154,7 +190,7 @@ const CreateToken = () => {
                         <div className="inner-form">
                             <div className="top-content">
                                 <div className="left-form">
-                                    <h1>Card Details</h1>
+                                    <h1 style={{ height: 32 }}>Card Details</h1>
                                     <Divider style={{ margin: "8px 0 16px 0" }} />
                                     <Form form={form} layout="vertical" autoComplete="off">
                                         <Form.Item name="name" label="Name">
@@ -169,8 +205,7 @@ const CreateToken = () => {
                                                 maxLength={100}
                                                 style={{ height: 120 }}
                                                 onChange={(e) => {
-                                                    setTokenDescription(e.setTokenDescription);
-                                                    console.log(e.target.value);
+                                                    setTokenDescription(e.target.value);
                                                 }}
                                             />
                                         </Form.Item>
@@ -203,7 +238,7 @@ const CreateToken = () => {
                                             <h1>Royalties</h1>
                                         </Col>
                                         <Col>
-                                            <Button type="primary" icon={<PlusOutlined />} style={{ borderRadius: 8 }}></Button>
+                                            <Button type="primary" icon={<PlusOutlined />} style={{ borderRadius: 8 }} onClick={toggleRoyaltyModal}></Button>
                                         </Col>
                                     </Row>
                                     <Divider style={{ margin: "8px 0" }} />
@@ -215,7 +250,7 @@ const CreateToken = () => {
                                         <h1>Arttributes</h1>
                                     </Col>
                                     <Col>
-                                        <Button type="primary" icon={<PlusOutlined />} style={{ borderRadius: 8 }}></Button>
+                                        <Button type="primary" icon={<PlusOutlined />} style={{ borderRadius: 8 }} onClick={toggleArttributeModal}></Button>
                                     </Col>
                                 </Row>
                                 <Divider style={{ margin: "8px 0" }} />
