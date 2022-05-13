@@ -633,6 +633,13 @@
   background-color: #888888;
   border-radius: 12px;
 }
+.create-token-page .token-contents .left-content .preview-pfp {
+  border-radius: 16px;
+  padding-top: calc(100% - 8px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .create-token-page .token-contents .left-content .creator {
   width: 100%;
   margin-top: 16px;

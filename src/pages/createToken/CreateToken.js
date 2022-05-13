@@ -11,6 +11,7 @@ const CreateToken = () => {
     const [toggleModal, setToggleModal] = useState("");
     const [tokenDescription, setTokenDescription] = useState("");
     const [tokenPrice, setTokenPrice] = useState(0);
+    const [uploadImage, setUploadImage] = useState({ preview: "", raw: "" });
     const [tokenRoyalty, setTokenRoyalty] = useState(0);
     const [tokenSupply, setTokenSupply] = useState(0);
     const { TextArea } = Input;
@@ -59,7 +60,17 @@ const CreateToken = () => {
                     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                         <Col span={8}>
                             <div className="left-content">
-                                <div className="token-img"></div>
+                                <label htmlFor="upload-button">
+                                    {uploadImage.preview ? <div className="preview-pfp" style={{ backgroundImage: `url(${uploadImage.preview})` }}></div> : <div className="token-img"></div>}
+                                </label>
+                                <input
+                                    type="file"
+                                    id="upload-button"
+                                    style={{ display: "none" }}
+                                    onChange={(e) => {
+                                        setUploadImage({ preview: URL.createObjectURL(e.target.files[0]), raw: e.target.files[0] });
+                                    }}
+                                />
                                 <div className="creator">
                                     <h4>{accountName}</h4>
                                 </div>

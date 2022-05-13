@@ -21,6 +21,15 @@
                 background-color: #888888;
                 border-radius: 12px;
             }
+            .preview-img {
+            }
+            .preview-pfp {
+                border-radius: 16px;
+                padding-top: calc(100% - 8px);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
             .creator {
                 width: 100%;
                 margin-top: 16px;
