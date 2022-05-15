@@ -1,16 +1,22 @@
 import MainLayout from "../../layout";
 import { Button, Col, Divider, Row, Form, Input, Modal } from "antd";
 import { FlagOutlined, HeartOutlined, PlusOutlined, UploadOutlined } from "@ant-design/icons";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import collectionPFP from "../../assets/images/collection-mock-pfp.svg";
+import { AccountContext } from "../../store/accountContext";
+import { collections } from "../../db";
 const CreateToken = () => {
     const { accountName } = useParams();
+    const accountContext = useContext(AccountContext);
     const [form] = Form.useForm();
     const [tokenName, setTokenName] = useState("");
+    const [tokenCollection, setTokenCollection] = useState("");
     const [visibleModal, setVisibleModal] = useState(false);
     const [toggleModal, setToggleModal] = useState("");
     const [tokenDescription, setTokenDescription] = useState("");
     const [tokenPrice, setTokenPrice] = useState(0);
+    const [userCollections, setUserCollections] = useState();
     const [uploadImage, setUploadImage] = useState({ preview: "", raw: "" });
     const [tokenRoyalty, setTokenRoyalty] = useState(0);
     const [tokenSupply, setTokenSupply] = useState(0);
@@ -36,6 +42,16 @@ const CreateToken = () => {
     useEffect(() => {
         document.title = `${accountName} | Create Card`;
     }, [accountName]);
+    useEffect(() => {
+        if (accountContext.account !== undefined) {
+            accountContext.account.collections.forEach((r) => {
+                const findCollection = collections.find((x) => {
+                    return x.id === r;
+                });
+                setUserCollections(findCollection);
+            });
+        }
+    }, [accountContext]);
     return (
         <MainLayout>
             <Modal
@@ -86,7 +102,7 @@ const CreateToken = () => {
                                                     <Row align="middle">
                                                         <h4>{tokenName !== "" ? tokenName : "Example"}</h4>
                                                         <Divider type="vertical" />
-                                                        {/* <h4>{token.collection}</h4> */}
+                                                        <h4>{tokenCollection !== "" ? tokenCollection : "Example"}</h4>
                                                     </Row>
                                                 </div>
                                                 <div className="token-description">
@@ -266,6 +282,32 @@ const CreateToken = () => {
                                 </Row>
                                 <Divider style={{ margin: "8px 0" }} />
                             </div>
+                        </div>
+                    </div>
+                    <div className="select-collection">
+                        <h1>Choose Collection</h1>
+                        <Divider style={{ margin: "16px 0" }} />
+                        <div className="collections">
+                            <Row gutter={[32, 32]}>
+                                {collections.map((row, index) => (
+                                    <Col span={8} key={row.id}>
+                                        <div
+                                            className="medium-card-block"
+                                            onClick={() => {
+                                                setTokenCollection(row.name);
+                                            }}
+                                        >
+                                            <div className="medium-card-cover"></div>
+                                            <div className="medium-card-profile">
+                                                <img src={collectionPFP} alt="pfp" />
+                                                <div className="medium-card-name">
+                                                    <h5>{row.name}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                ))}
+                            </Row>
                         </div>
                     </div>
                 </div>
