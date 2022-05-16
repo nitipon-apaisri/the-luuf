@@ -908,6 +908,15 @@ body .ant-popover .ant-popover-content .ant-popover-inner .ant-popover-title {
   font-weight: bolder;
   padding: 12px 16px;
 }
+body .ant-modal {
+  font-family: "Poppins", sans-serif;
+}
+body .ant-modal .primary-royalty {
+  border-radius: 16px;
+  padding: 24px;
+  background: #fafafb;
+  border: 1px solid #ededed;
+}
 body .wallet-actions {
   display: flex;
   flex-flow: column;

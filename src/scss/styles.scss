@@ -76,6 +76,15 @@ body {
             }
         }
     }
+    .ant-modal {
+        font-family: "Poppins", sans-serif;
+        .primary-royalty {
+            border-radius: 16px;
+            padding: 24px;
+            background: #fafafb;
+            border: 1px solid #ededed;
+        }
+    }
     .wallet-actions {
         display: flex;
         flex-flow: column;

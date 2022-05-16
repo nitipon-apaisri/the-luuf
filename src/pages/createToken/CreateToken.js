@@ -18,8 +18,10 @@ const CreateToken = () => {
     const [tokenDescription, setTokenDescription] = useState("");
     const [tokenPrice, setTokenPrice] = useState(0);
     const [userCollections, setUserCollections] = useState();
-    const [royaltyData, setRoyaltyData] = useState([]);
+    const [loyaltyData, setLoyaltyData] = useState([]);
     const [uploadImage, setUploadImage] = useState({ preview: "", raw: "" });
+    const [royaltyWallet, setLoyaltyWallet] = useState("");
+    const [royaltyValue, setLoyaltyValue] = useState(0);
     const [tokenRoyalty, setTokenRoyalty] = useState(0);
     const [tokenSupply, setTokenSupply] = useState(0);
     const { TextArea } = Input;
@@ -35,31 +37,11 @@ const CreateToken = () => {
                 return (
                     <span>
                         <Tooltip placement="top" title="Edit">
-                            <Button
-                                type="link"
-                                icon={<EditOutlined />}
-                                style={{ color: "#283143" }}
-                                onClick={() => {
-                                    // data.findIndex((r) => {
-                                    //     if (r.colorInfo.id === cell.id) {
-                                    //         setColorIndex(r.colorInfo.id - 1);
-                                    //     }
-                                    //     return 0;
-                                    // });
-                                    // editColor();
-                                }}
-                            />
+                            <Button type="link" icon={<EditOutlined />} style={{ color: "#283143" }} onClick={() => {}} />
                         </Tooltip>
                         <Divider type="vertical" />
                         <Tooltip placement="top" title="Delete">
-                            <Button
-                                type="link"
-                                icon={<DeleteOutlined />}
-                                style={{ color: "#ff6b72" }}
-                                onClick={() => {
-                                    // setData(data.filter((item) => item.colorInfo.id !== cell.id));
-                                }}
-                            />
+                            <Button type="link" icon={<DeleteOutlined />} style={{ color: "#ff6b72" }} onClick={() => {}} />
                         </Tooltip>
                     </span>
                 );
@@ -67,9 +49,33 @@ const CreateToken = () => {
         },
     ];
     const RoyaltyForm = () => (
-        <>
-            <h1>Royalty</h1>
-        </>
+        <div className="primary-royalty">
+            <h3>Contributor</h3>
+            <Divider style={{ margin: "8px 0" }} />
+            <Form form={form} layout="vertical" autoComplete="off">
+                <Row gutter={16}>
+                    <Col span={12}>
+                        <Form.Item name="wallet" label="Wallet" style={{ marginBottom: 0 }}>
+                            <Input
+                                onChange={(e) => {
+                                    setLoyaltyWallet(e.target.value);
+                                }}
+                            />
+                        </Form.Item>
+                    </Col>
+                    <Col span={12}>
+                        <Form.Item name="royalty" label="Royalty (10, 20, 30)" style={{ marginBottom: 0 }}>
+                            <Input
+                                onChange={(e) => {
+                                    setLoyaltyValue(e.target.value);
+                                }}
+                                type="number"
+                            />
+                        </Form.Item>
+                    </Col>
+                </Row>
+            </Form>
+        </div>
     );
     const ArttributeForm = () => (
         <>
@@ -102,6 +108,12 @@ const CreateToken = () => {
             <Modal
                 title="Royalties"
                 visible={visibleModal}
+                onOk={() => {
+                    setLoyaltyData((prevData) => [...prevData, { contributor: royaltyWallet, royalty: royaltyValue }]);
+                    setLoyaltyWallet("");
+                    setLoyaltyValue(0);
+                    setVisibleModal(false);
+                }}
                 onCancel={() => {
                     setVisibleModal(false);
                 }}
@@ -326,7 +338,7 @@ const CreateToken = () => {
                                         </Col>
                                     </Row>
                                     <Divider style={{ margin: "8px 0" }} />
-                                    <Table dataSource={royaltyData} columns={columns} rowKey={(r) => r.contributor} />
+                                    <Table dataSource={loyaltyData} columns={columns} rowKey={(r) => r.contributor} />
                                 </div>
                             </div>
                             <div className="bottom-content">
