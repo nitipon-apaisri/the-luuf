@@ -78,7 +78,19 @@ const CreateToken = () => {
                         <Col span={8}>
                             <div className="left-content">
                                 <label htmlFor="upload-button">
-                                    {uploadImage.preview ? <div className="preview-pfp" style={{ backgroundImage: `url(${uploadImage.preview})` }}></div> : <div className="token-img"></div>}
+                                    {uploadImage.preview ? (
+                                        <div className="preview-pfp" style={{ backgroundImage: `url(${uploadImage.preview})` }}></div>
+                                    ) : (
+                                        <div className="token-img">
+                                            <div className="upload-img-overlay">
+                                                <UploadOutlined />
+                                                <h3>Upload Your File</h3>
+                                                <p>
+                                                    File types supported: JPG, PNG, GIF, MP3, MP4 <br /> Max 100MB
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
                                 </label>
                                 <input
                                     type="file"
