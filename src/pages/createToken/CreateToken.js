@@ -14,6 +14,7 @@ const CreateToken = () => {
     const [tokenCollection, setTokenCollection] = useState("");
     const [visibleModal, setVisibleModal] = useState(false);
     const [toggleModal, setToggleModal] = useState("");
+    const [collectionSelected, setCollectionSelected] = useState();
     const [tokenDescription, setTokenDescription] = useState("");
     const [tokenPrice, setTokenPrice] = useState(0);
     const [userCollections, setUserCollections] = useState();
@@ -288,13 +289,14 @@ const CreateToken = () => {
                         <h1>Choose Collection</h1>
                         <Divider style={{ margin: "16px 0" }} />
                         <div className="collections">
-                            <Row gutter={[32, 32]}>
+                            <Row gutter={[32, 32]} style={{ padding: 20 }}>
                                 {collections.map((row, index) => (
                                     <Col span={8} key={row.id}>
                                         <div
-                                            className="medium-card-block"
+                                            className={`medium-card-block ${collectionSelected === index ? "selected" : ""}`}
                                             onClick={() => {
                                                 setTokenCollection(row.name);
+                                                setCollectionSelected(index);
                                             }}
                                         >
                                             <div className="medium-card-cover"></div>

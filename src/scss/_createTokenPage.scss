@@ -195,6 +195,17 @@
             }
             .collections {
                 @extend .medium-card;
+                .medium-card-block {
+                    cursor: pointer;
+                }
+                .medium-card-block:hover {
+                    box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
+                    transition: 500ms;
+                }
+                .selected {
+                    box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
+                    transition: 500ms;
+                }
             }
         }
     }
