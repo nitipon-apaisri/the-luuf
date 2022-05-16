@@ -1,6 +1,6 @@
 import MainLayout from "../../layout";
-import { Button, Col, Divider, Row, Form, Input, Modal } from "antd";
-import { FlagOutlined, HeartOutlined, PlusOutlined, UploadOutlined } from "@ant-design/icons";
+import { Button, Col, Divider, Row, Form, Input, Modal, Table, Tooltip } from "antd";
+import { FlagOutlined, HeartOutlined, PlusOutlined, UploadOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import collectionPFP from "../../assets/images/collection-mock-pfp.svg";
@@ -18,10 +18,54 @@ const CreateToken = () => {
     const [tokenDescription, setTokenDescription] = useState("");
     const [tokenPrice, setTokenPrice] = useState(0);
     const [userCollections, setUserCollections] = useState();
+    const [royaltyData, setRoyaltyData] = useState([]);
     const [uploadImage, setUploadImage] = useState({ preview: "", raw: "" });
     const [tokenRoyalty, setTokenRoyalty] = useState(0);
     const [tokenSupply, setTokenSupply] = useState(0);
     const { TextArea } = Input;
+    const columns = [
+        { title: "Contributor", dataIndex: "contributor", render: (text) => <h5>{text}</h5> },
+        { title: "Royalty", dataIndex: "royalty", render: (text) => <h5>{text}%</h5> },
+        {
+            title: "Tools",
+            dataIndex: "task",
+            fixed: "right",
+            width: 150,
+            render: (cell, row) => {
+                return (
+                    <span>
+                        <Tooltip placement="top" title="Edit">
+                            <Button
+                                type="link"
+                                icon={<EditOutlined />}
+                                style={{ color: "#283143" }}
+                                onClick={() => {
+                                    // data.findIndex((r) => {
+                                    //     if (r.colorInfo.id === cell.id) {
+                                    //         setColorIndex(r.colorInfo.id - 1);
+                                    //     }
+                                    //     return 0;
+                                    // });
+                                    // editColor();
+                                }}
+                            />
+                        </Tooltip>
+                        <Divider type="vertical" />
+                        <Tooltip placement="top" title="Delete">
+                            <Button
+                                type="link"
+                                icon={<DeleteOutlined />}
+                                style={{ color: "#ff6b72" }}
+                                onClick={() => {
+                                    // setData(data.filter((item) => item.colorInfo.id !== cell.id));
+                                }}
+                            />
+                        </Tooltip>
+                    </span>
+                );
+            },
+        },
+    ];
     const RoyaltyForm = () => (
         <>
             <h1>Royalty</h1>
@@ -282,6 +326,7 @@ const CreateToken = () => {
                                         </Col>
                                     </Row>
                                     <Divider style={{ margin: "8px 0" }} />
+                                    <Table dataSource={royaltyData} columns={columns} rowKey={(r) => r.contributor} />
                                 </div>
                             </div>
                             <div className="bottom-content">
