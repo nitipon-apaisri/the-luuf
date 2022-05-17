@@ -199,6 +199,27 @@
                             border: 1px solid #f0f0f0;
                         }
                     }
+                    .right-form {
+                        .loyalty-form {
+                            margin-top: 16px;
+                            padding: 24px;
+                            background: #fafafb;
+                            border: 1px solid #ededed;
+                            border-radius: 16px;
+                            label {
+                                font-size: 0.8rem;
+                            }
+                            input {
+                                border-radius: 8px;
+                                height: 32px;
+                            }
+                            button {
+                                font-size: 0.8rem;
+                                border-radius: 8px;
+                                height: 36px;
+                            }
+                        }
+                    }
                 }
                 .bottom-content {
                     margin-top: 24px;

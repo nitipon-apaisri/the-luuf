@@ -12,16 +12,13 @@ const CreateToken = () => {
     const [form] = Form.useForm();
     const [tokenName, setTokenName] = useState("");
     const [tokenCollection, setTokenCollection] = useState("");
-    const [visibleModal, setVisibleModal] = useState(false);
-    const [toggleModal, setToggleModal] = useState("");
     const [collectionSelected, setCollectionSelected] = useState();
     const [tokenDescription, setTokenDescription] = useState("");
     const [tokenPrice, setTokenPrice] = useState(0);
     const [userCollections, setUserCollections] = useState();
+    const [visibleLoyaltyForm, setVisibleLoyaltyForm] = useState(false);
     const [loyaltyData, setLoyaltyData] = useState([]);
     const [uploadImage, setUploadImage] = useState({ preview: "", raw: "" });
-    const [royaltyWallet, setLoyaltyWallet] = useState("");
-    const [royaltyValue, setLoyaltyValue] = useState(0);
     const [tokenRoyalty, setTokenRoyalty] = useState(0);
     const [tokenSupply, setTokenSupply] = useState(0);
     const { TextArea } = Input;
@@ -48,48 +45,14 @@ const CreateToken = () => {
             },
         },
     ];
-    const RoyaltyForm = () => (
-        <div className="primary-royalty">
-            <h3>Contributor</h3>
-            <Divider style={{ margin: "8px 0" }} />
-            <Form form={form} layout="vertical" autoComplete="off">
-                <Row gutter={16}>
-                    <Col span={12}>
-                        <Form.Item name="wallet" label="Wallet" style={{ marginBottom: 0 }}>
-                            <Input
-                                onChange={(e) => {
-                                    setLoyaltyWallet(e.target.value);
-                                }}
-                            />
-                        </Form.Item>
-                    </Col>
-                    <Col span={12}>
-                        <Form.Item name="royalty" label="Royalty (10, 20, 30)" style={{ marginBottom: 0 }}>
-                            <Input
-                                onChange={(e) => {
-                                    setLoyaltyValue(e.target.value);
-                                }}
-                                type="number"
-                            />
-                        </Form.Item>
-                    </Col>
-                </Row>
-            </Form>
-        </div>
-    );
-    const ArttributeForm = () => (
-        <>
-            <h1>Arttribute</h1>
-        </>
-    );
-    const toggleRoyaltyModal = () => {
-        setVisibleModal(true);
-        setToggleModal("royalty");
+    const addLoyalty = (e) => {
+        setLoyaltyData((prevData) => [...prevData, { contributor: e.walletAddress, royalty: e.loyaltyValue }]);
+        setTimeout(() => {
+            form.resetFields();
+        }, 100);
+        form.resetFields();
     };
-    const toggleArttributeModal = () => {
-        setVisibleModal(true);
-        setToggleModal("arttribute");
-    };
+    const toggleAddLoyaltyForm = () => {};
     useEffect(() => {
         document.title = `${accountName} | Create Card`;
     }, [accountName]);
@@ -105,28 +68,6 @@ const CreateToken = () => {
     }, [accountContext]);
     return (
         <MainLayout>
-            <Modal
-                title="Royalties"
-                visible={visibleModal}
-                onOk={() => {
-                    setLoyaltyData((prevData) => [...prevData, { contributor: royaltyWallet, royalty: royaltyValue }]);
-                    setLoyaltyWallet("");
-                    setLoyaltyValue(0);
-                    setVisibleModal(false);
-                }}
-                onCancel={() => {
-                    setVisibleModal(false);
-                }}
-            >
-                {(() => {
-                    if (toggleModal === "royalty") {
-                        return <RoyaltyForm />;
-                    }
-                    if (toggleModal === "arttribute") {
-                        return <ArttributeForm />;
-                    }
-                })()}
-            </Modal>
             <section className="create-token-page">
                 <div className="page-cover"></div>
                 <div className="token-contents">
@@ -329,16 +270,31 @@ const CreateToken = () => {
                                 </div>
                                 <Divider style={{ margin: "0 24px ", height: "auto" }} type="vertical" />
                                 <div className="right-form">
-                                    <Row justify="space-between">
-                                        <Col>
-                                            <h1>Royalties</h1>
-                                        </Col>
-                                        <Col>
-                                            <Button type="primary" icon={<PlusOutlined />} style={{ borderRadius: 8 }} onClick={toggleRoyaltyModal}></Button>
-                                        </Col>
-                                    </Row>
+                                    <h1>Royalties</h1>
+
                                     <Divider style={{ margin: "8px 0" }} />
-                                    <Table dataSource={loyaltyData} columns={columns} rowKey={(r) => r.contributor} />
+                                    {loyaltyData.length !== 0 && <Table dataSource={loyaltyData} columns={columns} rowKey={(r) => r.contributor} />}
+                                    <div className="loyalty-form">
+                                        <Form form={form} name="basic" initialValues={{ remember: true }} layout={"vertical"} onFinish={addLoyalty}>
+                                            <Row gutter={16}>
+                                                <Col span={12}>
+                                                    <Form.Item label="Wallet" name="walletAddress" rules={[{ required: true, message: "Please input wallet address!" }]}>
+                                                        <Input />
+                                                    </Form.Item>
+                                                </Col>
+                                                <Col span={12}>
+                                                    <Form.Item label="Loyalty(10,20,30)" name="loyaltyValue" rules={[{ required: true, message: "Please input loyalty" }]}>
+                                                        <Input type="number" />
+                                                    </Form.Item>
+                                                </Col>
+                                            </Row>
+                                            <Row justify="end">
+                                                <Button type="primary" htmlType="submit">
+                                                    Submit
+                                                </Button>
+                                            </Row>
+                                        </Form>
+                                    </div>
                                 </div>
                             </div>
                             <div className="bottom-content">
@@ -347,7 +303,7 @@ const CreateToken = () => {
                                         <h1>Arttributes</h1>
                                     </Col>
                                     <Col>
-                                        <Button type="primary" icon={<PlusOutlined />} style={{ borderRadius: 8 }} onClick={toggleArttributeModal}></Button>
+                                        <Button type="primary" icon={<PlusOutlined />} style={{ borderRadius: 8 }}></Button>
                                     </Col>
                                 </Row>
                                 <Divider style={{ margin: "8px 0" }} />

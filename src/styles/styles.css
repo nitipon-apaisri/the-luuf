@@ -800,6 +800,25 @@
   background-color: #f9f9f9;
   border: 1px solid #f0f0f0;
 }
+.create-token-page .token-contents .token-form .inner-form .top-content .right-form .loyalty-form {
+  margin-top: 16px;
+  padding: 24px;
+  background: #fafafb;
+  border: 1px solid #ededed;
+  border-radius: 16px;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .right-form .loyalty-form label {
+  font-size: 0.8rem;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .right-form .loyalty-form input {
+  border-radius: 8px;
+  height: 32px;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .right-form .loyalty-form button {
+  font-size: 0.8rem;
+  border-radius: 8px;
+  height: 36px;
+}
 .create-token-page .token-contents .token-form .inner-form .bottom-content {
   margin-top: 24px;
   min-height: 160px;
