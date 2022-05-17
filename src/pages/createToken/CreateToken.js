@@ -10,16 +10,19 @@ const CreateToken = () => {
     const { accountName } = useParams();
     const accountContext = useContext(AccountContext);
     const [form] = Form.useForm();
+    const [visibleModal, setVisibleModal] = useState(false);
     const [tokenName, setTokenName] = useState("");
     const [tokenCollection, setTokenCollection] = useState("");
     const [collectionSelected, setCollectionSelected] = useState();
     const [tokenDescription, setTokenDescription] = useState("");
     const [tokenPrice, setTokenPrice] = useState(0);
-    const [userCollections, setUserCollections] = useState();
-    const [visibleLoyaltyForm, setVisibleLoyaltyForm] = useState(false);
+    const [userCollections, setUserCollections] = useState([]);
     const [loyaltyData, setLoyaltyData] = useState([]);
     const [uploadImage, setUploadImage] = useState({ preview: "", raw: "" });
     const [tokenRoyalty, setTokenRoyalty] = useState(0);
+    const [type, setType] = useState("");
+    const [arttributeValue, setArttributeValue] = useState("");
+    const [arttributes, setArttributes] = useState([]);
     const [tokenSupply, setTokenSupply] = useState(0);
     const { TextArea } = Input;
     const columns = [
@@ -61,7 +64,7 @@ const CreateToken = () => {
                 const findCollection = collections.find((x) => {
                     return x.id === r;
                 });
-                setUserCollections(findCollection);
+                setUserCollections((prevData) => [...prevData, findCollection]);
             });
         }
     }, [accountContext]);
@@ -73,6 +76,44 @@ const CreateToken = () => {
     }, [loyaltyData]);
     return (
         <MainLayout>
+            <Modal
+                title="Basic Modal"
+                visible={visibleModal}
+                onOk={() => {
+                    setVisibleModal(false);
+                }}
+                onCancel={() => {
+                    setVisibleModal(false);
+                }}
+            >
+                <Form form={form} name="basic" initialValues={{ remember: true }} layout={"vertical"}>
+                    <Row gutter={16} align="middle">
+                        <Col span={10}>
+                            <Form.Item label="Type">
+                                <Input
+                                    onChange={(e) => {
+                                        setType(e.target.value);
+                                        console.log(type);
+                                    }}
+                                />
+                            </Form.Item>
+                        </Col>
+                        <Col span={10}>
+                            <Form.Item label="Value">
+                                <Input
+                                    onChange={(e) => {
+                                        setArttributeValue(e.target.value);
+                                        console.log(arttributeValue);
+                                    }}
+                                />
+                            </Form.Item>
+                        </Col>
+                        <Col flex="auto">
+                            <Button type="primary" icon={<PlusOutlined />}></Button>
+                        </Col>
+                    </Row>
+                </Form>
+            </Modal>
             <section className="create-token-page">
                 <div className="page-cover"></div>
                 <div className="token-contents">
@@ -172,22 +213,7 @@ const CreateToken = () => {
                                                 <div className="token-title">
                                                     <h4>Arttributes</h4>
                                                 </div>
-                                                <div className="arttributes">
-                                                    {/* {token.arttributes.length !== 0 ? (
-                                                            <Row gutter={[8, 8]}>
-                                                                {token.arttributes.map((row, index) => (
-                                                                    <Col span={8} key={row.value}>
-                                                                        <div className="arttribute">
-                                                                            <p>{row.type}</p>
-                                                                            <h4>{row.value}</h4>
-                                                                        </div>
-                                                                    </Col>
-                                                                ))}
-                                                            </Row>
-                                                        ) : (
-                                                            "-"
-                                                        )} */}
-                                                </div>
+                                                <div className="arttributes"></div>
                                             </div>
                                         </Col>
                                     </Row>
@@ -264,27 +290,26 @@ const CreateToken = () => {
                                 <Divider style={{ margin: "0 24px ", height: "auto" }} type="vertical" />
                                 <div className="right-form">
                                     <h1>Royalties</h1>
-
                                     <Divider style={{ margin: "8px 0" }} />
                                     {loyaltyData.length !== 0 && <Table dataSource={loyaltyData} columns={columns} rowKey={(r) => r.contributor} />}
                                     <div className="loyalty-form">
                                         <Form form={form} name="basic" initialValues={{ remember: true }} layout={"vertical"} onFinish={addLoyalty}>
-                                            <Row gutter={16}>
-                                                <Col span={12}>
+                                            <Row gutter={16} align="middle">
+                                                <Col span={9}>
                                                     <Form.Item label="Wallet" name="walletAddress" rules={[{ required: true, message: "Please input wallet address!" }]}>
                                                         <Input />
                                                     </Form.Item>
                                                 </Col>
-                                                <Col span={12}>
+                                                <Col span={9}>
                                                     <Form.Item label="Loyalty(10,20,30)" name="loyaltyValue" rules={[{ required: true, message: "Please input loyalty" }]}>
                                                         <Input type="number" />
                                                     </Form.Item>
                                                 </Col>
-                                            </Row>
-                                            <Row justify="end">
-                                                <Button type="primary" htmlType="submit">
-                                                    Submit
-                                                </Button>
+                                                <Col flex="auto">
+                                                    <Button type="primary" htmlType="submit">
+                                                        Submit
+                                                    </Button>
+                                                </Col>
                                             </Row>
                                         </Form>
                                     </div>
@@ -296,7 +321,14 @@ const CreateToken = () => {
                                         <h1>Arttributes</h1>
                                     </Col>
                                     <Col>
-                                        <Button type="primary" icon={<PlusOutlined />} style={{ borderRadius: 8 }}></Button>
+                                        <Button
+                                            type="primary"
+                                            icon={<PlusOutlined />}
+                                            style={{ borderRadius: 8 }}
+                                            onClick={() => {
+                                                setVisibleModal(true);
+                                            }}
+                                        ></Button>
                                     </Col>
                                 </Row>
                                 <Divider style={{ margin: "8px 0" }} />
@@ -308,7 +340,7 @@ const CreateToken = () => {
                         <Divider style={{ margin: "16px 0" }} />
                         <div className="collections">
                             <Row gutter={[32, 32]} style={{ padding: 20 }}>
-                                {collections.map((row, index) => (
+                                {Array.from(new Set(userCollections)).map((row, index) => (
                                     <Col span={8} key={row.id}>
                                         <div
                                             className={`medium-card-block ${collectionSelected === index ? "selected" : ""}`}

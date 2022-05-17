@@ -211,12 +211,14 @@
                             }
                             input {
                                 border-radius: 8px;
-                                height: 32px;
+                                height: 36px;
                             }
                             button {
+                                margin-top: 4px;
                                 font-size: 0.8rem;
                                 border-radius: 8px;
                                 height: 36px;
+                                width: 100%;
                             }
                         }
                     }

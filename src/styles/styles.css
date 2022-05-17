@@ -812,12 +812,14 @@
 }
 .create-token-page .token-contents .token-form .inner-form .top-content .right-form .loyalty-form input {
   border-radius: 8px;
-  height: 32px;
+  height: 36px;
 }
 .create-token-page .token-contents .token-form .inner-form .top-content .right-form .loyalty-form button {
+  margin-top: 4px;
   font-size: 0.8rem;
   border-radius: 8px;
   height: 36px;
+  width: 100%;
 }
 .create-token-page .token-contents .token-form .inner-form .bottom-content {
   margin-top: 24px;
