@@ -46,13 +46,12 @@ const CreateToken = () => {
         },
     ];
     const addLoyalty = (e) => {
-        setLoyaltyData((prevData) => [...prevData, { contributor: e.walletAddress, royalty: e.loyaltyValue }]);
+        setLoyaltyData((prevData) => [...prevData, { contributor: e.walletAddress, royalty: Number(e.loyaltyValue) }]);
         setTimeout(() => {
             form.resetFields();
         }, 100);
         form.resetFields();
     };
-    const toggleAddLoyaltyForm = () => {};
     useEffect(() => {
         document.title = `${accountName} | Create Card`;
     }, [accountName]);
@@ -66,6 +65,12 @@ const CreateToken = () => {
             });
         }
     }, [accountContext]);
+    useEffect(() => {
+        if (loyaltyData.length !== 0) {
+            const sumRoyalty = loyaltyData.reduce((a, b) => a + b.royalty, 0);
+            setTokenRoyalty(sumRoyalty);
+        }
+    }, [loyaltyData]);
     return (
         <MainLayout>
             <section className="create-token-page">
@@ -137,19 +142,7 @@ const CreateToken = () => {
                                                     <Col flex="auto">
                                                         <div className="token-Loyalty sub-info-content">
                                                             <p>Loyalty</p>
-                                                            <h4>
-                                                                {/* {(() => {
-                                                                        if (token.tradeInfo.loyalties.length > 1) {
-                                                                            const royaltiesSummarizedtoken = token.tradeInfo.loyalties.reduce((a, b) => {
-                                                                                return a + b.value;
-                                                                            }, 0);
-                                                                            return royaltiesSummarizedtoken;
-                                                                        } else {
-                                                                            return token.tradeInfo.loyalties[0].value;
-                                                                        }
-                                                                    })()} */}
-                                                                %
-                                                            </h4>
+                                                            <h4>{tokenRoyalty}%</h4>
                                                         </div>
                                                     </Col>
                                                     <Divider type="vertical" style={{ height: "auto" }} />
