@@ -76,23 +76,11 @@ body {
             }
         }
     }
-    .ant-modal {
+    .ant-modal.arttribute-modal {
         font-family: "Poppins", sans-serif;
-        .primary-royalty {
-            border-radius: 16px;
-            padding: 24px;
-            background: #fafafb;
-            border: 1px solid #ededed;
-        }
-    }
-    .wallet-actions {
-        display: flex;
-        flex-flow: column;
+        input,
         button {
-            border-radius: 8px;
-            font-weight: bolder;
-            height: 48px;
-            margin: 8px 0;
+            border-radius: 6px;
         }
     }
     .connect-wallet,

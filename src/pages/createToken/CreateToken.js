@@ -48,12 +48,59 @@ const CreateToken = () => {
             },
         },
     ];
+    const arttributeColumns = [
+        { title: "Type", dataIndex: "type", render: (text) => <h5>{text}</h5> },
+        { title: "Value", dataIndex: "value", render: (text) => <h5>{text}</h5> },
+        {
+            title: "Tools",
+            dataIndex: "task",
+            fixed: "right",
+            width: 150,
+            render: (cell, row) => {
+                return (
+                    <span>
+                        <Tooltip placement="top" title="Edit">
+                            <Button type="link" icon={<EditOutlined />} style={{ color: "#283143" }} onClick={() => {}} />
+                        </Tooltip>
+                        <Divider type="vertical" />
+                        <Tooltip placement="top" title="Delete">
+                            <Button type="link" icon={<DeleteOutlined />} style={{ color: "#ff6b72" }} onClick={() => {}} />
+                        </Tooltip>
+                    </span>
+                );
+            },
+        },
+    ];
     const addLoyalty = (e) => {
         setLoyaltyData((prevData) => [...prevData, { contributor: e.walletAddress, royalty: Number(e.loyaltyValue) }]);
         setTimeout(() => {
             form.resetFields();
         }, 100);
         form.resetFields();
+    };
+    const addArttribute = () => {
+        setArttributes((prevData) => [
+            ...prevData,
+            {
+                type: type,
+                value: arttributeValue,
+            },
+        ]);
+        setTimeout(() => {
+            console.log(arttributes);
+            setType("");
+            setArttributeValue("");
+        }, 100);
+    };
+    const handleOk = () => {
+        setVisibleModal(false);
+    };
+    const handleCancle = () => {
+        setVisibleModal(false);
+        setTimeout(() => {
+            setType("");
+            setArttributeValue("");
+        }, 100);
     };
     useEffect(() => {
         document.title = `${accountName} | Create Card`;
@@ -76,40 +123,32 @@ const CreateToken = () => {
     }, [loyaltyData]);
     return (
         <MainLayout>
-            <Modal
-                title="Basic Modal"
-                visible={visibleModal}
-                onOk={() => {
-                    setVisibleModal(false);
-                }}
-                onCancel={() => {
-                    setVisibleModal(false);
-                }}
-            >
+            <Modal title="Basic Modal" visible={visibleModal} onOk={handleOk} onCancel={handleCancle} className="arttribute-modal" width={720}>
+                <Table dataSource={arttributes} columns={arttributeColumns} rowKey={(r) => r.value} />
                 <Form form={form} name="basic" initialValues={{ remember: true }} layout={"vertical"}>
                     <Row gutter={16} align="middle">
-                        <Col span={10}>
+                        <Col span={11}>
                             <Form.Item label="Type">
                                 <Input
                                     onChange={(e) => {
                                         setType(e.target.value);
-                                        console.log(type);
                                     }}
+                                    value={type}
                                 />
                             </Form.Item>
                         </Col>
-                        <Col span={10}>
+                        <Col span={11}>
                             <Form.Item label="Value">
                                 <Input
                                     onChange={(e) => {
                                         setArttributeValue(e.target.value);
-                                        console.log(arttributeValue);
                                     }}
+                                    value={arttributeValue}
                                 />
                             </Form.Item>
                         </Col>
                         <Col flex="auto">
-                            <Button type="primary" icon={<PlusOutlined />}></Button>
+                            <Button type="primary" icon={<PlusOutlined />} style={{ marginTop: 5 }} onClick={addArttribute}></Button>
                         </Col>
                     </Row>
                 </Form>
@@ -332,6 +371,15 @@ const CreateToken = () => {
                                     </Col>
                                 </Row>
                                 <Divider style={{ margin: "8px 0" }} />
+                                {arttributes.map((row, index) => (
+                                    <Col span={4} key={row.value}>
+                                        <div className="token-arttribute">
+                                            <p style={{ color: "#0652DD", fontSize: "0.7rem" }}>{row.type}</p>
+                                            <h3>{row.value}</h3>
+                                            <p style={{ fontSize: "0.7rem", color: "#898989" }}>100% have this trait</p>
+                                        </div>
+                                    </Col>
+                                ))}
                             </div>
                         </div>
                     </div>
