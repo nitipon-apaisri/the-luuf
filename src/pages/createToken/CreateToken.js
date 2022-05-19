@@ -73,10 +73,6 @@ const CreateToken = () => {
     ];
     const addLoyalty = (e) => {
         setLoyaltyData((prevData) => [...prevData, { contributor: e.walletAddress, royalty: Number(e.loyaltyValue) }]);
-        setTimeout(() => {
-            form.resetFields();
-        }, 100);
-        form.resetFields();
     };
     const addArttribute = () => {
         setArttributes((prevData) => [
@@ -252,7 +248,19 @@ const CreateToken = () => {
                                                 <div className="token-title">
                                                     <h4>Arttributes</h4>
                                                 </div>
-                                                <div className="arttributes"></div>
+                                                <div className="arttributes">
+                                                    <Row gutter={8} wrap="true">
+                                                        {arttributes.map((row, index) => (
+                                                            <Col span={8} key={row.value}>
+                                                                <div className="token-arttribute">
+                                                                    <p style={{ color: "#0652DD", fontSize: "0.7rem" }}>{row.type}</p>
+                                                                    <h3>{row.value}</h3>
+                                                                    <p style={{ fontSize: "0.7rem", color: "#898989" }}>100% have this trait</p>
+                                                                </div>
+                                                            </Col>
+                                                        ))}
+                                                    </Row>
+                                                </div>
                                             </div>
                                         </Col>
                                     </Row>
@@ -371,15 +379,17 @@ const CreateToken = () => {
                                     </Col>
                                 </Row>
                                 <Divider style={{ margin: "8px 0" }} />
-                                {arttributes.map((row, index) => (
-                                    <Col span={4} key={row.value}>
-                                        <div className="token-arttribute">
-                                            <p style={{ color: "#0652DD", fontSize: "0.7rem" }}>{row.type}</p>
-                                            <h3>{row.value}</h3>
-                                            <p style={{ fontSize: "0.7rem", color: "#898989" }}>100% have this trait</p>
-                                        </div>
-                                    </Col>
-                                ))}
+                                <Row gutter={8}>
+                                    {arttributes.map((row, index) => (
+                                        <Col span={4} key={row.value}>
+                                            <div className="token-arttribute">
+                                                <p style={{ color: "#0652DD", fontSize: "0.7rem" }}>{row.type}</p>
+                                                <h3>{row.value}</h3>
+                                                <p style={{ fontSize: "0.7rem", color: "#898989" }}>100% have this trait</p>
+                                            </div>
+                                        </Col>
+                                    ))}
+                                </Row>
                             </div>
                         </div>
                     </div>
