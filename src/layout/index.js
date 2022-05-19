@@ -180,9 +180,12 @@ const MainLayout = ({ children }) => {
                             </Link>
                         </li>
                         <li>
-                            <a href={"/marketplace"}>
+                            <Link to={"/marketplace"}>
                                 <h4>Marketplace</h4>
-                            </a>
+                            </Link>
+                            {/* <a href={"/marketplace"}>
+                                <h4>Marketplace</h4>
+                            </a> */}
                         </li>
                         <li>
                             <Link to={"/"}>

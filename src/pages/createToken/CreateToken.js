@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import collectionPFP from "../../assets/images/collection-mock-pfp.svg";
 import { AccountContext } from "../../store/accountContext";
-import { collections } from "../../db";
+import { collections, tokens } from "../../db";
 const CreateToken = () => {
     const { accountName } = useParams();
     const accountContext = useContext(AccountContext);
@@ -73,6 +73,29 @@ const CreateToken = () => {
     ];
     const addLoyalty = (e) => {
         setLoyaltyData((prevData) => [...prevData, { contributor: e.walletAddress, royalty: Number(e.loyaltyValue) }]);
+    };
+    const createToken = () => {
+        const token = {
+            id: `TK${tokens.length}`,
+            name: tokenName,
+            description: tokenDescription,
+            image: uploadImage.raw,
+            edition: tokenSupply,
+            creator: accountName,
+            owner: "",
+            collection: tokenCollection,
+            chain: "Near",
+            tradeInfo: {
+                sellStatus: true,
+                price: tokenPrice,
+                loyalties: loyaltyData,
+            },
+            metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+            arttributes: arttributes,
+        };
+        setTimeout(() => {
+            tokens.push(token);
+        }, 100);
     };
     const addArttribute = () => {
         setArttributes((prevData) => [
@@ -420,6 +443,12 @@ const CreateToken = () => {
                             </Row>
                         </div>
                     </div>
+                    <Divider />
+                    <Row justify="end">
+                        <Button type="primary" onClick={createToken} className="create-token-button">
+                            Create
+                        </Button>
+                    </Row>
                 </div>
             </section>
         </MainLayout>

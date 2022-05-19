@@ -621,6 +621,13 @@
   border: 1px solid #f0f0f0;
   border-radius: 8px;
 }
+.create-token-page .create-token-button {
+  width: 160px;
+  height: 48px;
+  border-radius: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04rem;
+}
 .create-token-page .page-cover {
   position: absolute;
   top: 0;
