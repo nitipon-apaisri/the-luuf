@@ -19,6 +19,9 @@
     },
     "homepage": "https://github.com/nitipon-apaisri/backend-template#readme",
     "dependencies": {
-        "express": "^4.17.1"
+        "body-parser": "^1.20.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "uuid": "^8.3.2"
     }
 }
