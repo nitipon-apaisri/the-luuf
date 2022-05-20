@@ -52,6 +52,9 @@ const MainLayout = ({ children }) => {
             setModalVisible(false);
         }, 300);
     };
+    const createAWallet = (e) => {
+        console.log(e);
+    };
     const onCancel = () => {
         setModalVisible(false);
         setSelectAction(true);
@@ -100,7 +103,7 @@ const MainLayout = ({ children }) => {
     );
     const CreateWalletForm = () => (
         <div className="create-wallet">
-            <Form {...layout} form={form} name="basic" initialValues={{ remember: true }} layout={"vertical"} onFinish={connectAWallet}>
+            <Form {...layout} form={form} name="basic" initialValues={{ remember: true }} layout={"vertical"} onFinish={createAWallet}>
                 <Form.Item label="Wallet Address" name="walletAddress" rules={[{ required: true, message: "Please input wallet address!" }]}>
                     <Input />
                 </Form.Item>
