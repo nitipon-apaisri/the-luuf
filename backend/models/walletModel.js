@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require("uuid");
 const db = require("../db/wallet");
-const { NoWallets } = require("../errors");
+const { Unauthorized } = require("../errors");
 const createWallet = (walletAddress, walletPassword) => {
     const walletModel = {
         id: uuidv4(),
@@ -44,7 +44,7 @@ const authentication = (walletAddress, walletPassword) => {
         });
         return findWallet;
     } else {
-        throw new NoWallets();
+        throw new Unauthorized();
     }
 };
 module.exports = {

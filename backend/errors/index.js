@@ -15,11 +15,11 @@ class InvalidAddress extends ErrorManager {
         this.errorCode = 404;
     }
 }
-class NoWallets extends ErrorManager {
+class Unauthorized extends ErrorManager {
     constructor() {
         super();
-        this.message = "No Wallets";
-        this.errorCode = 404;
+        this.message = "Unauthorized - Wallet Address or Password is wrong";
+        this.errorCode = 401;
     }
 }
 
@@ -45,5 +45,5 @@ module.exports = {
     InvalidAddress,
     InvalidBody,
     ExistingToken,
-    NoWallets,
+    Unauthorized,
 };
