@@ -1,5 +1,6 @@
 const { v4: uuidv4 } = require("uuid");
 const db = require("../db/wallet");
+const { NoWallets } = require("../errors");
 const createWallet = (walletAddress, walletPassword) => {
     const walletModel = {
         id: uuidv4(),
@@ -33,7 +34,20 @@ const createWallet = (walletAddress, walletPassword) => {
         return "Wallet Existing";
     }
 };
-
+const authentication = (walletAddress, walletPassword) => {
+    const isWalletExisting = db.wallets.some((wallet) => {
+        return wallet.signInInfo.walletAddress === walletAddress && wallet.signInInfo.password === walletPassword;
+    });
+    if (isWalletExisting === true) {
+        const findWallet = db.wallets.find((wallet) => {
+            return wallet.signInInfo.walletAddress === walletAddress && wallet.signInInfo.password === walletPassword;
+        });
+        return findWallet;
+    } else {
+        throw new NoWallets();
+    }
+};
 module.exports = {
     createWallet,
+    authentication,
 };
