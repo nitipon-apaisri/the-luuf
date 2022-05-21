@@ -23,8 +23,15 @@ const createWallet = (walletAddress, walletPassword) => {
         collectibles: [],
         favorited: [],
     };
-    db.addWallet(walletModel);
-    return walletModel;
+    const isWalletExisting = db.wallets.some((wallet) => {
+        return wallet.signInInfo.walletAddress === walletAddress;
+    });
+    if (isWalletExisting === false) {
+        db.addWallet(walletModel);
+        return "Wallet Created";
+    } else {
+        return "Wallet Existing";
+    }
 };
 
 module.exports = {

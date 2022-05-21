@@ -1,7 +1,8 @@
+const { v4: uuidv4 } = require("uuid");
 const wallets = [];
 const mockWallets = [
     {
-        id: "ACC0001",
+        id: uuidv4(),
         name: "kamwoo",
         signInInfo: {
             walletAddress: "kamwoo",
@@ -23,7 +24,7 @@ const mockWallets = [
         favorited: [],
     },
     {
-        id: "ACC0002",
+        id: uuidv4(),
         name: "nitipon apaisri",
         signInInfo: {
             walletAddress: "nitipon-apaisri",
