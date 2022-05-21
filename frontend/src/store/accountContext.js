@@ -1,28 +1,25 @@
 import axios from "axios";
 import { createContext, useState } from "react";
-import { accounts } from "../db";
 const AccountContext = createContext();
 const AccountProvider = (props) => {
     const [account, setAccount] = useState();
 
     const signIn = (signInInfo) => {
-        // const findAccount = accounts.find((acc) => {
-        //     return acc.signInInfo.walletAddress === signInInfo.walletAddress && acc.signInInfo.password === signInInfo.walletPassword;
-        // });
-        // setAccount(findAccount);
-        // if (findAccount !== undefined) {
-        //     localStorage.setItem("auth", JSON.stringify({ walletAddress: findAccount.signInInfo.walletAddress, walletPassword: findAccount.signInInfo.password }));
-        // }
         axios({
             method: "post",
-            url: "http://localhost:4200/",
+            url: "http://localhost:4200/authentication",
             data: {
-                walletAddress: "kamwoo",
-                walletPassword: "1234",
+                walletAddress: signInInfo.walletAddress,
+                walletPassword: signInInfo.walletPassword,
             },
-        }).then((res) => {
-            console.log(res.data);
-        });
+        })
+            .then((wallet) => {
+                setAccount(wallet.data);
+                localStorage.setItem("auth", JSON.stringify({ walletAddress: wallet.data.signInInfo.walletAddress, walletPassword: wallet.data.signInInfo.password }));
+            })
+            .catch((err) => {
+                console.log(err.response.data.error);
+            });
     };
     const signOut = () => {
         localStorage.removeItem("auth");
