@@ -53,7 +53,11 @@ const MainLayout = ({ children }) => {
         }, 300);
     };
     const createAWallet = (e) => {
-        console.log(e);
+        accountContext.createWallet(e);
+        setTimeout(() => {
+            form.resetFields();
+            setModalVisible(false);
+        }, 300);
     };
     const onCancel = () => {
         setModalVisible(false);
