@@ -215,6 +215,12 @@
   background-color: #888888;
   border-radius: 16px;
 }
+.token .preview-pfp, .token-page .token-contents .relate-tokens .token .preview-pfp {
+  padding-top: calc(100% - 8px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .token .token-info, .token-page .token-contents .relate-tokens .token .token-info {
   background-color: #f9f9f9;
   padding: 16px 24px;

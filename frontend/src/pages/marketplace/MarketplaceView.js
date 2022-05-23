@@ -4,6 +4,7 @@ import Token from "../../components/globally/Token";
 import { tokens } from "../../db";
 import MainLayout from "../../layout";
 import InfiniteScroll from "react-infinite-scroll-component";
+import axios from "axios";
 const Marketplace = () => {
     const [width, setWidth] = useState(window.innerWidth);
     const [colSpan, setColSpan] = useState(6);
@@ -27,14 +28,18 @@ const Marketplace = () => {
     useEffect(() => {
         setTimeout(() => {
             if (getTokens.length === 0) {
-                for (let token = 0; token < 8; token++) {
-                    if (tokens[token] === undefined) {
-                        break;
-                    } else {
-                        setGetTokens((addTokens) => [...addTokens, tokens[token]]);
-                    }
-                }
+                axios
+                    .get("http://localhost:4200/marketplace")
+                    .then((tokens) => {
+                        tokens.data.data.forEach((r) => {
+                            setGetTokens((arr) => [...arr, r]);
+                        });
+                    })
+                    .catch((err) => {
+                        console.log(err.response.data.error);
+                    });
             }
+
             if (getTokens.length !== 0) setLoader(false);
         }, 750);
     }, [getTokens]);

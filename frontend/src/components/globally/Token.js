@@ -1,7 +1,7 @@
 const Token = ({ data }) => {
     return (
         <div className="token">
-            <div className="token-img"></div>
+            {data.image !== "" ? <div className="token-img preview-pfp" style={{ backgroundImage: `url(${data.image})` }}></div> : <div className="token-img"></div>}
             <div className="token-info">
                 <div className="token-name">
                     <p>{data.creator}</p>
