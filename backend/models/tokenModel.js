@@ -4,6 +4,10 @@ const createToken = (tokenData) => {
     return tokenData;
 };
 
+const getTokens = () => {
+    return db.tokens;
+};
 module.exports = {
     createToken,
+    getTokens,
 };

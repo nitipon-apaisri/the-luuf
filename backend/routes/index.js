@@ -6,8 +6,6 @@ const bodyParser = require("body-parser");
 const jsonParser = bodyParser.json();
 router.post("/createWallet", jsonParser, walletController.createWallet);
 router.post("/authentication", jsonParser, walletController.authentication);
-router.get("/marketplace", (req, res) => {
-    res.json({ msg: "Marketplace" });
-});
+router.get("/marketplace", tokenController.getTokens);
 router.post("/:walletAddress/createToken", jsonParser, tokenController.createToken);
 module.exports = router;

@@ -11,7 +11,15 @@ const createToken = async (req, res, next) => {
         next(err);
     }
 };
-
+const getTokens = async (req, res, next) => {
+    try {
+        const tokens = tokenModel.getTokens();
+        res.json({ data: tokens });
+    } catch (err) {
+        next(err);
+    }
+};
 module.exports = {
     createToken,
+    getTokens,
 };
