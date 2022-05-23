@@ -2,12 +2,19 @@ import MainLayout from "../../layout";
 import { Button, Col, Divider, Row, Form, Input, Modal, Table, Tooltip } from "antd";
 import { FlagOutlined, HeartOutlined, PlusOutlined, UploadOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import collectionPFP from "../../assets/images/collection-mock-pfp.svg";
 import { AccountContext } from "../../store/accountContext";
 import { collections, tokens } from "../../db";
+import { createClient } from "@supabase/supabase-js";
+import axios from "axios";
 const CreateToken = () => {
+    const supabaseUrl = "https://pfjrjbqogbhegczbokwr.supabase.co";
+    const supabaseKey =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmanJqYnFvZ2JoZWdjemJva3dyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY1MDgyNjI5NiwiZXhwIjoxOTY2NDAyMjk2fQ.imlzQBEdkwiEEhq9Eck6h3ysAuo4yAkqbO4AcmV_Gzo";
+    const supabase = createClient(supabaseUrl, supabaseKey);
     const { accountName } = useParams();
+    const navigate = useNavigate();
     const accountContext = useContext(AccountContext);
     const [form] = Form.useForm();
     const [visibleModal, setVisibleModal] = useState(false);
@@ -74,12 +81,23 @@ const CreateToken = () => {
     const addLoyalty = (e) => {
         setLoyaltyData((prevData) => [...prevData, { contributor: e.walletAddress, royalty: Number(e.loyaltyValue) }]);
     };
+    const uploadImageToStorage = async () => {
+        const image = uploadImage.raw;
+        const { data, error } = await supabase.storage.from("images").upload(uploadImage.raw.name.toLowerCase(), image);
+        if (error) {
+            throw error;
+        }
+        return data;
+    };
     const createToken = () => {
+        if (tokenName !== "" && tokenCollection !== "" && uploadImage.raw !== "") {
+            uploadImageToStorage();
+        }
         const token = {
             id: `TK${tokens.length}`,
             name: tokenName,
             description: tokenDescription,
-            image: uploadImage.raw,
+            image: `https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/${uploadImage.raw.name}`,
             edition: tokenSupply,
             creator: accountName,
             owner: "",
@@ -93,9 +111,24 @@ const CreateToken = () => {
             metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
             arttributes: arttributes,
         };
-        setTimeout(() => {
-            tokens.push(token);
-        }, 100);
+        if (tokenName !== "" && tokenCollection !== "" && uploadImage.raw !== "") {
+            setTimeout(() => {
+                axios({
+                    method: "post",
+                    url: `http://localhost:4200/${accountName}/createToken`,
+                    data: {
+                        tokenData: token,
+                    },
+                })
+                    .then((res) => {
+                        console.log(res);
+                        navigate(`/account/${accountName}`);
+                    })
+                    .catch((err) => {
+                        console.log(err.response.data.error);
+                    });
+            }, 100);
+        }
     };
     const addArttribute = () => {
         setArttributes((prevData) => [
@@ -197,7 +230,7 @@ const CreateToken = () => {
                                     type="file"
                                     id="upload-button"
                                     style={{ display: "none" }}
-                                    onChange={(e) => {
+                                    onChange={async (e) => {
                                         setUploadImage({ preview: URL.createObjectURL(e.target.files[0]), raw: e.target.files[0] });
                                     }}
                                 />

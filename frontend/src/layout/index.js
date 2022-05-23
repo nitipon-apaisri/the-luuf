@@ -47,6 +47,7 @@ const MainLayout = ({ children }) => {
     };
     const connectAWallet = (e) => {
         accountContext.signIn(e);
+        setSelectAction(true);
         setTimeout(() => {
             form.resetFields();
             setModalVisible(false);
@@ -54,6 +55,7 @@ const MainLayout = ({ children }) => {
     };
     const createAWallet = (e) => {
         accountContext.createWallet(e);
+        setSelectAction(true);
         setTimeout(() => {
             form.resetFields();
             setModalVisible(false);
