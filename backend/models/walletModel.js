@@ -1,5 +1,5 @@
 const { v4: uuidv4 } = require("uuid");
-const db = require("../db/wallet");
+const db = require("../db/wallets");
 const { Unauthorized } = require("../errors");
 const createWallet = (walletAddress, walletPassword) => {
     const walletModel = {

@@ -57,6 +57,5 @@ const addWallet = (walletData) => {
 addMockWallets();
 module.exports = {
     wallets,
-    addMockWallets,
     addWallet,
 };

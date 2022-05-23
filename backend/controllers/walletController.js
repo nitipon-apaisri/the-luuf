@@ -1,5 +1,5 @@
 const walletModel = require("../models/walletModel");
-const db = require("../db/wallet");
+const db = require("../db/wallets");
 const createWallet = async (req, res, next) => {
     const { walletAddress, walletPassword } = req.body;
     try {
