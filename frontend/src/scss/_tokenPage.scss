@@ -21,6 +21,12 @@
                 background-color: #888888;
                 border-radius: 12px;
             }
+            .preview-pfp {
+                padding-top: calc(100% - 8px);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
             .creator {
                 width: 100%;
                 margin-top: 16px;
@@ -157,6 +163,11 @@
                     font-size: 0.8rem;
                     .link {
                         cursor: pointer;
+                        text-align: right;
+                        width: 160px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                         color: #0652dd;
                     }
                 }

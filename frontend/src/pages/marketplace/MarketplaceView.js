@@ -31,7 +31,7 @@ const Marketplace = () => {
                 axios
                     .get("http://localhost:4200/marketplace")
                     .then((tokens) => {
-                        tokens.data.data.forEach((r) => {
+                        tokens.data.forEach((r) => {
                             setGetTokens((arr) => [...arr, r]);
                         });
                     })

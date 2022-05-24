@@ -20,15 +20,17 @@ const TokenPage = () => {
     useEffect(() => {
         setLoader(true);
         setTimeout(() => {
-            tokenContext.fetchTokenData(tokenId);
-            setToken(tokenContext.token);
-            setTokenCollection(tokenContext.tokenCollection);
+            if (token === undefined) {
+                tokenContext.fetchTokenData(tokenId);
+                setToken(tokenContext.token);
+            }
+            // setTokenCollection(tokenContext.tokenCollection);
         }, 750);
         if (token !== undefined) {
             setLoader(false);
             document.title = `${token.collection} ${token.name} | THE LUUF`;
         }
-    }, [tokenId, tokenContext, token, tokenCollection]);
+    }, [tokenId, tokenContext, token]);
     return (
         <MainLayout>
             {loader && (
@@ -45,7 +47,7 @@ const TokenPage = () => {
                         <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                             <Col span={8}>
                                 <div className="left-content">
-                                    <div className="token-img"></div>
+                                    {token !== undefined ? <div className="token-img preview-pfp" style={{ backgroundImage: `url(${token.image})` }}></div> : <div className="token-img"></div>}
                                     <div className="creator">
                                         <h4>
                                             <a href={`/account/${token.creator}`}>{token.creator}</a>
@@ -210,9 +212,9 @@ const TokenPage = () => {
                             <Row gutter={[32, 32]}>
                                 <Col span={16}>
                                     <article className="token-collection">
-                                        <h1>About {tokenCollection.name}</h1>
+                                        {/* <h1>About {tokenCollection.name}</h1>
                                         <Divider style={{ margin: "16px 0" }} />
-                                        <p>{tokenCollection.description}</p>
+                                        <p>{tokenCollection.description}</p> */}
                                     </article>
                                 </Col>
                                 <Col span={8}>
@@ -262,7 +264,7 @@ const TokenPage = () => {
                                 </div>
                             </div>
                         </article>
-                        <article className="relate-tokens">
+                        {/* <article className="relate-tokens">
                             <h1>More from this collection</h1>
                             <Divider style={{ margin: "16px 0 40px 0" }} />
                             <Row gutter={[32, 32]}>
@@ -274,7 +276,7 @@ const TokenPage = () => {
                                     </Col>
                                 ))}
                             </Row>
-                        </article>
+                        </article> */}
                     </div>
                 </section>
             )}

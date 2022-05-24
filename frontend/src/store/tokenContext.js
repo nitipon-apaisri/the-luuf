@@ -1,3 +1,4 @@
+import axios from "axios";
 import { createContext, useState } from "react";
 import { collections, tokens } from "../db";
 const TokenContext = createContext();
@@ -10,21 +11,25 @@ const TokenProvider = (props) => {
         const getToken = tokens.find((r) => {
             return r.id === tokenId;
         });
-        const getCollection = collections.find((r) => {
-            return r.name === getToken.collection && r.createdBy === getToken.creator;
+        axios.get(`http://localhost:4200/token/${tokenId}`).then((token) => {
+            setToken(token.data);
+            console.log(token.data);
         });
-        getCollection.tokens.forEach((r) => {
-            if (r !== getToken.id) {
-                const relateToken = tokens.find((x) => {
-                    return x.id === r;
-                });
-                if (relateTokens.length === 0) {
-                    setRelateTokens((arr) => [...arr, relateToken]);
-                }
-            }
-        });
+        // const getCollection = collections.find((r) => {
+        //     return r.name === getToken.collection && r.createdBy === getToken.creator;
+        // });
+        // getCollection.tokens.forEach((r) => {
+        //     if (r !== getToken.id) {
+        //         const relateToken = tokens.find((x) => {
+        //             return x.id === r;
+        //         });
+        //         if (relateTokens.length === 0) {
+        //             setRelateTokens((arr) => [...arr, relateToken]);
+        //         }
+        //     }
+        // });
         setToken(getToken);
-        setTokenCollection(getCollection);
+        // setTokenCollection(getCollection);
     };
     return <TokenContext.Provider value={{ token, tokenCollection, relateTokens, fetchTokenData }}>{props.children}</TokenContext.Provider>;
 };
