@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const walletController = require("../controllers/walletController");
 const tokenController = require("../controllers/tokenController");
+const collectionController = require("../controllers/collectionController");
 const router = new Router();
 const bodyParser = require("body-parser");
 const jsonParser = bodyParser.json();
@@ -9,4 +10,5 @@ router.post("/authentication", jsonParser, walletController.authentication);
 router.get("/marketplace", tokenController.getTokens);
 router.post("/:walletAddress/createToken", jsonParser, tokenController.createToken);
 router.get("/token/:tokenId", tokenController.getAToken);
+router.get("/:collectionOwner/collection/:collectionName", collectionController.getACollection);
 module.exports = router;
