@@ -10,7 +10,6 @@ const TokenPage = () => {
     const tokenContext = useContext(TokenContext);
     const [loader, setLoader] = useState(false);
     const [token, setToken] = useState();
-    const [tokenCollection, setTokenCollection] = useState();
     const { tokenId } = useParams();
     const data = [
         {
@@ -19,13 +18,12 @@ const TokenPage = () => {
     ];
     useEffect(() => {
         setLoader(true);
-        setTimeout(() => {
-            if (token === undefined) {
-                tokenContext.fetchTokenData(tokenId);
+        if (token === undefined) {
+            tokenContext.fetchTokenData(tokenId);
+            setTimeout(() => {
                 setToken(tokenContext.token);
-            }
-            // setTokenCollection(tokenContext.tokenCollection);
-        }, 750);
+            }, 750);
+        }
         if (token !== undefined) {
             setLoader(false);
             document.title = `${token.collection} ${token.name} | THE LUUF`;
@@ -212,9 +210,9 @@ const TokenPage = () => {
                             <Row gutter={[32, 32]}>
                                 <Col span={16}>
                                     <article className="token-collection">
-                                        {/* <h1>About {tokenCollection.name}</h1>
+                                        <h1>About {tokenContext.tokenCollection.name}</h1>
                                         <Divider style={{ margin: "16px 0" }} />
-                                        <p>{tokenCollection.description}</p> */}
+                                        <p>{tokenContext.tokenCollection.description}</p>
                                     </article>
                                 </Col>
                                 <Col span={8}>
@@ -264,19 +262,21 @@ const TokenPage = () => {
                                 </div>
                             </div>
                         </article>
-                        {/* <article className="relate-tokens">
+                        <article className="relate-tokens">
                             <h1>More from this collection</h1>
                             <Divider style={{ margin: "16px 0 40px 0" }} />
                             <Row gutter={[32, 32]}>
-                                {tokenContext.relateTokens.slice(0, 4).map((row, index) => (
-                                    <Col span={6} key={row.id}>
-                                        <a href={`/token/${row.id}`}>
-                                            <Token data={row} />
-                                        </a>
-                                    </Col>
-                                ))}
+                                {Array.from(new Set(tokenContext.relateTokens))
+                                    .slice(0, 4)
+                                    .map((row, index) => (
+                                        <Col span={6} key={row.id}>
+                                            <a href={`/token/${row.id}`}>
+                                                <Token data={row} />
+                                            </a>
+                                        </Col>
+                                    ))}
                             </Row>
-                        </article> */}
+                        </article>
                     </div>
                 </section>
             )}

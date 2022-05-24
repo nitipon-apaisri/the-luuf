@@ -1,6 +1,5 @@
 import axios from "axios";
 import { createContext, useState } from "react";
-import { collections, tokens } from "../db";
 const TokenContext = createContext();
 
 const TokenProvider = (props) => {
@@ -8,28 +7,30 @@ const TokenProvider = (props) => {
     const [tokenCollection, setTokenCollection] = useState();
     const [relateTokens, setRelateTokens] = useState([]);
     const fetchTokenData = (tokenId) => {
-        const getToken = tokens.find((r) => {
-            return r.id === tokenId;
-        });
-        axios.get(`http://localhost:4200/token/${tokenId}`).then((token) => {
-            setToken(token.data);
-            console.log(token.data);
-        });
-        // const getCollection = collections.find((r) => {
-        //     return r.name === getToken.collection && r.createdBy === getToken.creator;
-        // });
-        // getCollection.tokens.forEach((r) => {
-        //     if (r !== getToken.id) {
-        //         const relateToken = tokens.find((x) => {
-        //             return x.id === r;
-        //         });
-        //         if (relateTokens.length === 0) {
-        //             setRelateTokens((arr) => [...arr, relateToken]);
-        //         }
-        //     }
-        // });
-        setToken(getToken);
-        // setTokenCollection(getCollection);
+        axios
+            .get(`http://localhost:4200/token/${tokenId}`)
+            .then((token) => {
+                setToken(token.data);
+            })
+            .catch((err) => console.log(err.response.data.error));
+        if (token !== undefined) {
+            axios
+                .get(`http://localhost:4200/${token.creator}/collection/${token.collection}`)
+                .then((r) => setTokenCollection(r.data))
+                .catch((err) => console.log(err.response.data.error));
+        }
+        if (tokenCollection !== undefined) {
+            tokenCollection.tokens.forEach((tokenId) => {
+                if (tokenId !== token.id) {
+                    axios
+                        .get(`http://localhost:4200/token/${tokenId}`)
+                        .then((token) => {
+                            setRelateTokens((arr) => [...arr, token.data]);
+                        })
+                        .catch((err) => console.log(err.response.data.error));
+                }
+            });
+        }
     };
     return <TokenContext.Provider value={{ token, tokenCollection, relateTokens, fetchTokenData }}>{props.children}</TokenContext.Provider>;
 };
