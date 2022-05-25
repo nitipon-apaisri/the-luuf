@@ -82,7 +82,7 @@ const CreateToken = () => {
     };
     const uploadImageToStorage = async () => {
         const image = uploadImage.raw;
-        const { data, error } = await supabase.storage.from("images").upload(uploadImage.raw.name.toLowerCase(), image);
+        const { data, error } = await supabase.storage.from("images").upload(`token-images/${uploadImage.raw.name.toLowerCase()}`, image);
         if (error) {
             throw error;
         }
@@ -96,7 +96,7 @@ const CreateToken = () => {
             id: uuidv4(),
             name: tokenName,
             description: tokenDescription,
-            image: `https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/${uploadImage.raw.name}`,
+            image: `https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/${uploadImage.raw.name}`,
             edition: tokenSupply,
             creator: accountName,
             owner: "",
@@ -157,15 +157,27 @@ const CreateToken = () => {
         document.title = `${accountName} | Create Card`;
     }, [accountName]);
     useEffect(() => {
-        if (accountContext.account !== undefined) {
-            accountContext.account.collections.forEach((r) => {
-                const findCollection = collections.find((x) => {
-                    return x.id === r;
-                });
-                setUserCollections((prevData) => [...prevData, findCollection]);
+        axios
+            .get(`http://localhost:4200/${accountName}/collections`)
+            .then((collections) => {
+                if (userCollections.length === 0) {
+                    collections.data.forEach((collection) => {
+                        setUserCollections((arr) => [...arr, collection]);
+                    });
+                }
+            })
+            .catch((err) => {
+                console.log(err.response.data.error);
             });
-        }
-    }, [accountContext]);
+        // if (accountContext.account !== undefined) {
+        //     accountContext.account.collections.forEach((r) => {
+        //         const findCollection = collections.find((x) => {
+        //             return x.id === r;
+        //         });
+        //         setUserCollections((prevData) => [...prevData, findCollection]);
+        //     });
+        // }
+    }, [userCollections, accountName]);
     useEffect(() => {
         if (loyaltyData.length !== 0) {
             const sumRoyalty = loyaltyData.reduce((a, b) => a + b.royalty, 0);
@@ -462,9 +474,9 @@ const CreateToken = () => {
                                                 setCollectionSelected(index);
                                             }}
                                         >
-                                            <div className="medium-card-cover"></div>
+                                            <div className="medium-card-cover" style={{ backgroundImage: `url(${row.collectionCover})` }}></div>
                                             <div className="medium-card-profile">
-                                                <img src={collectionPFP} alt="pfp" />
+                                                <img src={row.collectionLogo} alt="pfp" />
                                                 <div className="medium-card-name">
                                                     <h5>{row.name}</h5>
                                                 </div>

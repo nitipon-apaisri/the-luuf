@@ -31,10 +31,7 @@ const AccountPage = () => {
         document.title = `${accountName} - creation`;
         setLoader(true);
         setTimeout(() => {
-            const findAccount = accounts.find((r) => {
-                return r.name === accountName;
-            });
-            setAccount(findAccount);
+            setAccount(accountContext.account);
         }, 750);
         if (account !== undefined) setLoader(false);
     }, [accountContext, accountName, account]);
@@ -49,11 +46,11 @@ const AccountPage = () => {
                 loader
             ) : (
                 <section className="account-page">
-                    <div className="page-cover"></div>
+                    <div className="page-cover" style={{ backgroundImage: `url(${account.medias.banner})` }}></div>
                     <div className="account-contents">
                         <div className="account-profile main-profile">
                             <div className="profile">
-                                <div className="account-pfp main-pfp"></div>
+                                <div className="account-pfp main-pfp" style={{ backgroundImage: `url(${account.medias.pfp})` }}></div>
                                 <h3>{account.name}</h3>
                             </div>
                             <div className="account-info main-content-info">

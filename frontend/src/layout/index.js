@@ -210,7 +210,7 @@ const MainLayout = ({ children }) => {
                             <div className="authenticate-actions">
                                 <Popover placement="bottomRight" title={accountContext.account.name} content={popOverContent} trigger="click">
                                     <div className="profile">
-                                        <div className="mock-pfp"></div>
+                                        <div className="pfp" style={{ backgroundImage: `url(${accountContext.account.medias.pfp})` }}></div>
                                     </div>
                                 </Popover>
                             </div>
