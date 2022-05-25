@@ -8,9 +8,8 @@ import { AccountContext } from "../../store/accountContext";
 import { collections, tokens } from "../../db";
 import { createClient } from "@supabase/supabase-js";
 import axios from "axios";
-import { supabaseKey } from "../../keys";
+import { supabaseKey, supabaseUrl } from "../../keys";
 const CreateToken = () => {
-    const supabaseUrl = "https://pfjrjbqogbhegczbokwr.supabase.co";
     const supabase = createClient(supabaseUrl, supabaseKey);
     const { accountName } = useParams();
     const navigate = useNavigate();

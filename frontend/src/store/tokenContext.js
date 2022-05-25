@@ -15,7 +15,7 @@ const TokenProvider = (props) => {
             .catch((err) => console.log(err.response.data.error));
         if (token !== undefined) {
             axios
-                .get(`http://localhost:4200/${token.creator}/collection/${token.collection}`)
+                .get(`http://localhost:4200/${token.creator}/collections/${token.collection}`)
                 .then((r) => setTokenCollection(r.data))
                 .catch((err) => console.log(err.response.data.error));
         }
