@@ -1,7 +1,6 @@
 import { Button, Col, Row } from "antd";
 import { useEffect, useState } from "react";
 import Token from "../../components/globally/Token";
-import { tokens } from "../../db";
 import MainLayout from "../../layout";
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from "axios";
@@ -15,10 +14,16 @@ const Marketplace = () => {
     };
     const fetchMoreData = () => {
         setTimeout(() => {
-            const loadMoreTokens = tokens.slice(getTokens.length, getTokens.length + 4);
-            loadMoreTokens.forEach((token) => {
-                setGetTokens((prevData) => [...prevData, token]);
-            });
+            axios
+                .get(`http://localhost:4200/marketplace`)
+                .then((tokens) => {
+                    tokens.data.slice(getTokens.length, getTokens.length + 3).forEach((token) => {
+                        setGetTokens((arr) => [...arr, token]);
+                    });
+                })
+                .catch((err) => {
+                    console.log(err.response.data.error);
+                });
         }, 750);
     };
     useEffect(() => {

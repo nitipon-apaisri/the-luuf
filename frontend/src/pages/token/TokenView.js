@@ -57,7 +57,7 @@ const TokenPage = () => {
                                 <div className="token-right">
                                     <div className="token-info">
                                         <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} style={{ height: "100%" }}>
-                                            <Col span={12}>
+                                            <Col span={11}>
                                                 <div className="main-info">
                                                     <div className="token-title">
                                                         <Row align="middle">
@@ -100,12 +100,11 @@ const TokenPage = () => {
                                                                     {(() => {
                                                                         if (token.tradeInfo.loyalties.length > 1) {
                                                                             const royaltiesSummarizedtoken = token.tradeInfo.loyalties.reduce((a, b) => {
-                                                                                return a + b.value;
+                                                                                return a + b.royalty;
                                                                             }, 0);
                                                                             return royaltiesSummarizedtoken;
-                                                                        } else {
-                                                                            return token.tradeInfo.loyalties[0].value;
                                                                         }
+                                                                        return token.tradeInfo.loyalties[0].royalty;
                                                                     })()}
                                                                     %
                                                                 </h4>
@@ -116,7 +115,6 @@ const TokenPage = () => {
                                                             <div className="token-owner sub-info-content">
                                                                 <p>Owner</p>
                                                                 <h4>
-                                                                    {" "}
                                                                     <a href={`/account/${token.owner}`}>{token.owner}</a>
                                                                 </h4>
                                                             </div>
@@ -157,7 +155,7 @@ const TokenPage = () => {
                                                 })()}
                                             </Col>
                                             <Divider type="vertical" style={{ height: "auto" }}></Divider>
-                                            <Col flex={"auto"}>
+                                            <Col span={12}>
                                                 <div className="token-arttributes">
                                                     <div className="token-title">
                                                         <h4>Arttributes</h4>

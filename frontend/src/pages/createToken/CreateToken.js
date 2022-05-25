@@ -1,11 +1,12 @@
 import MainLayout from "../../layout";
+import { v4 as uuidv4 } from "uuid";
 import { Button, Col, Divider, Row, Form, Input, Modal, Table, Tooltip } from "antd";
 import { FlagOutlined, HeartOutlined, PlusOutlined, UploadOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import collectionPFP from "../../assets/images/collection-mock-pfp.svg";
 import { AccountContext } from "../../store/accountContext";
-import { collections, tokens } from "../../db";
+import { collections } from "../../db";
 import { createClient } from "@supabase/supabase-js";
 import axios from "axios";
 import { supabaseKey, supabaseUrl } from "../../keys";
@@ -92,7 +93,7 @@ const CreateToken = () => {
             uploadImageToStorage();
         }
         const token = {
-            id: `TK${tokens.length}`,
+            id: uuidv4(),
             name: tokenName,
             description: tokenDescription,
             image: `https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/${uploadImage.raw.name}`,
