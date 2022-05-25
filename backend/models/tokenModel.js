@@ -13,9 +13,15 @@ const getAToken = (tokenId) => {
     });
     return token;
 };
+const getTokensByOwner = (owner) => {
+    const findTokensOwner = db.tokens.filter((tokens) => {
+        return tokens.owner === owner;
+    });
+    return findTokensOwner;
+};
 const getTokensByCreator = (creatorName) => {
-    const tokens = db.tokens.filter((token) => {
-        return token.creator === creatorName;
+    const tokens = db.tokens.filter((tokens) => {
+        return tokens.creator === creatorName;
     });
     return tokens;
 };
@@ -23,5 +29,6 @@ module.exports = {
     createToken,
     getTokens,
     getAToken,
+    getTokensByOwner,
     getTokensByCreator,
 };

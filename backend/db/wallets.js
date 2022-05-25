@@ -62,7 +62,6 @@ const addMockWallets = () => {
             });
             mockWallets[findTokenOwner].collectibles.push(token.id);
         });
-        console.log(mockWallets);
         mockWallets.forEach((wallet) => wallets.push(wallet));
     }
 };
