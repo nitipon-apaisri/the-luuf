@@ -9,6 +9,16 @@ const getACollection = async (req, res, next) => {
     }
 };
 
+const getCollectionsByOwner = async (req, res, next) => {
+    const { ownerName } = req.params;
+    try {
+        const collections = collectionModel.getCollectionsByOwner(ownerName);
+        res.json(collections);
+    } catch (err) {
+        next(err);
+    }
+};
 module.exports = {
     getACollection,
+    getCollectionsByOwner,
 };

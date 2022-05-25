@@ -5,7 +5,13 @@ const getACollection = (collectionOwner, collectionName) => {
     });
     return collection;
 };
-
+const getCollectionsByOwner = (owner) => {
+    const collections = db.collections.filter((collections) => {
+        return collections.createdBy === owner;
+    });
+    return collections;
+};
 module.exports = {
     getACollection,
+    getCollectionsByOwner,
 };

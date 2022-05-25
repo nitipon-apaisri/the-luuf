@@ -13,4 +13,5 @@ router.get("/token/:tokenId", tokenController.getAToken);
 router.get("/:collectionOwner/collections/:collectionName", collectionController.getACollection);
 router.get("/:creatorName/tokens", tokenController.getTokensByCreator);
 router.get("/:ownerName/collectibles", tokenController.getTokensByOwner);
+router.get("/:ownerName/collections", collectionController.getCollectionsByOwner);
 module.exports = router;
