@@ -1,4 +1,6 @@
 const { v4: uuidv4 } = require("uuid");
+const { collections } = require("./collections");
+const { tokens } = require("./tokens");
 const wallets = [];
 const mockWallets = [
     {
@@ -19,8 +21,8 @@ const mockWallets = [
             twitter: "...",
             discord: "...",
         },
-        collections: ["LVC0001"],
-        collectibles: ["TK0004"],
+        collections: [],
+        collectibles: [],
         favorited: [],
     },
     {
@@ -42,12 +44,25 @@ const mockWallets = [
             discord: "...",
         },
         collections: [],
-        collectibles: ["TK0001", "TK0002"],
+        collectibles: [],
         favorited: [],
     },
 ];
 const addMockWallets = () => {
     if (wallets.length === 0) {
+        collections.forEach((collection) => {
+            const findCollectionOwner = mockWallets.findIndex((r) => {
+                return r.signInInfo.walletAddress === collection.createdBy;
+            });
+            mockWallets[findCollectionOwner].collections.push(collection.id);
+        });
+        tokens.forEach((token) => {
+            const findTokenOwner = mockWallets.findIndex((r) => {
+                return r.signInInfo.walletAddress === token.owner;
+            });
+            mockWallets[findTokenOwner].collectibles.push(token.id);
+        });
+        console.log(mockWallets);
         mockWallets.forEach((wallet) => wallets.push(wallet));
     }
 };
