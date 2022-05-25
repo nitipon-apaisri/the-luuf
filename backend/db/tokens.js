@@ -7,7 +7,7 @@ const mockTokens = [
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
         edition: 1,
-        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/atk-billie",
+        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/atk-billie",
         creator: "kamwoo",
         owner: "nitipon-apaisri",
         collection: "It's fine.",
@@ -31,7 +31,7 @@ const mockTokens = [
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
         edition: 1,
-        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/atk-jesus",
+        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/atk-jesus",
         creator: "kamwoo",
         owner: "nitipon-apaisri",
         collection: "It's fine.",
@@ -54,7 +54,7 @@ const mockTokens = [
         name: "#OK159",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
-        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/atk-nang-rum",
+        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/atk-nang-rum",
         edition: 1,
         creator: "kamwoo",
         owner: "nitipon-apaisri",
@@ -81,7 +81,7 @@ const mockTokens = [
         name: "#OK173",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
-        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/atk-moon-knight",
+        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/atk-moon-knight",
         edition: 1,
         creator: "kamwoo",
         owner: "kamwoo",
@@ -105,7 +105,7 @@ const mockTokens = [
         name: "#OK174",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
-        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/atk-dr-strange",
+        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/atk-dr-strange",
         edition: 1,
         creator: "kamwoo",
         owner: "kamwoo",
@@ -129,7 +129,7 @@ const mockTokens = [
         name: "#OK176",
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
-        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/atk-joker",
+        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/atk-joker",
         edition: 1,
         creator: "kamwoo",
         owner: "nitipon-apaisri",
