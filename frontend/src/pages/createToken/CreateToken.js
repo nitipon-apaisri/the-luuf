@@ -85,7 +85,7 @@ const CreateToken = () => {
         if (error) {
             throw error;
         }
-        return data;
+        console.log(data);
     };
     const createToken = () => {
         if (tokenName !== "" && tokenCollection !== "" && uploadImage.raw !== "") {
