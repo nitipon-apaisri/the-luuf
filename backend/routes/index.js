@@ -10,5 +10,6 @@ router.post("/authentication", jsonParser, walletController.authentication);
 router.get("/marketplace", tokenController.getTokens);
 router.post("/:walletAddress/createToken", jsonParser, tokenController.createToken);
 router.get("/token/:tokenId", tokenController.getAToken);
-router.get("/:collectionOwner/collection/:collectionName", collectionController.getACollection);
+router.get("/:collectionOwner/collections/:collectionName", collectionController.getACollection);
+router.get("/:creatorName/tokens", tokenController.getTokensByCreator);
 module.exports = router;

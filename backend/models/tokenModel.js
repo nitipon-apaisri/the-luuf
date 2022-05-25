@@ -13,8 +13,15 @@ const getAToken = (tokenId) => {
     });
     return token;
 };
+const getTokensByCreator = (creatorName) => {
+    const tokens = db.tokens.filter((token) => {
+        return token.creator === creatorName;
+    });
+    return tokens;
+};
 module.exports = {
     createToken,
     getTokens,
     getAToken,
+    getTokensByCreator,
 };

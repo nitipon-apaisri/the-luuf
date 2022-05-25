@@ -28,8 +28,18 @@ const getAToken = async (req, res, next) => {
         next(err);
     }
 };
+const getTokensByCreator = async (req, res, next) => {
+    const { creatorName } = req.params;
+    try {
+        const tokens = tokenModel.getTokensByCreator(creatorName);
+        res.json(tokens);
+    } catch (err) {
+        next(err);
+    }
+};
 module.exports = {
     createToken,
     getTokens,
     getAToken,
+    getTokensByCreator,
 };
