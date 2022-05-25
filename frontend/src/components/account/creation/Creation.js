@@ -44,34 +44,32 @@ const Creation = ({ accountName }) => {
     }, [accountName, createdTokens]);
     return (
         <section className="creation-container">
-            {createdTokens.length !== 0 && (
-                <>
-                    <div className="title">
-                        <h1>Creation</h1>
+            <div className="title">
+                <h1>Creation</h1>
 
-                        <div className="action-buttons">
-                            {isAuth && (
-                                <Button type="primary">
-                                    <a href={`/${accountName}/createToken`}>Create Card</a>
-                                </Button>
-                            )}
-                            <Button type="primary">Filter</Button>
-                        </div>
-                    </div>
-                    <div className="created-tokens">
-                        <InfiniteScroll dataLength={createdTokens.length} next={fetchMoreData} hasMore={true}>
-                            <Row gutter={[32, 32]} style={{ padding: 20 }}>
-                                {Array.from(new Set(createdTokens)).map((row, index) => (
-                                    <Col span={8} key={row.id}>
-                                        <a href={`/token/${row.id}`}>
-                                            <Token data={row} />
-                                        </a>
-                                    </Col>
-                                ))}
-                            </Row>
-                        </InfiniteScroll>
-                    </div>
-                </>
+                <div className="action-buttons">
+                    {isAuth && (
+                        <Button type="primary">
+                            <a href={`/${accountName}/createToken`}>Create Card</a>
+                        </Button>
+                    )}
+                    <Button type="primary">Filter</Button>
+                </div>
+            </div>
+            {createdTokens.length !== 0 && (
+                <div className="created-tokens">
+                    <InfiniteScroll dataLength={createdTokens.length} next={fetchMoreData} hasMore={true}>
+                        <Row gutter={[32, 32]} style={{ padding: 20 }}>
+                            {Array.from(new Set(createdTokens)).map((row, index) => (
+                                <Col span={8} key={row.id}>
+                                    <a href={`/token/${row.id}`}>
+                                        <Token data={row} />
+                                    </a>
+                                </Col>
+                            ))}
+                        </Row>
+                    </InfiniteScroll>
+                </div>
             )}
         </section>
     );

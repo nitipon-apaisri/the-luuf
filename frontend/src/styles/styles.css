@@ -172,6 +172,9 @@
   border-radius: 16px 16px 0 0;
   background-color: #888888;
   height: 190px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .medium-card .medium-card-block .medium-card-profile, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile,
 .landing-page .trending-collections .creators .medium-card-block .medium-card-profile,
