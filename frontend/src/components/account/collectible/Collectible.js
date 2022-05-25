@@ -1,37 +1,41 @@
 import { Button, Col, Row } from "antd";
 import { useState, useEffect } from "react";
-import { tokens } from "../../../db";
 import Token from "../../globally/Token";
 import InfiniteScroll from "react-infinite-scroll-component";
+import axios from "axios";
 const Collectible = ({ accountName }) => {
     const [collectibles, setCollectibles] = useState([]);
     const fetchMoreData = () => {
         setTimeout(() => {
-            const findCreatedTokens = tokens.slice(collectibles.length, collectibles.length + 3).filter((r) => {
-                return r.owner === accountName;
-            });
-            findCreatedTokens.forEach((token) => {
-                setCollectibles((prevData) => [...prevData, token]);
-            });
+            axios
+                .get(`http://localhost:4200/${accountName}/collectibles`)
+                .then((tokens) => {
+                    tokens.data.slice(collectibles.length, collectibles.length + 3).forEach((token) => {
+                        setCollectibles((arr) => [...arr, token]);
+                    });
+                })
+                .catch((err) => {
+                    console.log(err.response.data.error);
+                });
         }, 750);
+        console.log(collectibles);
     };
     useEffect(() => {
         document.title = `${accountName} - collectibles`;
     }, [accountName]);
     useEffect(() => {
-        const findAccountCollectibles = tokens.filter((token) => {
-            return token.owner === accountName;
-        });
-
-        if (collectibles.length === 0) {
-            for (let token = 0; token < 3; token++) {
-                if (findAccountCollectibles[token] === undefined) {
-                    break;
-                } else {
-                    setCollectibles((addTokens) => [...addTokens, findAccountCollectibles[token]]);
+        axios
+            .get(`http://localhost:4200/${accountName}/collectibles`)
+            .then((tokens) => {
+                if (collectibles.length === 0) {
+                    tokens.data.slice(0, 3).forEach((token) => {
+                        setCollectibles((arr) => [...arr, token]);
+                    });
                 }
-            }
-        }
+            })
+            .catch((err) => {
+                console.log(err.response.data.error);
+            });
     }, [accountName, collectibles]);
     return (
         <section className="collectible-container">
