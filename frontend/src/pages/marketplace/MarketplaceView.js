@@ -34,7 +34,7 @@ const Marketplace = () => {
         setTimeout(() => {
             if (getTokens.length === 0) {
                 axios
-                    .get("http://localhost:4200/marketplace")
+                    .get("http://localhost:4200/tokens")
                     .then((tokens) => {
                         tokens.data.forEach((r) => {
                             setGetTokens((arr) => [...arr, r]);
