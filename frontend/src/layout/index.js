@@ -28,7 +28,7 @@ const MainLayout = ({ children }) => {
                         <h4>{accountContext.account.balance}N</h4>
                     </div>
                     <Divider style={{ margin: "8px 0" }} />
-                    <a href={`/account/${accountContext.account.name}`}>
+                    <a href={`/account/${accountContext.account.signInInfo.walletAddress}`}>
                         <h4>My Profile</h4>
                     </a>
                     <Divider style={{ margin: "8px 0" }} />

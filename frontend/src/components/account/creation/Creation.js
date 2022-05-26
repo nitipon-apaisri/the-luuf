@@ -25,7 +25,7 @@ const Creation = ({ accountName }) => {
     useEffect(() => {
         document.title = `${accountName} - creation`;
         if (accountContext.account !== undefined) {
-            if (accountContext.account.name === accountName) setAuth(true);
+            if (accountContext.account.signInInfo.walletAddress === accountName) setAuth(true);
         }
     }, [accountName, accountContext]);
     useEffect(() => {
