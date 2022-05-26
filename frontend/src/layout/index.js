@@ -171,14 +171,14 @@ const MainLayout = ({ children }) => {
             </Modal>
             <Header>
                 <nav>
-                    <Link to={"/"}>
+                    <a href="/">
                         <div className="nav-banner">
                             <div className="logo-outter">
                                 <img src={Logo} alt="4"></img>
                             </div>
                             <h4>THE LUUF</h4>
                         </div>
-                    </Link>
+                    </a>
                     <div className="nav-search-bar">
                         <Search placeholder="Search items, collection, and accounts" enterButton />
                     </div>

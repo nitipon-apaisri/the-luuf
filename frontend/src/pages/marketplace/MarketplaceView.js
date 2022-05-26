@@ -15,7 +15,7 @@ const Marketplace = () => {
     const fetchMoreData = () => {
         setTimeout(() => {
             axios
-                .get(`http://localhost:4200/marketplace`)
+                .get(`http://localhost:4200/tokens`)
                 .then((tokens) => {
                     tokens.data.slice(getTokens.length, getTokens.length + 3).forEach((token) => {
                         setGetTokens((arr) => [...arr, token]);

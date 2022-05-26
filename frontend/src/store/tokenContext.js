@@ -8,7 +8,7 @@ const TokenProvider = (props) => {
     const [relateTokens, setRelateTokens] = useState([]);
     const fetchTokenData = (tokenId) => {
         axios
-            .get(`http://localhost:4200/token/${tokenId}`)
+            .get(`http://localhost:4200/tokens/${tokenId}`)
             .then((token) => {
                 setToken(token.data);
             })
@@ -23,7 +23,7 @@ const TokenProvider = (props) => {
             tokenCollection.tokens.forEach((tokenId) => {
                 if (tokenId !== token.id) {
                     axios
-                        .get(`http://localhost:4200/token/${tokenId}`)
+                        .get(`http://localhost:4200/tokens/${tokenId}`)
                         .then((token) => {
                             setRelateTokens((arr) => [...arr, token.data]);
                         })

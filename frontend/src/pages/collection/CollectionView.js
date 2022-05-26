@@ -2,11 +2,11 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MainLayout from "../../layout";
 import { useState } from "react";
-import { collections } from "../../db";
 import { Button, Divider } from "antd";
 import ItemsInCollection from "../../components/collection/items/ItemsInCollection";
 import { InstagramFilled, LinkOutlined, SettingFilled, TwitterOutlined } from "@ant-design/icons";
 import { AccountContext } from "../../store/accountContext";
+import axios from "axios";
 const CollectionView = () => {
     const { accountName, collectionName } = useParams();
     const accountContext = useContext(AccountContext);
@@ -24,16 +24,22 @@ const CollectionView = () => {
         document.title = `${collectionName} - Collection`;
         setLoader(true);
         setTimeout(() => {
-            const findCollection = collections.find((collection) => {
-                return collection.name === collectionName;
-            });
-            setCollection(findCollection);
+            if (collection === undefined) {
+                axios
+                    .get(`http://localhost:4200/${accountName}/collections/${decodeURI(collectionName)}`)
+                    .then((collection) => {
+                        setCollection(collection.data);
+                    })
+                    .catch((err) => {
+                        console.log(err.response.data.error);
+                    });
+            }
         }, 750);
         if (collection !== undefined) setLoader(false);
-    }, [collection, collectionName]);
+    }, [collection, collectionName, accountName]);
     useEffect(() => {
         if (accountContext.account !== undefined) {
-            if (accountContext.account.name === accountName) setAuth(true);
+            if (accountContext.account.signInInfo.walletAddress === accountName) setAuth(true);
         }
     }, [accountContext, accountName]);
     return (
@@ -47,11 +53,11 @@ const CollectionView = () => {
                 loader
             ) : (
                 <div className="collection-view-container">
-                    <div className="page-cover"></div>
+                    <div className="page-cover" style={{ backgroundImage: `url(${collection.collectionCover})` }}></div>
                     <div className="collection-contents">
                         <div className="account-profile main-profile">
                             <div className="profile">
-                                <div className="account-pfp main-pfp"></div>
+                                <div className="account-pfp main-pfp" style={{ backgroundImage: `url(${collection.collectionLogo})` }}></div>
                                 <h3>{collection.name}</h3>
                             </div>
                             <div className="account-info main-content-info">
@@ -102,7 +108,7 @@ const CollectionView = () => {
                         <Divider />
                         {(() => {
                             if (collectionCategory === "items") {
-                                return <ItemsInCollection collection={collection} />;
+                                return <ItemsInCollection tokens={collection.tokens} />;
                             }
                         })()}
                     </div>

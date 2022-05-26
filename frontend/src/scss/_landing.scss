@@ -50,6 +50,9 @@
                         background-color: #888888;
                         height: 392px;
                         border-radius: 16px 16px 0 0;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
                     }
                     .token-short-info {
                         padding: 0 24px;
@@ -61,6 +64,9 @@
                             height: 40px;
                             background-color: #888888;
                             border-radius: 100%;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: cover;
                         }
                         .info {
                             width: 100%;

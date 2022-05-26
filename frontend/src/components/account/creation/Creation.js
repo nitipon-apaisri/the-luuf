@@ -50,7 +50,6 @@ const Creation = ({ accountName }) => {
                 <div className="action-buttons">
                     {(() => {
                         if (isAuth) {
-                            console.log(accountContext.account);
                             if (accountName === accountContext.account.signInInfo.walletAddress) {
                                 return (
                                     <Button type="primary">

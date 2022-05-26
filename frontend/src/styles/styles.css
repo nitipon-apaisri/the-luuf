@@ -50,6 +50,9 @@
   background-color: #888888;
   height: 392px;
   border-radius: 16px 16px 0 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .landing-page .hero .hero-right .content-wrapper .token-of-the-day .token-short-info {
   padding: 0 24px;
@@ -62,6 +65,9 @@
   height: 40px;
   background-color: #888888;
   border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .landing-page .hero .hero-right .content-wrapper .token-of-the-day .token-short-info .info {
   width: 100%;
@@ -269,6 +275,9 @@
   border-radius: 100%;
   background-color: #373737;
   border: 10px solid #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .main-content-style .main-profile .main-content-info, .collection-view-container .collection-contents .main-profile .main-content-info, .account-page .account-contents .main-profile .main-content-info {
   margin-left: 80px;
