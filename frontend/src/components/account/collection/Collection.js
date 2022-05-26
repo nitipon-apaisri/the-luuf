@@ -1,9 +1,7 @@
 import { Button, Row, Col } from "antd";
 import { useContext, useEffect } from "react";
 import { useState } from "react";
-import { collections } from "../../../db";
 import InfiniteScroll from "react-infinite-scroll-component";
-import collectionPFP from "../../../assets/images/collection-mock-pfp.svg";
 import { AccountContext } from "../../../store/accountContext";
 import axios from "axios";
 const Collection = ({ accountName }) => {

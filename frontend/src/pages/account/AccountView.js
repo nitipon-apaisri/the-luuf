@@ -7,7 +7,6 @@ import Creation from "../../components/account/creation/Creation";
 import Collectible from "../../components/account/collectible/Collectible";
 import Collection from "../../components/account/collection/Collection";
 import Favorited from "../../components/account/favorited/Favorited";
-import { accounts } from "../../db";
 import { InstagramFilled, LinkOutlined, SettingFilled, TwitterOutlined } from "@ant-design/icons";
 import axios from "axios";
 const AccountPage = () => {

@@ -2,11 +2,8 @@ import MainLayout from "../../layout";
 import { v4 as uuidv4 } from "uuid";
 import { Button, Col, Divider, Row, Form, Input, Modal, Table, Tooltip } from "antd";
 import { FlagOutlined, HeartOutlined, PlusOutlined, UploadOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import collectionPFP from "../../assets/images/collection-mock-pfp.svg";
-import { AccountContext } from "../../store/accountContext";
-import { collections } from "../../db";
 import { createClient } from "@supabase/supabase-js";
 import axios from "axios";
 import { supabaseKey, supabaseUrl } from "../../keys";
@@ -14,7 +11,6 @@ const CreateToken = () => {
     const supabase = createClient(supabaseUrl, supabaseKey);
     const { accountName } = useParams();
     const navigate = useNavigate();
-    const accountContext = useContext(AccountContext);
     const [form] = Form.useForm();
     const [visibleModal, setVisibleModal] = useState(false);
     const [tokenName, setTokenName] = useState("");
@@ -169,14 +165,6 @@ const CreateToken = () => {
             .catch((err) => {
                 console.log(err.response.data.error);
             });
-        // if (accountContext.account !== undefined) {
-        //     accountContext.account.collections.forEach((r) => {
-        //         const findCollection = collections.find((x) => {
-        //             return x.id === r;
-        //         });
-        //         setUserCollections((prevData) => [...prevData, findCollection]);
-        //     });
-        // }
     }, [userCollections, accountName]);
     useEffect(() => {
         if (loyaltyData.length !== 0) {

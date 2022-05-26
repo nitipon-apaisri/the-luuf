@@ -48,11 +48,18 @@ const Creation = ({ accountName }) => {
                 <h1>Creation</h1>
 
                 <div className="action-buttons">
-                    {isAuth && (
-                        <Button type="primary">
-                            <a href={`/${accountName}/createToken`}>Create Card</a>
-                        </Button>
-                    )}
+                    {(() => {
+                        if (isAuth) {
+                            console.log(accountContext.account);
+                            if (accountName === accountContext.account.signInInfo.walletAddress) {
+                                return (
+                                    <Button type="primary">
+                                        <a href={`/${accountName}/createToken`}>Create Card</a>
+                                    </Button>
+                                );
+                            }
+                        }
+                    })()}
                     <Button type="primary">Filter</Button>
                 </div>
             </div>
