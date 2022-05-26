@@ -36,7 +36,7 @@ const mockWallets = [
         about: "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         medias: {
             pfp: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/profile-pictures/anl-pfp.jpeg",
-            banner: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/profile-cover/its-fine-cover",
+            banner: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/anl-cover.png",
         },
         links: {
             universal: "...",
@@ -63,6 +63,7 @@ const addMockWallets = () => {
             mockWallets[findTokenOwner].collectibles.push(token.id);
         });
         mockWallets.forEach((wallet) => wallets.push(wallet));
+        console.log(wallets);
     }
 };
 const addWallet = (walletData) => {
