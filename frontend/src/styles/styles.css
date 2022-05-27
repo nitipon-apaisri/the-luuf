@@ -90,7 +90,7 @@
   align-items: center;
   margin-bottom: 16px;
 }
-.landing-page .top-collections .top-collection h5,
+.landing-page .top-collections .top-collection h4,
 .landing-page .top-collections .top-collection h6 {
   font-weight: bolder;
 }
@@ -101,6 +101,7 @@
   margin-left: 24px;
 }
 .landing-page .top-collections .top-collection .collection-details img {
+  border-radius: 100%;
   width: 64px;
   height: 64px;
 }

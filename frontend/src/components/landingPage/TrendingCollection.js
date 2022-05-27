@@ -1,27 +1,39 @@
 import { Col, Row } from "antd";
-import collectionPFP from "../../assets/images/collection-mock-pfp.svg";
-import { trendingCollection } from "../../db";
+import axios from "axios";
+import { useEffect, useState } from "react";
 const TrendingCollection = () => {
+    const [trendingCollections, setTrendingCollections] = useState([]);
+    useEffect(() => {
+        if (trendingCollections.length === 0) {
+            axios.get("http://localhost:4200/collections/trending").then((collections) => {
+                collections.data.forEach((collection) => {
+                    setTrendingCollections((arr) => [...arr, collection]);
+                });
+            });
+        }
+    }, [trendingCollections]);
     return (
         <article className="trending-collections ">
             <h1>Trending Collections</h1>
-            <div className="collections block-contents">
-                <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                    {trendingCollection.slice(0, 3).map((row, index) => (
-                        <Col span={8} key={row.name}>
-                            <div className="medium-card-block">
-                                <div className="medium-card-cover"></div>
-                                <div className="medium-card-profile">
-                                    <img src={collectionPFP} alt="pfp" />
-                                    <div className="medium-card-name">
-                                        <h5>{row.name}</h5>
+            {trendingCollections.length !== 0 && (
+                <div className="collections block-contents">
+                    <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                        {trendingCollections.map((row, index) => (
+                            <Col span={8} key={row.name}>
+                                <div className="medium-card-block">
+                                    <div className="medium-card-cover" style={{ backgroundImage: `url(${row.collectionCover})` }}></div>
+                                    <div className="medium-card-profile">
+                                        <img src={row.collectionLogo} alt="pfp" />
+                                        <div className="medium-card-name">
+                                            <h5>{row.name}</h5>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </Col>
-                    ))}
-                </Row>
-            </div>
+                            </Col>
+                        ))}
+                    </Row>
+                </div>
+            )}
         </article>
     );
 };
