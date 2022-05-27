@@ -565,7 +565,7 @@
   left: 0;
   background-color: #c4c4c4;
   width: 100%;
-  height: 400px;
+  height: 415px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -919,6 +919,18 @@ a {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.wallet-actions {
+  display: flex;
+  flex-flow: column;
+}
+.wallet-actions button {
+  letter-spacing: 0.04rem;
+  border-radius: 8px;
+  height: 48px;
+  font-weight: bolder;
+  margin: 4px 0;
 }
 
 body {

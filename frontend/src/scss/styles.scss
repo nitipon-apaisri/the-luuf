@@ -25,6 +25,17 @@ a {
 ::-webkit-scrollbar {
     display: none;
 }
+.wallet-actions {
+    display: flex;
+    flex-flow: column;
+    button {
+        letter-spacing: 0.04rem;
+        border-radius: 8px;
+        height: 48px;
+        font-weight: bolder;
+        margin: 4px 0;
+    }
+}
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;

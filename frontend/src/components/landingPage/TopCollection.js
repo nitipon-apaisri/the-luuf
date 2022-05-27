@@ -23,19 +23,21 @@ const TopCollection = () => {
                         <Col span={8}>
                             {topCollections.slice(0, 3).map((row, index) => (
                                 <Col key={row.name}>
-                                    <div className="top-collection">
-                                        <h5>{index + 1}</h5>
-                                        <div className="collection-details">
-                                            <img src={row.collectionLogo} alt="pfp" />
-                                            <div className="details">
-                                                <h4>{row.name}</h4>
-                                                <div className="values">
-                                                    <h6>Floor price:{row.values.floorPrice}N</h6>
-                                                    <h6>{row.values.totalVolume}N</h6>
+                                    <a href={`/${row.createdBy}/collection/${row.name}`}>
+                                        <div className="top-collection">
+                                            <h5>{index + 1}</h5>
+                                            <div className="collection-details">
+                                                <img src={row.collectionLogo} alt="pfp" />
+                                                <div className="details">
+                                                    <h4>{row.name}</h4>
+                                                    <div className="values">
+                                                        <h6>Floor price:{row.values.floorPrice}N</h6>
+                                                        <h6>{row.values.totalVolume}N</h6>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                     <Divider />
                                 </Col>
                             ))}
@@ -43,19 +45,21 @@ const TopCollection = () => {
                         <Col span={8}>
                             {topCollections.slice(3, 6).map((row, index) => (
                                 <Col key={row.name}>
-                                    <div className="top-collection">
-                                        <h5>{index + 4}</h5>
-                                        <div className="collection-details">
-                                            <img src={row.collectionLogo} alt="pfp" />
-                                            <div className="details">
-                                                <h4>{row.name}</h4>
-                                                <div className="values">
-                                                    <h6>Floor price:{row.values.floorPrice}N</h6>
-                                                    <h6>{row.values.totalVolume}N</h6>
+                                    <a href={`/${row.createdBy}/collection/${row.name}`}>
+                                        <div className="top-collection">
+                                            <h5>{index + 4}</h5>
+                                            <div className="collection-details">
+                                                <img src={row.collectionLogo} alt="pfp" />
+                                                <div className="details">
+                                                    <h4>{row.name}</h4>
+                                                    <div className="values">
+                                                        <h6>Floor price:{row.values.floorPrice}N</h6>
+                                                        <h6>{row.values.totalVolume}N</h6>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                     <Divider />
                                 </Col>
                             ))}
@@ -63,19 +67,21 @@ const TopCollection = () => {
                         <Col span={8}>
                             {topCollections.slice(6, 9).map((row, index) => (
                                 <Col key={row.name}>
-                                    <div className="top-collection">
-                                        <h5>{index + 7}</h5>
-                                        <div className="collection-details">
-                                            <img src={row.collectionLogo} alt="pfp" />
-                                            <div className="details">
-                                                <h4>{row.name}</h4>
-                                                <div className="values">
-                                                    <h6>Floor price:{row.values.floorPrice}N</h6>
-                                                    <h6>{row.values.totalVolume}N</h6>
+                                    <a href={`/${row.createdBy}/collection/${row.name}`}>
+                                        <div className="top-collection">
+                                            <h5>{index + 7}</h5>
+                                            <div className="collection-details">
+                                                <img src={row.collectionLogo} alt="pfp" />
+                                                <div className="details">
+                                                    <h4>{row.name}</h4>
+                                                    <div className="values">
+                                                        <h6>Floor price:{row.values.floorPrice}N</h6>
+                                                        <h6>{row.values.totalVolume}N</h6>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                     <Divider />
                                 </Col>
                             ))}
