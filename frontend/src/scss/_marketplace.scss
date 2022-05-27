@@ -1,0 +1,21 @@
+.marketplace {
+    padding: 0 80px;
+    margin: 100px auto 0 auto;
+    .marketplace-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        margin-bottom: 30px;
+        h1 {
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+        button {
+            width: 120px;
+            height: 48px;
+            letter-spacing: 0.06em;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+    }
+}

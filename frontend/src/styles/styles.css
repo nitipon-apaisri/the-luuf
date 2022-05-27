@@ -1,0 +1,1188 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.landing-page article {
+  margin-top: 80px;
+}
+.landing-page article h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.landing-page .block-contents {
+  width: 1280px;
+  max-width: 1280px;
+  margin: 40px auto 0 auto;
+}
+.landing-page .hero {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+.landing-page .hero .hero-left {
+  max-width: 560px;
+  margin-top: 50px;
+}
+.landing-page .hero .hero-left .advertisement {
+  margin-bottom: 2rem;
+}
+.landing-page .hero .hero-left .advertisement h1 {
+  font-size: 2.35rem;
+  font-weight: bolder;
+  margin-bottom: 0.35rem;
+}
+.landing-page .hero .hero-left .advertisement p {
+  font-size: 0.8rem;
+  color: #8e8e8e;
+}
+.landing-page .hero .hero-left button {
+  width: 160px;
+  height: 48px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  border-radius: 8px;
+}
+.landing-page .hero .hero-right .content-wrapper {
+  width: 480px;
+  height: 480px;
+  border-radius: 16px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
+}
+.landing-page .hero .hero-right .content-wrapper .token-of-the-day .token-img {
+  background-color: #888888;
+  height: 392px;
+  border-radius: 16px 16px 0 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.landing-page .hero .hero-right .content-wrapper .token-of-the-day .token-short-info {
+  padding: 0 24px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+}
+.landing-page .hero .hero-right .content-wrapper .token-of-the-day .token-short-info .creator-pfp {
+  min-width: 40px;
+  height: 40px;
+  background-color: #888888;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.landing-page .hero .hero-right .content-wrapper .token-of-the-day .token-short-info .info {
+  width: 100%;
+  margin-left: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.landing-page .hero .hero-right .content-wrapper .token-of-the-day .token-short-info .info h4 {
+  font-weight: bolder;
+}
+.landing-page .trending-collections,
+.landing-page .rising-stars {
+  text-align: center;
+}
+.landing-page .top-collections h1 {
+  text-align: center;
+}
+.landing-page .top-collections .top-collection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.landing-page .top-collections .top-collection h4,
+.landing-page .top-collections .top-collection h6 {
+  font-weight: bolder;
+}
+.landing-page .top-collections .top-collection .collection-details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+}
+.landing-page .top-collections .top-collection .collection-details img {
+  border-radius: 100%;
+  width: 64px;
+  height: 64px;
+}
+.landing-page .top-collections .top-collection .collection-details .details {
+  width: 100%;
+  margin-left: 24px;
+}
+.landing-page .top-collections .top-collection .collection-details .details .values {
+  display: flex;
+  justify-content: space-between;
+}
+.landing-page .top-collections .top-collection .collection-details .details .values h6 {
+  color: #aeaeae;
+}
+.landing-page .features-preview {
+  text-align: center;
+  background-color: #fbfdff;
+  padding: 40px 0;
+}
+.landing-page .features-preview .features {
+  margin-top: 50px;
+}
+.landing-page .features-preview .features .feature .description {
+  margin-top: 24px;
+}
+.landing-page .features-preview .features .feature .description h3 {
+  font-weight: bolder;
+  margin-bottom: 16px !important;
+}
+.landing-page .features-preview .features .feature .description p {
+  color: #a0a0a0;
+  font-size: 0.8rem;
+}
+.landing-page .category-container {
+  text-align: center;
+}
+.landing-page .category-container .category {
+  margin-top: 50px;
+}
+.landing-page .category-container .category .category-row {
+  margin-bottom: 24px;
+}
+.landing-page .category-container .category .category-row .card-category .card-category-cover {
+  border-radius: 16px 16px 0 0;
+  height: 232px;
+}
+.landing-page .category-container .category .category-row .card-category h2 {
+  font-weight: bolder;
+  padding: 24px 0;
+}
+
+.card, .create-token-page .token-contents .select-collection, .create-token-page .token-contents .token-form, .create-token-page .token-contents .token-right, .create-token-page .token-contents .left-content, .token-page .token-contents .relate-tokens, .token-page .token-contents .transaction-history .transactions, .token-page .token-contents .transaction-history, .token-page .token-contents .second-content .token-collection,
+.token-page .token-contents .second-content .token-metadata, .token-page .token-contents .token-right, .token-page .token-contents .left-content, .token, .token-page .token-contents .relate-tokens .token, .medium-card .medium-card-block, .create-token-page .token-contents .select-collection .collections .medium-card-block, .account-page .account-contents .created-collections .medium-card-block, .landing-page .trending-collections .collections .medium-card-block,
+.landing-page .trending-collections .creators .medium-card-block,
+.landing-page .rising-stars .collections .medium-card-block,
+.landing-page .rising-stars .creators .medium-card-block, .landing-page .category-container .category .category-row .card-category {
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 16px;
+}
+
+.medium-card .medium-card-block, .create-token-page .token-contents .select-collection .collections .medium-card-block, .account-page .account-contents .created-collections .medium-card-block, .landing-page .trending-collections .collections .medium-card-block,
+.landing-page .trending-collections .creators .medium-card-block,
+.landing-page .rising-stars .collections .medium-card-block,
+.landing-page .rising-stars .creators .medium-card-block {
+  position: relative;
+  height: 320px;
+  max-height: 320px;
+  overflow: auto;
+}
+.medium-card .medium-card-block .medium-card-cover, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-cover, .account-page .account-contents .created-collections .medium-card-block .medium-card-cover, .landing-page .trending-collections .collections .medium-card-block .medium-card-cover,
+.landing-page .trending-collections .creators .medium-card-block .medium-card-cover,
+.landing-page .rising-stars .collections .medium-card-block .medium-card-cover,
+.landing-page .rising-stars .creators .medium-card-block .medium-card-cover {
+  border-radius: 16px 16px 0 0;
+  background-color: #888888;
+  height: 190px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.medium-card .medium-card-block .medium-card-profile, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile,
+.landing-page .trending-collections .creators .medium-card-block .medium-card-profile,
+.landing-page .rising-stars .collections .medium-card-block .medium-card-profile,
+.landing-page .rising-stars .creators .medium-card-block .medium-card-profile {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.medium-card .medium-card-block .medium-card-profile img, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile img, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile img, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile img,
+.landing-page .trending-collections .creators .medium-card-block .medium-card-profile img,
+.landing-page .rising-stars .collections .medium-card-block .medium-card-profile img,
+.landing-page .rising-stars .creators .medium-card-block .medium-card-profile img {
+  width: 128px;
+  height: 128px;
+  border: 10px solid #ffffff;
+  box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
+  border-radius: 100px;
+}
+.medium-card .medium-card-block .medium-card-profile .medium-card-name, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile .medium-card-name, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile .medium-card-name, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile .medium-card-name,
+.landing-page .trending-collections .creators .medium-card-block .medium-card-profile .medium-card-name,
+.landing-page .rising-stars .collections .medium-card-block .medium-card-profile .medium-card-name,
+.landing-page .rising-stars .creators .medium-card-block .medium-card-profile .medium-card-name {
+  margin-top: 8px;
+}
+.medium-card .medium-card-block .medium-card-profile .medium-card-name h5, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile .medium-card-name h5, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile .medium-card-name h5, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile .medium-card-name h5,
+.landing-page .trending-collections .creators .medium-card-block .medium-card-profile .medium-card-name h5,
+.landing-page .rising-stars .collections .medium-card-block .medium-card-profile .medium-card-name h5,
+.landing-page .rising-stars .creators .medium-card-block .medium-card-profile .medium-card-name h5 {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.token, .token-page .token-contents .relate-tokens .token {
+  padding: 24px;
+}
+.token .token-img, .token-page .token-contents .relate-tokens .token .token-img {
+  width: 100%;
+  padding-top: 100%;
+  background-color: #888888;
+  border-radius: 16px;
+}
+.token .preview-pfp, .token-page .token-contents .relate-tokens .token .preview-pfp {
+  padding-top: calc(100% - 8px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.token .token-info, .token-page .token-contents .relate-tokens .token .token-info {
+  background-color: #f9f9f9;
+  padding: 16px 24px;
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 16px;
+}
+.token .token-info p, .token-page .token-contents .relate-tokens .token .token-info p {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: #353840;
+}
+.token .token-info h4, .token-page .token-contents .relate-tokens .token .token-info h4 {
+  font-weight: bolder;
+}
+.token .token-info .token-value p, .token-page .token-contents .relate-tokens .token .token-info .token-value p {
+  letter-spacing: normal;
+  text-align: right;
+}
+.token .token-info .token-value h4, .token-page .token-contents .relate-tokens .token .token-info .token-value h4 {
+  letter-spacing: normal;
+  text-align: right;
+}
+
+.token:hover, .token-page .token-contents .relate-tokens .token:hover {
+  box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
+  transition: 500ms;
+}
+
+.main-content-style .main-profile, .collection-view-container .collection-contents .main-profile, .account-page .account-contents .main-profile {
+  display: flex;
+}
+.main-content-style .main-profile .profile, .collection-view-container .collection-contents .main-profile .profile, .account-page .account-contents .main-profile .profile {
+  text-align: center;
+}
+.main-content-style .main-profile .profile h3, .collection-view-container .collection-contents .main-profile .profile h3, .account-page .account-contents .main-profile .profile h3 {
+  font-weight: bolder;
+}
+.main-content-style .main-profile .profile .main-pfp, .collection-view-container .collection-contents .main-profile .profile .main-pfp, .account-page .account-contents .main-profile .profile .main-pfp {
+  width: 240px;
+  height: 240px;
+  border-radius: 100%;
+  background-color: #373737;
+  border: 10px solid #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main-content-style .main-profile .main-content-info, .collection-view-container .collection-contents .main-profile .main-content-info, .account-page .account-contents .main-profile .main-content-info {
+  margin-left: 80px;
+  display: flex;
+  flex-grow: 1;
+  flex-flow: column;
+}
+.main-content-style .main-profile .main-content-info .external-links, .collection-view-container .collection-contents .main-profile .main-content-info .external-links, .account-page .account-contents .main-profile .main-content-info .external-links {
+  align-self: end;
+  display: flex;
+  margin-top: 95px;
+}
+.main-content-style .main-profile .main-content-info .external-links .links, .collection-view-container .collection-contents .main-profile .main-content-info .external-links .links, .account-page .account-contents .main-profile .main-content-info .external-links .links {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  background-color: #fff;
+  padding: 12px 24px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0px 4px 20px -4px rgba(168, 168, 168, 0.25);
+}
+.main-content-style .main-profile .main-content-info .external-links .links .link button, .collection-view-container .collection-contents .main-profile .main-content-info .external-links .links .link button, .account-page .account-contents .main-profile .main-content-info .external-links .links .link button {
+  background-color: #efefef;
+  border-color: transparent;
+}
+.main-content-style .main-profile .main-content-info .external-links .links .link button:hover, .collection-view-container .collection-contents .main-profile .main-content-info .external-links .links .link button:hover, .account-page .account-contents .main-profile .main-content-info .external-links .links .link button:hover {
+  color: #000;
+}
+.main-content-style .main-profile .main-content-info .main-content-description p, .collection-view-container .collection-contents .main-profile .main-content-info .main-content-description p, .account-page .account-contents .main-profile .main-content-info .main-content-description p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #a0a0a0;
+}
+
+.sub-navigator .active, .collection-view-container .collection-contents .tabs .active, .account-page .account-contents .tabs .active {
+  transition-duration: 700ms;
+  color: #000;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+.sub-navigator nav ul, .collection-view-container .collection-contents .tabs nav ul, .account-page .account-contents .tabs nav ul {
+  display: flex;
+  justify-content: center;
+}
+.sub-navigator nav ul li, .collection-view-container .collection-contents .tabs nav ul li, .account-page .account-contents .tabs nav ul li {
+  margin: 0 16px;
+  list-style: none;
+}
+.sub-navigator nav ul li h4, .collection-view-container .collection-contents .tabs nav ul li h4, .account-page .account-contents .tabs nav ul li h4 {
+  cursor: pointer;
+  color: #efefef;
+  font-weight: bolder;
+}
+
+.marketplace {
+  padding: 0 80px;
+  margin: 100px auto 0 auto;
+}
+.marketplace .marketplace-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+.marketplace .marketplace-header h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.marketplace .marketplace-header button {
+  width: 120px;
+  height: 48px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+@media only screen and (min-width: 1960px) {
+  .marketplace {
+    width: 1960px;
+  }
+}
+.token-page .page-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c4c4c4;
+  width: 100%;
+  height: 450px;
+}
+.token-page .token-contents {
+  width: 1280px;
+  max-width: 1280px;
+  margin: 120px auto 0 auto;
+}
+.token-page .token-contents .left-content {
+  padding: 20px;
+  min-height: 480px;
+  max-height: 480px;
+}
+.token-page .token-contents .left-content .token-img {
+  width: 100%;
+  padding-top: calc(100% - 8px);
+  background-color: #888888;
+  border-radius: 12px;
+}
+.token-page .token-contents .left-content .preview-pfp {
+  padding-top: calc(100% - 8px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.token-page .token-contents .left-content .creator {
+  width: 100%;
+  margin-top: 16px;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+.token-page .token-contents .left-content .creator h4 {
+  font-weight: bolder;
+}
+.token-page .token-contents .token-right {
+  height: 100%;
+  max-height: 480px;
+  padding: 40px;
+}
+.token-page .token-contents .token-right .token-title h4 {
+  font-weight: bolder;
+}
+.token-page .token-contents .token-right .token-info {
+  height: 320px;
+  max-height: 320px;
+}
+.token-page .token-contents .token-right .token-info .action-buttons, .token-page .token-contents .token-right .token-info .offer-button, .token-page .token-contents .token-right .token-info .buy-button {
+  height: 40px;
+  border-radius: 8px;
+}
+.token-page .token-contents .token-right .token-info .buy-button {
+  font-weight: 500;
+  letter-spacing: 0.04rem;
+}
+.token-page .token-contents .token-right .token-info .offer-button {
+  padding: 0;
+}
+.token-page .token-contents .token-right .token-info .offer-button h4 {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  font-weight: bolder;
+}
+.token-page .token-contents .token-right .token-info .offer-button:hover {
+  background: transparent;
+}
+.token-page .token-contents .token-right .token-info .main-info {
+  height: 100%;
+  max-height: 120px;
+  overflow: scroll;
+}
+.token-page .token-contents .token-right .token-info .main-info .token-description {
+  margin-top: 16px;
+}
+.token-page .token-contents .token-right .token-info .main-info .token-description p {
+  font-size: 0.8rem;
+  color: #8d8d8d;
+}
+.token-page .token-contents .token-right .token-info .sub-info .sub-info-content p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #000;
+}
+.token-page .token-contents .token-right .token-info .sub-info .sub-info-content h4 {
+  color: #353840;
+  font-weight: bolder;
+}
+.token-page .token-contents .token-right .token-arttributes {
+  max-height: 320px;
+  overflow: auto;
+}
+.token-page .token-contents .token-right .token-arttributes .arttributes {
+  margin-top: 16px;
+}
+.token-page .token-contents .token-right .token-arttributes .arttributes .arttribute {
+  background-color: #f9f9f9;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  text-align: center;
+  padding: 16px 8px;
+  overflow: auto;
+}
+.token-page .token-contents .token-right .token-arttributes .arttributes .arttribute p {
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: #0652dd;
+}
+.token-page .token-contents .token-right .token-arttributes .arttributes .arttribute h4 {
+  color: #2e2e2e;
+}
+.token-page .token-contents .social-medias .link button {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #efefef;
+}
+.token-page .token-contents .social-medias .link button .anticon {
+  color: #000;
+}
+.token-page .token-contents .second-content .token-collection,
+.token-page .token-contents .second-content .token-metadata {
+  padding: 40px;
+  height: 320px;
+  max-height: 320px;
+}
+.token-page .token-contents .second-content .token-collection h1,
+.token-page .token-contents .second-content .token-metadata h1 {
+  font-weight: bolder;
+  font-size: 1.25rem;
+}
+.token-page .token-contents .second-content .token-collection p {
+  font-size: 0.8rem;
+  color: #8d8d8d;
+}
+.token-page .token-contents .second-content .token-metadata .data {
+  margin: 8px 0;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+.token-page .token-contents .second-content .token-metadata .data .link {
+  cursor: pointer;
+  text-align: right;
+  width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #0652dd;
+}
+.token-page .token-contents .transaction-history {
+  margin-top: 40px;
+  background: #fbfdff;
+  padding: 40px;
+}
+.token-page .token-contents .transaction-history .transactions {
+  padding: 40px;
+}
+.token-page .token-contents .transaction-history .transactions h1 {
+  font-weight: bolder;
+  font-size: 1.25rem;
+}
+.token-page .token-contents .transaction-history .transactions .table {
+  margin-top: 16px;
+}
+.token-page .token-contents .transaction-history .transactions .table .ant-table-thead > tr > th {
+  border-top: 1px solid #f0f0f0;
+  background: transparent;
+}
+.token-page .token-contents .transaction-history .transactions .table .ant-table-cell::before {
+  background-color: transparent;
+}
+.token-page .token-contents .transaction-history .transactions .table .ant-table-tbody > tr > td,
+.token-page .token-contents .transaction-history .transactions .table .ant-table-thead > tr > th,
+.token-page .token-contents .transaction-history .transactions .table .ant-table tfoot > tr > td,
+.token-page .token-contents .transaction-history .transactions .table .ant-table tfoot > tr > th {
+  padding: 16px 0;
+}
+.token-page .token-contents .relate-tokens {
+  margin-top: 40px;
+  padding: 40px;
+  background: #fbfdff;
+}
+.token-page .token-contents .relate-tokens h1 {
+  font-weight: bolder;
+  font-size: 1.25rem;
+}
+.token-page .token-contents .relate-tokens .token h4 {
+  font-size: 0.65rem;
+}
+
+.account-page .page-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c4c4c4;
+  width: 100%;
+  height: 415px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.account-page .account-pfp {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.account-page .account-contents {
+  position: relative;
+  z-index: 2;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 210px auto 0 auto;
+}
+.account-page .account-contents .creation-container .title,
+.account-page .account-contents .collectible-container .title,
+.account-page .account-contents .collection-container .title,
+.account-page .account-contents .favorited-container .title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+.account-page .account-contents .creation-container .title h1,
+.account-page .account-contents .collectible-container .title h1,
+.account-page .account-contents .collection-container .title h1,
+.account-page .account-contents .favorited-container .title h1 {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.account-page .account-contents .creation-container .title button,
+.account-page .account-contents .collectible-container .title button,
+.account-page .account-contents .collection-container .title button,
+.account-page .account-contents .favorited-container .title button {
+  border-radius: 8px;
+  min-width: 100px;
+  height: 48px;
+  font-weight: 700;
+  margin-left: 16px;
+  letter-spacing: 0.06em;
+}
+.account-page .account-contents .created-collections {
+  text-align: center;
+}
+
+.collection-view-container .page-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c4c4c4;
+  width: 100%;
+  height: 415px;
+}
+.collection-view-container .collection-contents {
+  position: relative;
+  z-index: 2;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 210px auto 0 auto;
+}
+.collection-view-container .collection-contents .items-collection-container .title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+.collection-view-container .collection-contents .items-collection-container .title h1 {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.collection-view-container .collection-contents .items-collection-container .title button {
+  border-radius: 8px;
+  width: 100px;
+  height: 48px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.create-token-page {
+  font-family: "Poppins", sans-serif;
+}
+.create-token-page .token-arttribute {
+  text-align: center;
+  padding: 12px;
+  background: #f9f9f9;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+}
+.create-token-page .create-token-button {
+  width: 160px;
+  height: 48px;
+  border-radius: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04rem;
+}
+.create-token-page .page-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c4c4c4;
+  width: 100%;
+  height: 400px;
+}
+.create-token-page .token-contents {
+  width: 1280px;
+  max-width: 1280px;
+  margin: 120px auto 0 auto;
+}
+.create-token-page .token-contents .left-content {
+  padding: 20px;
+  height: 480px;
+  max-height: 480px;
+}
+.create-token-page .token-contents .left-content .token-img {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  padding-top: calc(100% - 8px);
+  background-color: #f8f8f8;
+  border-radius: 12px;
+}
+.create-token-page .token-contents .left-content .token-img .upload-img-overlay {
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}
+.create-token-page .token-contents .left-content .token-img .upload-img-overlay svg {
+  font-size: 2rem;
+}
+.create-token-page .token-contents .left-content .token-img .upload-img-overlay h3 {
+  margin: 8px 0 !important;
+  font-weight: bolder;
+}
+.create-token-page .token-contents .left-content .token-img .upload-img-overlay p {
+  color: #d7d7d7;
+  font-size: 0.7rem;
+}
+.create-token-page .token-contents .left-content .preview-pfp {
+  cursor: pointer;
+  border-radius: 16px;
+  padding-top: calc(100% - 8px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.create-token-page .token-contents .left-content .creator {
+  width: 100%;
+  margin-top: 16px;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+.create-token-page .token-contents .left-content .creator h4 {
+  font-weight: bolder;
+}
+.create-token-page .token-contents .token-right {
+  height: 100%;
+  max-height: 480px;
+  padding: 40px;
+}
+.create-token-page .token-contents .token-right .token-title h4 {
+  font-weight: bolder;
+}
+.create-token-page .token-contents .token-right .token-info {
+  max-height: 320px;
+}
+.create-token-page .token-contents .token-right .token-info .action-buttons, .create-token-page .token-contents .token-right .token-info .offer-button, .create-token-page .token-contents .token-right .token-info .buy-button {
+  height: 40px;
+  border-radius: 8px;
+}
+.create-token-page .token-contents .token-right .token-info .buy-button {
+  font-weight: 500;
+  letter-spacing: 0.04rem;
+}
+.create-token-page .token-contents .token-right .token-info .offer-button {
+  padding: 0;
+}
+.create-token-page .token-contents .token-right .token-info .offer-button h4 {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  font-weight: bolder;
+}
+.create-token-page .token-contents .token-right .token-info .offer-button:hover {
+  background: transparent;
+}
+.create-token-page .token-contents .token-right .token-info .main-info {
+  height: 100%;
+  max-height: 120px;
+  overflow: scroll;
+}
+.create-token-page .token-contents .token-right .token-info .main-info .token-description {
+  margin-top: 16px;
+}
+.create-token-page .token-contents .token-right .token-info .main-info .token-description p {
+  font-size: 0.8rem;
+  color: #8d8d8d;
+}
+.create-token-page .token-contents .token-right .token-info .sub-info .sub-info-content p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #000;
+}
+.create-token-page .token-contents .token-right .token-info .sub-info .sub-info-content h4 {
+  color: #353840;
+  font-weight: bolder;
+}
+.create-token-page .token-contents .token-right .token-arttributes {
+  height: 320px;
+  max-height: 320px;
+  overflow: auto;
+}
+.create-token-page .token-contents .token-right .token-arttributes .arttributes {
+  margin-top: 16px;
+}
+.create-token-page .token-contents .token-right .token-arttributes .arttributes .arttribute {
+  background-color: #f9f9f9;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  text-align: center;
+  padding: 16px 8px;
+  overflow: auto;
+}
+.create-token-page .token-contents .token-right .token-arttributes .arttributes .arttribute p {
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: #0652dd;
+}
+.create-token-page .token-contents .token-right .token-arttributes .arttributes .arttribute h4 {
+  color: #2e2e2e;
+}
+.create-token-page .token-contents .social-medias .link button {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #efefef;
+}
+.create-token-page .token-contents .social-medias .link button .anticon {
+  color: #000;
+}
+.create-token-page .token-contents .token-form {
+  margin-top: 40px;
+  padding: 40px;
+  background: #fbfdff;
+}
+.create-token-page .token-contents .token-form .inner-form {
+  padding: 24px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+}
+.create-token-page .token-contents .token-form .inner-form h1 {
+  font-weight: bolder;
+  font-size: 1.25rem;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content {
+  display: flex;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .left-form,
+.create-token-page .token-contents .token-form .inner-form .top-content .right-form {
+  width: 50%;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .left-form input {
+  height: 48px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #f0f0f0;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .left-form input:focus,
+.create-token-page .token-contents .token-form .inner-form .top-content .left-form textarea:focus {
+  background-color: #ffffff;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .left-form textarea {
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #f0f0f0;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .right-form .loyalty-form {
+  margin-top: 16px;
+  padding: 24px;
+  background: #fafafb;
+  border: 1px solid #ededed;
+  border-radius: 16px;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .right-form .loyalty-form label {
+  font-size: 0.8rem;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .right-form .loyalty-form input {
+  border-radius: 8px;
+  height: 36px;
+}
+.create-token-page .token-contents .token-form .inner-form .top-content .right-form .loyalty-form button {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  height: 36px;
+  width: 100%;
+}
+.create-token-page .token-contents .token-form .inner-form .bottom-content {
+  margin-top: 24px;
+  min-height: 120px;
+}
+.create-token-page .token-contents .select-collection {
+  margin-top: 40px;
+  padding: 40px;
+  background: #fbfdff;
+}
+.create-token-page .token-contents .select-collection h1 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+.create-token-page .token-contents .select-collection .collections .medium-card-block {
+  cursor: pointer;
+}
+.create-token-page .token-contents .select-collection .collections .medium-card-block:hover {
+  box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
+  transition: 500ms;
+}
+.create-token-page .token-contents .select-collection .collections .selected {
+  box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
+  transition: 500ms;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  letter-spacing: 0.04rem;
+  margin: 0 !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.wallet-actions {
+  display: flex;
+  flex-flow: column;
+}
+.wallet-actions button {
+  letter-spacing: 0.04rem;
+  border-radius: 8px;
+  height: 48px;
+  font-weight: bolder;
+  margin: 4px 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+body .ant-layout-header {
+  background-color: #fff;
+  height: 80px;
+}
+body .ant-layout {
+  background: #fff;
+}
+body .ant-btn-primary {
+  background: #0652dd;
+  border: #0652dd;
+}
+body .ant-btn-primary:hover {
+  background: #0047ca;
+  border: #0047ca;
+}
+body .loading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 400px);
+  align-items: center;
+}
+body .loading .loader {
+  width: 56px;
+  height: 56px;
+  border: 8px solid #0652dd;
+  border-radius: 50%;
+  position: relative;
+  animation: loader-scale 1s ease-out infinite;
+}
+@keyframes loader-scale {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+body .not-for-sell {
+  text-decoration-line: line-through;
+}
+body .ant-popover .ant-popover-content {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.04rem;
+}
+body .ant-popover .ant-popover-content h4 {
+  font-weight: 600;
+}
+body .ant-popover .ant-popover-content .ant-popover-inner {
+  border-radius: 8px;
+}
+body .ant-popover .ant-popover-content .ant-popover-inner .ant-popover-title {
+  font-weight: bolder;
+  padding: 12px 16px;
+}
+body .ant-modal.arttribute-modal {
+  font-family: "Poppins", sans-serif;
+}
+body .ant-modal.arttribute-modal input,
+body .ant-modal.arttribute-modal button {
+  border-radius: 6px;
+}
+body .connect-wallet,
+body .create-wallet {
+  height: 0;
+  overflow: hidden;
+  -moz-animation: slide 1s ease 320ms forwards;
+  -webkit-animation: slide 1s ease 320ms forwards;
+  -o-animation: slide 1s ease 320ms forwards;
+  -ms-animation: slide 1s ease 320ms forwards;
+  animation: slide 1s ease 320ms forwards;
+}
+body .connect-wallet input,
+body .create-wallet input {
+  height: 40px;
+  border-radius: 6px;
+}
+@keyframes slide {
+  from {
+    height: 0;
+  }
+  to {
+    height: 164px;
+  }
+}
+body .ant-modal-content {
+  border-radius: 12px;
+}
+body .ant-modal-header {
+  border-radius: 12px 12px 0 0;
+}
+body .ant-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+body .ant-modal-footer button {
+  min-width: 80px;
+  height: 40px;
+  border-radius: 8px;
+}
+body label {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.04rem;
+}
+body textarea {
+  resize: none;
+}
+body header {
+  z-index: 1;
+}
+body header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+body header nav .nav-banner {
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body header nav .nav-banner .logo-outter {
+  width: 40px;
+  height: 40px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body header nav .nav-banner .logo-outter img {
+  width: 24px;
+  height: 24px;
+}
+body header nav .nav-banner h4 {
+  font-weight: bold;
+  margin: 0;
+}
+body header nav .nav-search-bar {
+  width: 560px;
+  display: flex;
+  align-items: center;
+}
+body header nav .nav-search-bar input.ant-input {
+  height: 40px;
+  border-radius: 6px;
+}
+body header nav .nav-search-bar button {
+  border-radius: 0 6px 6px 0 !important;
+  height: 40px;
+  background: #0652dd;
+  border: 1px solid #0652dd;
+}
+body header nav .nav-search-bar .ant-input-group-addon {
+  background: transparent;
+}
+body header nav ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-content: center;
+}
+body header nav ul li {
+  margin: 0 16px;
+  list-style: none;
+}
+body header nav ul li h4 {
+  color: #323232;
+  font-weight: bolder;
+  margin: 0;
+}
+body header nav ul li h4:hover {
+  color: #101010;
+}
+body header nav .authenticate-actions {
+  margin-left: 32px;
+  display: flex;
+  align-items: center;
+}
+body header nav .authenticate-actions button {
+  background: #efefef;
+  width: 40px;
+  height: 40px;
+}
+body header nav .authenticate-actions button:hover {
+  background: #282828;
+  border-color: #282828;
+  color: #ececec;
+}
+body header nav .authenticate-actions .profile {
+  cursor: pointer;
+}
+body header nav .authenticate-actions .profile .pfp {
+  border: 4px solid #fff;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  background-color: #2a2a2a;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .ant-popover {
+  width: 240px;
+}
+body .popover-content .account-info .account-balance {
+  display: flex;
+  justify-content: space-between;
+}
+body main {
+  width: 100%;
+  margin: 0 auto;
+}
+body footer {
+  text-align: center;
+  margin-top: 80px;
+}
+body footer .nav-banner {
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body footer .nav-banner .logo-outter {
+  width: 40px;
+  height: 40px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body footer .nav-banner .logo-outter img {
+  width: 24px;
+  height: 24px;
+}
+body footer .nav-banner h4 {
+  font-weight: bold;
+  margin: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */

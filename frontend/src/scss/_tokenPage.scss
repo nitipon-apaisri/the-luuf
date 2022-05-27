@@ -1,0 +1,225 @@
+.token-page {
+    .page-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #c4c4c4;
+        width: 100%;
+        height: 450px;
+    }
+    .token-contents {
+        width: 1280px;
+        max-width: 1280px;
+        margin: 120px auto 0 auto;
+        .left-content {
+            @extend .card;
+            padding: 20px;
+            min-height: 480px;
+            max-height: 480px;
+            .token-img {
+                width: 100%;
+                padding-top: calc(100% - 8px);
+                background-color: #888888;
+                border-radius: 12px;
+            }
+            .preview-pfp {
+                padding-top: calc(100% - 8px);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .creator {
+                width: 100%;
+                margin-top: 16px;
+                text-align: center;
+                padding: 20px 0;
+                border-radius: 12px;
+                background-color: #f9f9f9;
+                h4 {
+                    font-weight: bolder;
+                }
+            }
+        }
+        .token-right {
+            @extend .card;
+            height: 100%;
+            max-height: 480px;
+            padding: 40px;
+            .token-title {
+                h4 {
+                    font-weight: bolder;
+                }
+            }
+            .token-info {
+                height: 320px;
+                max-height: 320px;
+                .action-buttons {
+                    height: 40px;
+                    border-radius: 8px;
+                }
+                .buy-button {
+                    font-weight: 500;
+                    letter-spacing: 0.04rem;
+                    @extend .action-buttons;
+                }
+                .offer-button {
+                    @extend .action-buttons;
+                    padding: 0;
+                    h4 {
+                        text-decoration: underline;
+                        text-decoration-thickness: 3px;
+                        text-underline-offset: 3px;
+                        font-weight: bolder;
+                    }
+                }
+                .offer-button:hover {
+                    background: transparent;
+                }
+                .main-info {
+                    height: 100%;
+                    max-height: 120px;
+                    overflow: scroll;
+                    .token-description {
+                        margin-top: 16px;
+                        p {
+                            font-size: 0.8rem;
+                            color: #8d8d8d;
+                        }
+                    }
+                }
+                .sub-info {
+                    .sub-info-content {
+                        p {
+                            font-size: 0.8rem;
+                            font-weight: 500;
+                            color: #000;
+                        }
+                        h4 {
+                            color: #353840;
+                            font-weight: bolder;
+                        }
+                    }
+                }
+            }
+            .token-arttributes {
+                max-height: 320px;
+                overflow: auto;
+                .arttributes {
+                    margin-top: 16px;
+                    .arttribute {
+                        background-color: #f9f9f9;
+                        border: 1px solid #f0f0f0;
+                        border-radius: 8px;
+                        text-align: center;
+                        padding: 16px 8px;
+                        overflow: auto;
+                        p {
+                            text-transform: uppercase;
+                            font-size: 0.625rem;
+                            font-weight: 500;
+                            color: #0652dd;
+                        }
+                        h4 {
+                            color: #2e2e2e;
+                        }
+                    }
+                }
+            }
+        }
+        .social-medias {
+            .link {
+                button {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+                    background-color: #efefef;
+                    .anticon {
+                        color: #000;
+                    }
+                }
+            }
+        }
+        .second-content {
+            .token-collection,
+            .token-metadata {
+                @extend .card;
+                padding: 40px;
+                height: 320px;
+                max-height: 320px;
+                h1 {
+                    font-weight: bolder;
+                    font-size: 1.25rem;
+                }
+            }
+            .token-collection {
+                p {
+                    font-size: 0.8rem;
+                    color: #8d8d8d;
+                }
+            }
+            .token-metadata {
+                .data {
+                    margin: 8px 0;
+                    font-weight: 500;
+                    font-size: 0.8rem;
+                    .link {
+                        cursor: pointer;
+                        text-align: right;
+                        width: 160px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        color: #0652dd;
+                    }
+                }
+            }
+        }
+        .transaction-history {
+            @extend .card;
+            margin-top: 40px;
+            background: #fbfdff;
+            padding: 40px;
+
+            .transactions {
+                @extend .card;
+                padding: 40px;
+                h1 {
+                    font-weight: bolder;
+                    font-size: 1.25rem;
+                }
+                .table {
+                    margin-top: 16px;
+                    .ant-table-thead > tr > th {
+                        border-top: 1px solid #f0f0f0;
+                        background: transparent;
+                    }
+                    .ant-table-cell::before {
+                        background-color: transparent;
+                    }
+                    .ant-table-tbody > tr > td,
+                    .ant-table-thead > tr > th,
+                    .ant-table tfoot > tr > td,
+                    .ant-table tfoot > tr > th {
+                        padding: 16px 0;
+                    }
+                }
+            }
+        }
+        .relate-tokens {
+            @extend .card;
+            margin-top: 40px;
+            padding: 40px;
+            background: #fbfdff;
+            h1 {
+                font-weight: bolder;
+                font-size: 1.25rem;
+            }
+            .token {
+                @extend .token;
+                h4 {
+                    font-size: 0.65rem;
+                }
+            }
+        }
+    }
+}
