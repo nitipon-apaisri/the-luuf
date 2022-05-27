@@ -60,8 +60,13 @@ const authentication = (walletAddress, walletPassword) => {
         throw new Unauthorized();
     }
 };
+const getWallets = () => {
+    const wallets = db.wallets;
+    return wallets;
+};
 module.exports = {
     createWallet,
     authentication,
     getAWallet,
+    getWallets,
 };

@@ -11,7 +11,17 @@ const getCollectionsByOwner = (owner) => {
     });
     return collections;
 };
+const getTrendingCollections = () => {
+    const collections = db.collections.sort((a, b) => (a.values.totalVolume < b.values.totalVolume ? 1 : -1)).slice(0, 3);
+    return collections;
+};
+const getTopCollections = () => {
+    const collections = db.collections.sort((a, b) => (a.values.totalVolume < b.values.totalVolume ? 1 : -1)).slice(0, 9);
+    return collections;
+};
 module.exports = {
     getACollection,
     getCollectionsByOwner,
+    getTrendingCollections,
+    getTopCollections,
 };

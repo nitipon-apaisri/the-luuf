@@ -18,7 +18,25 @@ const getCollectionsByOwner = async (req, res, next) => {
         next(err);
     }
 };
+const getTrendingCollections = async (req, res, next) => {
+    try {
+        const collections = collectionModel.getTrendingCollections();
+        res.json(collections);
+    } catch (err) {
+        next(err);
+    }
+};
+const getTopCollections = async (req, res, next) => {
+    try {
+        const collections = collectionModel.getTopCollections();
+        res.json(collections);
+    } catch (err) {
+        next(err);
+    }
+};
 module.exports = {
     getACollection,
     getCollectionsByOwner,
+    getTrendingCollections,
+    getTopCollections,
 };

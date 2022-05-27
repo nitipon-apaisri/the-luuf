@@ -28,8 +28,17 @@ const getAWallet = async (req, res, next) => {
         next(err);
     }
 };
+const getWallets = async (req, res, next) => {
+    try {
+        const walllets = walletModel.getWallets();
+        res.json(walllets);
+    } catch (err) {
+        next(err);
+    }
+};
 module.exports = {
     createWallet,
     authentication,
     getAWallet,
+    getWallets,
 };
