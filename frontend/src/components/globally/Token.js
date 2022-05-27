@@ -1,3 +1,4 @@
+import React from "react";
 const Token = ({ data }) => {
     return (
         <div className="token">

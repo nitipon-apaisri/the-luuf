@@ -1,3 +1,4 @@
+import React from "react";
 import { Col, Row } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -20,15 +21,17 @@ const TrendingCollection = () => {
                     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                         {trendingCollections.map((row, index) => (
                             <Col span={8} key={row.name}>
-                                <div className="medium-card-block">
-                                    <div className="medium-card-cover" style={{ backgroundImage: `url(${row.collectionCover})` }}></div>
-                                    <div className="medium-card-profile">
-                                        <img src={row.collectionLogo} alt="pfp" />
-                                        <div className="medium-card-name">
-                                            <h5>{row.name}</h5>
+                                <a href={`/${row.createdBy}/collection/${row.name}`}>
+                                    <div className="medium-card-block">
+                                        <div className="medium-card-cover" style={{ backgroundImage: `url(${row.collectionCover})` }}></div>
+                                        <div className="medium-card-profile">
+                                            <img src={row.collectionLogo} alt="pfp" />
+                                            <div className="medium-card-name">
+                                                <h5>{row.name}</h5>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </Col>
                         ))}
                     </Row>

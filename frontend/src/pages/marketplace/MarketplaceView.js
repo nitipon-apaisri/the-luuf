@@ -1,5 +1,5 @@
 import { Button, Col, Row } from "antd";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Token from "../../components/globally/Token";
 import MainLayout from "../../layout";
 import InfiniteScroll from "react-infinite-scroll-component";

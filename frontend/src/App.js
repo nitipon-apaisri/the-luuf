@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles/styles.css";
 import { Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/landing/LandingView";
@@ -8,16 +9,18 @@ import CollectionView from "./pages/collection/CollectionView";
 import CreateToken from "./pages/createToken/CreateToken";
 const App = () => {
     return (
-        <div className="App">
-            <Routes>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/marketplace" element={<Marketplace />} />
-                <Route path="/token/:tokenId" element={<TokenPage />} />
-                <Route path="/account/:accountName" element={<AccountPage />} />
-                <Route path="/:accountName/collection/:collectionName" element={<CollectionView />} />
-                <Route path="/:accountName/createToken" element={<CreateToken />} />
-            </Routes>
-        </div>
+        <>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/marketplace" element={<Marketplace />} />
+                    <Route path="/token/:tokenId" element={<TokenPage />} />
+                    <Route path="/account/:accountName" element={<AccountPage />} />
+                    <Route path="/:accountName/collection/:collectionName" element={<CollectionView />} />
+                    <Route path="/:accountName/createToken" element={<CreateToken />} />
+                </Routes>
+            </div>
+        </>
     );
 };
 

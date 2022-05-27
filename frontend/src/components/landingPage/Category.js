@@ -1,3 +1,4 @@
+import React from "react";
 import { Col, Row } from "antd";
 import { category } from "../../db";
 const Category = () => {
@@ -10,10 +11,7 @@ const Category = () => {
                         {category.slice(0, 3).map((row, index) => (
                             <Col span={8} key={row.title}>
                                 <div className="card-category">
-                                    <div
-                                        className="card-category-cover"
-                                        style={{ backgroundColor: `${row.bgColor}` }}
-                                    ></div>
+                                    <div className="card-category-cover" style={{ backgroundColor: `${row.bgColor}` }}></div>
                                     <h2>{row.title}</h2>
                                 </div>
                             </Col>
@@ -25,10 +23,7 @@ const Category = () => {
                         {category.slice(3, 6).map((row, index) => (
                             <Col span={8} key={row.title}>
                                 <div className="card-category">
-                                    <div
-                                        className="card-category-cover"
-                                        style={{ backgroundColor: `${row.bgColor}` }}
-                                    ></div>
+                                    <div className="card-category-cover" style={{ backgroundColor: `${row.bgColor}` }}></div>
                                     <h2>{row.title}</h2>
                                 </div>
                             </Col>

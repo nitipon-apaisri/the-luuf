@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect } from "react";
 import Category from "../../components/landingPage/Category";
 import FeaturesPreview from "../../components/landingPage/FeaturesPreview";

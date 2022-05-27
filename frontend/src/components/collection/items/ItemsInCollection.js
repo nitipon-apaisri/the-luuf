@@ -1,6 +1,6 @@
 import { Button, Col, Row } from "antd";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Token from "../../globally/Token";
 import axios from "axios";
 const ItemsInCollection = (tokens) => {

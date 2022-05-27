@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MainLayout from "../../layout";
 import { AccountContext } from "../../store/accountContext";

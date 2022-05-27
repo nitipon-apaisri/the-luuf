@@ -1,16 +1,19 @@
 import MainLayout from "../../layout";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Col, Divider, Row } from "antd";
 import { useParams } from "react-router-dom";
 import { TokenContext } from "../../store/tokenContext";
 import { FlagOutlined, HeartOutlined, UploadOutlined } from "@ant-design/icons";
 import TransactionHistoryTable from "./table/TransactionTable";
 import Token from "../../components/globally/Token";
+import FastAverageColor from "fast-average-color";
 const TokenPage = () => {
     const tokenContext = useContext(TokenContext);
     const [loader, setLoader] = useState(false);
     const [token, setToken] = useState();
+    const [coverColor, setCoverColor] = useState("");
     const { tokenId } = useParams();
+    const fac = new FastAverageColor();
     const data = [
         {
             eventTitle: "Sale",
@@ -26,6 +29,13 @@ const TokenPage = () => {
         }
         if (token !== undefined) {
             setLoader(false);
+            fac.getColorAsync(token.image)
+                .then((color) => {
+                    setCoverColor(color.hex);
+                })
+                .catch((e) => {
+                    console.log(e);
+                });
             document.title = `${token.collection} ${token.name} | THE LUUF`;
         }
     }, [tokenId, tokenContext, token]);
@@ -40,7 +50,7 @@ const TokenPage = () => {
                 loader
             ) : (
                 <section className="token-page">
-                    <div className="page-cover"></div>
+                    <div className="page-cover" style={{ backgroundColor: `${coverColor}` }}></div>
                     <div className="token-contents">
                         <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                             <Col span={8}>

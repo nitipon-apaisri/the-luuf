@@ -1,3 +1,4 @@
+import React from "react";
 import { Col, Row } from "antd";
 import { features } from "../../db";
 const FeaturesPreview = () => {
