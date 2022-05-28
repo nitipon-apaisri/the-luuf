@@ -1,4 +1,5 @@
 const { v4: uuidv4 } = require("uuid");
+const collectionDB = require("./collections");
 const tokens = [];
 const mockTokens = [
     {
@@ -156,6 +157,7 @@ const addMockTokens = () => {
 };
 const createToken = (tokenData) => {
     tokens.unshift(tokenData);
+    return tokenData;
 };
 addMockTokens();
 
