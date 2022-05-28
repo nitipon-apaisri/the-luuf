@@ -20,19 +20,21 @@ const ItemsInCollection = (tokens) => {
         }, 750);
     };
     useEffect(() => {
-        tokens.tokens.slice(0, 3).forEach((r) => {
-            axios
-                .get(`http://localhost:4200/tokens/${r}`)
-                .then((token) => {
-                    if (tokens.length !== 0 && items.length === 0) {
-                        setItems((arr) => [...arr, token.data]);
-                    }
-                })
-                .catch((err) => {
-                    console.log(err.response.data.error);
-                });
-        });
-    }, [tokens, items]);
+        if (tokens.tokens.length !== 0) {
+            tokens.tokens.slice(0, 3).forEach((id) => {
+                axios
+                    .get(`http://localhost:4200/tokens/${id}`)
+                    .then((token) => {
+                        if (items.length === 0) {
+                            setItems((arr) => [...arr, token.data]);
+                        }
+                    })
+                    .catch((err) => {
+                        console.log(err.response.data.error);
+                    });
+            });
+        }
+    }, []);
     return (
         <section className="items-collection-container">
             <div className="title">
