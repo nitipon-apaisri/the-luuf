@@ -1,4 +1,5 @@
 const tokenModel = require("../models/tokenModel");
+const collectionDB = require("../db/collections");
 const createToken = async (req, res, next) => {
     const { tokenData } = req.body;
     try {
@@ -7,7 +8,9 @@ const createToken = async (req, res, next) => {
             msg: "TOKEN CREATE",
             data: token,
         });
+        collectionDB.addCreateToken(tokenData);
     } catch (err) {
+        console.log(tokenData);
         next(err);
     }
 };

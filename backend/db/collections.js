@@ -143,9 +143,17 @@ const addMockCollections = () => {
         mockCollections.forEach((token) => collections.push(token));
     }
 };
-
+const addCreateToken = (tokenData) => {
+    const findCollection = mockCollections.findIndex((collection) => {
+        return tokenData.collection === collection.name;
+    });
+    if (findCollection !== -1) {
+        mockCollections[findCollection].tokens.unshift(tokenData.id);
+    }
+};
 addMockCollections();
 
 module.exports = {
     collections,
+    addCreateToken,
 };
