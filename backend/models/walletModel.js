@@ -23,7 +23,7 @@ const createWallet = (walletAddress, walletPassword) => {
         collections: [
             {
                 id: uuidv4(),
-                name: `Default Collection - ${walletAddress}`,
+                name: `${walletAddress}'s collection`,
                 collectionLogo: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/collection-profile-pictures/collection-mock-pfp.svg",
                 collectionCover: "",
                 createdBy: walletAddress,
