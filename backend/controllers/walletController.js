@@ -1,10 +1,12 @@
 const walletModel = require("../models/walletModel");
 const db = require("../db/wallets");
+const collectionDB = require("../db/collections");
 const createWallet = async (req, res, next) => {
     const { walletAddress, walletPassword } = req.body;
     try {
         const wallet = walletModel.createWallet(walletAddress, walletPassword);
-        res.json(wallet);
+        collectionDB.createCollection(wallet.data.collections[0]);
+        res.json(wallet.msg);
     } catch (err) {
         next(err);
     }
