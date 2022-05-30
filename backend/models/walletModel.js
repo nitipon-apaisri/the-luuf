@@ -20,7 +20,22 @@ const createWallet = (walletAddress, walletPassword) => {
             twitter: "...",
             discord: "...",
         },
-        collections: [],
+        collections: [
+            {
+                id: uuidv4(),
+                name: `Default Collection - ${walletAddress}`,
+                collectionLogo: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/collection-profile-pictures/collection-mock-pfp.svg",
+                collectionCover: "",
+                createdBy: walletAddress,
+                description:
+                    "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
+                tokens: [],
+                values: {
+                    totalVolume: 0,
+                    floorPrice: 0,
+                },
+            },
+        ],
         collectibles: [],
         favorited: [],
     };
@@ -29,7 +44,7 @@ const createWallet = (walletAddress, walletPassword) => {
     });
     if (isWalletExisting === false) {
         db.addWallet(walletModel);
-        return "Wallet Created";
+        return { msg: "Wallet Created", data: walletModel };
     } else {
         return "Wallet Existing";
     }

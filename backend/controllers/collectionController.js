@@ -34,9 +34,18 @@ const getTopCollections = async (req, res, next) => {
         next(err);
     }
 };
+const createCollection = async (req, res, next) => {
+    const { collectionData } = req.body;
+    try {
+        const collection = collectionModel.createCollection();
+    } catch (err) {
+        next(err);
+    }
+};
 module.exports = {
     getACollection,
     getCollectionsByOwner,
     getTrendingCollections,
     getTopCollections,
+    createCollection,
 };

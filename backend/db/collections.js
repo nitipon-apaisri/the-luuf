@@ -151,9 +151,13 @@ const addCreateToken = (tokenData) => {
         mockCollections[findCollection].tokens.unshift(tokenData.id);
     }
 };
+const createCollection = (collectionData) => {
+    collections.push(collectionData);
+};
 addMockCollections();
 
 module.exports = {
     collections,
     addCreateToken,
+    createCollection,
 };

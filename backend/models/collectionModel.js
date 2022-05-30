@@ -19,9 +19,13 @@ const getTopCollections = () => {
     const collections = db.collections.sort((a, b) => (a.values.totalVolume < b.values.totalVolume ? 1 : -1)).slice(0, 9);
     return collections;
 };
+const createCollection = (collectionData) => {
+    db.createCollection(collectionData);
+};
 module.exports = {
     getACollection,
     getCollectionsByOwner,
     getTrendingCollections,
     getTopCollections,
+    createCollection,
 };
