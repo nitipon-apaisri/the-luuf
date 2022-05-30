@@ -42,7 +42,7 @@ const Creation = ({ accountName }) => {
             .catch((err) => {
                 console.log(err.response.data.error);
             });
-    }, [accountName, createdTokens]);
+    }, []);
     return (
         <section className="creation-container">
             <div className="title">
