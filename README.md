@@ -11,6 +11,14 @@
 
 ---
 
+#### Backend
+
+-   cd backend
+-   npm install
+-   npm start
+
+---
+
 #### frontend
 
 -   cd frontend
@@ -19,12 +27,6 @@
 -   download this file and place it at src/ : https://drive.google.com/file/d/1G7L7sY1sGmKFhUvyIVICupih3A_r4aLm/view?usp=sharing
 
 ---
-
-#### Backend
-
--   cd backend
--   npm install
--   npm start
 
 ##### How to
 
@@ -36,5 +38,3 @@
   "password": '123',
 
 ```
-
----
