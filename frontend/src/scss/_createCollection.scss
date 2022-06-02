@@ -1,0 +1,22 @@
+.create-collection-page {
+    font-family: "Poppins", sans-serif;
+    .page-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #ebebeb;
+        width: 100%;
+        height: 400px;
+    }
+    .collection-contents {
+        @extend .medium-card;
+        .collection-profile {
+            border: 1px solid #ebebeb;
+            margin-top: 160px;
+        }
+        .collection-form {
+            width: 960px;
+            margin: 0 auto;
+        }
+    }
+}

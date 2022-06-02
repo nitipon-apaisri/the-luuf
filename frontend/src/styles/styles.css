@@ -154,7 +154,7 @@
 }
 
 .card, .create-token-page .token-contents .select-collection, .create-token-page .token-contents .token-form, .create-token-page .token-contents .token-right, .create-token-page .token-contents .left-content, .token-page .token-contents .relate-tokens, .token-page .token-contents .transaction-history .transactions, .token-page .token-contents .transaction-history, .token-page .token-contents .second-content .token-collection,
-.token-page .token-contents .second-content .token-metadata, .token-page .token-contents .token-right, .token-page .token-contents .left-content, .token, .token-page .token-contents .relate-tokens .token, .medium-card .medium-card-block, .create-token-page .token-contents .select-collection .collections .medium-card-block, .account-page .account-contents .created-collections .medium-card-block, .landing-page .trending-collections .collections .medium-card-block,
+.token-page .token-contents .second-content .token-metadata, .token-page .token-contents .token-right, .token-page .token-contents .left-content, .token, .token-page .token-contents .relate-tokens .token, .medium-card .medium-card-block, .create-collection-page .collection-contents .medium-card-block, .create-token-page .token-contents .select-collection .collections .medium-card-block, .account-page .account-contents .created-collections .medium-card-block, .landing-page .trending-collections .collections .medium-card-block,
 .landing-page .trending-collections .creators .medium-card-block,
 .landing-page .rising-stars .collections .medium-card-block,
 .landing-page .rising-stars .creators .medium-card-block, .landing-page .category-container .category .category-row .card-category {
@@ -163,7 +163,7 @@
   border-radius: 16px;
 }
 
-.medium-card .medium-card-block, .create-token-page .token-contents .select-collection .collections .medium-card-block, .account-page .account-contents .created-collections .medium-card-block, .landing-page .trending-collections .collections .medium-card-block,
+.medium-card .medium-card-block, .create-collection-page .collection-contents .medium-card-block, .create-token-page .token-contents .select-collection .collections .medium-card-block, .account-page .account-contents .created-collections .medium-card-block, .landing-page .trending-collections .collections .medium-card-block,
 .landing-page .trending-collections .creators .medium-card-block,
 .landing-page .rising-stars .collections .medium-card-block,
 .landing-page .rising-stars .creators .medium-card-block {
@@ -172,7 +172,7 @@
   max-height: 320px;
   overflow: auto;
 }
-.medium-card .medium-card-block .medium-card-cover, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-cover, .account-page .account-contents .created-collections .medium-card-block .medium-card-cover, .landing-page .trending-collections .collections .medium-card-block .medium-card-cover,
+.medium-card .medium-card-block .medium-card-cover, .create-collection-page .collection-contents .medium-card-block .medium-card-cover, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-cover, .account-page .account-contents .created-collections .medium-card-block .medium-card-cover, .landing-page .trending-collections .collections .medium-card-block .medium-card-cover,
 .landing-page .trending-collections .creators .medium-card-block .medium-card-cover,
 .landing-page .rising-stars .collections .medium-card-block .medium-card-cover,
 .landing-page .rising-stars .creators .medium-card-block .medium-card-cover {
@@ -183,7 +183,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.medium-card .medium-card-block .medium-card-profile, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile,
+.medium-card .medium-card-block .medium-card-profile, .create-collection-page .collection-contents .medium-card-block .medium-card-profile, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile,
 .landing-page .trending-collections .creators .medium-card-block .medium-card-profile,
 .landing-page .rising-stars .collections .medium-card-block .medium-card-profile,
 .landing-page .rising-stars .creators .medium-card-block .medium-card-profile {
@@ -192,7 +192,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.medium-card .medium-card-block .medium-card-profile img, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile img, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile img, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile img,
+.medium-card .medium-card-block .medium-card-profile img, .create-collection-page .collection-contents .medium-card-block .medium-card-profile img, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile img, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile img, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile img,
 .landing-page .trending-collections .creators .medium-card-block .medium-card-profile img,
 .landing-page .rising-stars .collections .medium-card-block .medium-card-profile img,
 .landing-page .rising-stars .creators .medium-card-block .medium-card-profile img {
@@ -202,13 +202,13 @@
   box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
   border-radius: 100px;
 }
-.medium-card .medium-card-block .medium-card-profile .medium-card-name, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile .medium-card-name, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile .medium-card-name, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile .medium-card-name,
+.medium-card .medium-card-block .medium-card-profile .medium-card-name, .create-collection-page .collection-contents .medium-card-block .medium-card-profile .medium-card-name, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile .medium-card-name, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile .medium-card-name, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile .medium-card-name,
 .landing-page .trending-collections .creators .medium-card-block .medium-card-profile .medium-card-name,
 .landing-page .rising-stars .collections .medium-card-block .medium-card-profile .medium-card-name,
 .landing-page .rising-stars .creators .medium-card-block .medium-card-profile .medium-card-name {
   margin-top: 8px;
 }
-.medium-card .medium-card-block .medium-card-profile .medium-card-name h5, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile .medium-card-name h5, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile .medium-card-name h5, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile .medium-card-name h5,
+.medium-card .medium-card-block .medium-card-profile .medium-card-name h5, .create-collection-page .collection-contents .medium-card-block .medium-card-profile .medium-card-name h5, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile .medium-card-name h5, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile .medium-card-name h5, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile .medium-card-name h5,
 .landing-page .trending-collections .creators .medium-card-block .medium-card-profile .medium-card-name h5,
 .landing-page .rising-stars .collections .medium-card-block .medium-card-profile .medium-card-name h5,
 .landing-page .rising-stars .creators .medium-card-block .medium-card-profile .medium-card-name h5 {
@@ -902,6 +902,44 @@
 .create-token-page .token-contents .select-collection .collections .selected {
   box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
   transition: 500ms;
+}
+.create-token-page .token-contents .select-collection .create-collection-button {
+  border: 1px solid #ebebeb;
+  border-radius: 16px;
+  background-color: white;
+  text-align: center;
+  max-height: 320px;
+  cursor: pointer;
+}
+.create-token-page .token-contents .select-collection .create-collection-button .title {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.create-token-page .token-contents .select-collection .create-collection-button .title h3 {
+  font-weight: bolder;
+}
+
+.create-collection-page {
+  font-family: "Poppins", sans-serif;
+}
+.create-collection-page .page-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ebebeb;
+  width: 100%;
+  height: 400px;
+}
+.create-collection-page .collection-contents .collection-profile {
+  border: 1px solid #ebebeb;
+  margin-top: 160px;
+}
+.create-collection-page .collection-contents .collection-form {
+  width: 960px;
+  margin: 0 auto;
 }
 
 h1,
