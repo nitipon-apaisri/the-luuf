@@ -1,5 +1,6 @@
-import { Row, Col, Divider, Form, Input } from "antd";
 import React, { useEffect, useState } from "react";
+import { CameraFilled } from "@ant-design/icons";
+import { Row, Col, Divider, Form, Input, Button } from "antd";
 import { useParams } from "react-router-dom";
 import collectionPFP from "../../assets/images/collection-mock-pfp.svg";
 import MainLayout from "../../layout";
@@ -24,10 +25,17 @@ const CreateCollection = () => {
                 <div className="page-cover"></div>
                 <div className="collection-contents">
                     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} justify="center">
-                        <Col span={6}>
+                        <Col span={8}>
                             <div className="collection-profile medium-card-block">
                                 {collectionCover.preview === "" ? (
-                                    <div className="medium-card-cover upload-cover"></div>
+                                    <div className="medium-card-cover upload-cover">
+                                        <div className="upload-tag">
+                                            <div className="content">
+                                                <CameraFilled style={{ fontSize: "24px" }} />
+                                                <h4> Upload Cover</h4>
+                                            </div>
+                                        </div>
+                                    </div>
                                 ) : (
                                     <div className="medium-card-cover" style={{ backgroundImage: `url(${collectionCover.preview})` }}></div>
                                 )}
@@ -78,7 +86,7 @@ const CreateCollection = () => {
                                     </Form.Item>
                                 </Col>
                                 <Col span={12}>
-                                    <Form.Item name="ig" label="ig">
+                                    <Form.Item name="ig" label="Instagram">
                                         <Input
                                             onChange={(e) => {
                                                 setCollectionIG(e.target.value);
@@ -88,6 +96,11 @@ const CreateCollection = () => {
                                 </Col>
                             </Row>
                         </Form>
+                        <Row justify="end">
+                            <Button type="primary" className="create-token-button">
+                                Create
+                            </Button>
+                        </Row>
                     </div>
                 </div>
             </section>

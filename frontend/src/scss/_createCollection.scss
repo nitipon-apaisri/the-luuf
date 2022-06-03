@@ -9,6 +9,31 @@
         height: 400px;
     }
     .collection-contents {
+        width: 1280px;
+        max-width: 1440px;
+        margin: 0 auto;
+        .collection-profile {
+            .upload-cover {
+                position: relative;
+                .upload-tag {
+                    position: absolute;
+                    border-radius: 8px;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: white;
+                    padding: 12px 24px;
+                    .content {
+                        align-items: center;
+                        display: flex;
+                        h4 {
+                            font-weight: 600;
+                            margin-left: 8px !important;
+                        }
+                    }
+                }
+            }
+        }
         @extend .medium-card;
         .collection-profile {
             border: 1px solid #ebebeb;
@@ -17,6 +42,28 @@
         .collection-form {
             width: 960px;
             margin: 0 auto;
+            input {
+                height: 48px;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+                border: 1px solid #f0f0f0;
+            }
+            input:focus,
+            textarea:focus {
+                background-color: #ffffff;
+            }
+            textarea {
+                border-radius: 8px;
+                background-color: #f9f9f9;
+                border: 1px solid #f0f0f0;
+            }
+            button {
+                margin-top: 4px;
+                font-size: 0.8rem;
+                border-radius: 8px;
+                height: 40px;
+                width: 120px;
+            }
         }
     }
 }
