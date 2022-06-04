@@ -11,6 +11,11 @@ const mockCollections = [
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         tokens: [],
+        links: {
+            universal: "",
+            twitter: "",
+            ig: "",
+        },
         values: {
             totalVolume: 555,
             floorPrice: 1,
@@ -25,6 +30,11 @@ const mockCollections = [
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         tokens: [],
+        links: {
+            universal: "",
+            twitter: "",
+            ig: "",
+        },
         values: {
             totalVolume: 12,
             floorPrice: 6,
@@ -39,6 +49,11 @@ const mockCollections = [
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         tokens: [],
+        links: {
+            universal: "",
+            twitter: "",
+            ig: "",
+        },
         values: {
             totalVolume: 1470,
             floorPrice: 3,
@@ -53,6 +68,11 @@ const mockCollections = [
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         tokens: [],
+        links: {
+            universal: "",
+            twitter: "",
+            ig: "",
+        },
         values: {
             totalVolume: 15224,
             floorPrice: 10,
@@ -67,6 +87,11 @@ const mockCollections = [
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         tokens: [],
+        links: {
+            universal: "",
+            twitter: "",
+            ig: "",
+        },
         values: {
             totalVolume: 655,
             floorPrice: 1,
@@ -81,6 +106,11 @@ const mockCollections = [
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         tokens: [],
+        links: {
+            universal: "",
+            twitter: "",
+            ig: "",
+        },
         values: {
             totalVolume: 493,
             floorPrice: 0.8,
@@ -95,6 +125,11 @@ const mockCollections = [
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         tokens: [],
+        links: {
+            universal: "",
+            twitter: "",
+            ig: "",
+        },
         values: {
             totalVolume: 328,
             floorPrice: 9.5,
@@ -109,6 +144,11 @@ const mockCollections = [
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         tokens: [],
+        links: {
+            universal: "",
+            twitter: "",
+            ig: "",
+        },
         values: {
             totalVolume: 7828,
             floorPrice: 7.6,
@@ -123,6 +163,11 @@ const mockCollections = [
         description:
             "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
         tokens: [],
+        links: {
+            universal: "",
+            twitter: "",
+            ig: "",
+        },
         values: {
             totalVolume: 6155,
             floorPrice: 15,
