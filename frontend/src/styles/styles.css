@@ -202,6 +202,27 @@
   box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
   border-radius: 100px;
 }
+.medium-card .medium-card-block .medium-card-profile .default-collection-pfp, .create-collection-page .collection-contents .medium-card-block .medium-card-profile .default-collection-pfp, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile .default-collection-pfp, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile .default-collection-pfp, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile .default-collection-pfp,
+.landing-page .trending-collections .creators .medium-card-block .medium-card-profile .default-collection-pfp,
+.landing-page .rising-stars .collections .medium-card-block .medium-card-profile .default-collection-pfp,
+.landing-page .rising-stars .creators .medium-card-block .medium-card-profile .default-collection-pfp {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  border: 10px solid #ffffff;
+  background-color: #dedede;
+  box-shadow: 0px 4px 20px rgba(168, 168, 168, 0.25);
+  border-radius: 100px;
+}
+.medium-card .medium-card-block .medium-card-profile .default-collection-pfp span, .create-collection-page .collection-contents .medium-card-block .medium-card-profile .default-collection-pfp span, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile .default-collection-pfp span, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile .default-collection-pfp span, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile .default-collection-pfp span,
+.landing-page .trending-collections .creators .medium-card-block .medium-card-profile .default-collection-pfp span,
+.landing-page .rising-stars .collections .medium-card-block .medium-card-profile .default-collection-pfp span,
+.landing-page .rising-stars .creators .medium-card-block .medium-card-profile .default-collection-pfp span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .medium-card .medium-card-block .medium-card-profile .medium-card-name, .create-collection-page .collection-contents .medium-card-block .medium-card-profile .medium-card-name, .create-token-page .token-contents .select-collection .collections .medium-card-block .medium-card-profile .medium-card-name, .account-page .account-contents .created-collections .medium-card-block .medium-card-profile .medium-card-name, .landing-page .trending-collections .collections .medium-card-block .medium-card-profile .medium-card-name,
 .landing-page .trending-collections .creators .medium-card-block .medium-card-profile .medium-card-name,
 .landing-page .rising-stars .collections .medium-card-block .medium-card-profile .medium-card-name,

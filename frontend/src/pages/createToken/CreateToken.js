@@ -93,7 +93,7 @@ const CreateToken = () => {
             id: uuidv4(),
             name: tokenName,
             description: tokenDescription,
-            image: `https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/${uploadImage.raw.name}`,
+            image: `https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/${uploadImage.raw.namecollectionPfp.raw.name.toLowerCase()}`,
             edition: tokenSupply,
             creator: accountName,
             owner: "",

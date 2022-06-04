@@ -50,7 +50,11 @@ const Collection = ({ accountName }) => {
             <div className="title">
                 <h1>Collections</h1>
                 <div className="action-buttons">
-                    {isAuth && <Button type="primary">Create Collection</Button>}
+                    {isAuth && (
+                        <a href={`/${accountName}/collections/createCollection`}>
+                            <Button type="primary">Create Collection</Button>
+                        </a>
+                    )}
                     <Button type="primary">Filter</Button>
                 </div>
             </div>
@@ -60,7 +64,7 @@ const Collection = ({ accountName }) => {
                         <Row gutter={[32, 32]} style={{ padding: 20 }}>
                             {Array.from(new Set(createdCollections)).map((row, index) => (
                                 <Col span={8} key={row.id}>
-                                    <a href={`/${accountName}/collection/${row.name}`}>
+                                    <a href={`/${accountName}/collections/${row.name}`}>
                                         <div className="medium-card-block">
                                             <div className="medium-card-cover" style={{ backgroundImage: `url(${row.collectionCover})` }}></div>
                                             <div className="medium-card-profile">
