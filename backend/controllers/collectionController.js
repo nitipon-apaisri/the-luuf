@@ -37,7 +37,8 @@ const getTopCollections = async (req, res, next) => {
 const createCollection = async (req, res, next) => {
     const { collectionData } = req.body;
     try {
-        const collection = collectionModel.createCollection();
+        const collection = collectionModel.createCollection(collectionData);
+        res.json(collection);
     } catch (err) {
         next(err);
     }

@@ -268,6 +268,24 @@
                     transition: 500ms;
                 }
             }
+            .create-collection-button {
+                border: 1px solid #ebebeb;
+                border-radius: 16px;
+                background-color: white;
+                text-align: center;
+                max-height: 320px;
+                cursor: pointer;
+                .title {
+                    width: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    h3 {
+                        font-weight: bolder;
+                    }
+                }
+            }
         }
     }
 }

@@ -18,4 +18,5 @@ router.get("/:ownerName/collections", collectionController.getCollectionsByOwner
 router.get("/collections/trending", collectionController.getTrendingCollections);
 router.get("/collections/topCollections", collectionController.getTopCollections);
 router.get("/wallets", walletController.getWallets);
+router.post("/:walletAddress/collections/createCollection", jsonParser, collectionController.createCollection);
 module.exports = router;
