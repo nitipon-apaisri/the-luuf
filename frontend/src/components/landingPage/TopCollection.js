@@ -23,7 +23,7 @@ const TopCollection = () => {
                         <Col span={8}>
                             {topCollections.slice(0, 3).map((row, index) => (
                                 <Col key={row.name}>
-                                    <a href={`/${row.createdBy}/collection/${row.name}`}>
+                                    <a href={`/${row.createdBy}/collections/${row.name}`}>
                                         <div className="top-collection">
                                             <h5>{index + 1}</h5>
                                             <div className="collection-details">
@@ -45,7 +45,7 @@ const TopCollection = () => {
                         <Col span={8}>
                             {topCollections.slice(3, 6).map((row, index) => (
                                 <Col key={row.name}>
-                                    <a href={`/${row.createdBy}/collection/${row.name}`}>
+                                    <a href={`/${row.createdBy}/collections/${row.name}`}>
                                         <div className="top-collection">
                                             <h5>{index + 4}</h5>
                                             <div className="collection-details">
@@ -67,7 +67,7 @@ const TopCollection = () => {
                         <Col span={8}>
                             {topCollections.slice(6, 9).map((row, index) => (
                                 <Col key={row.name}>
-                                    <a href={`/${row.createdBy}/collection/${row.name}`}>
+                                    <a href={`/${row.createdBy}/collections/${row.name}`}>
                                         <div className="top-collection">
                                             <h5>{index + 7}</h5>
                                             <div className="collection-details">

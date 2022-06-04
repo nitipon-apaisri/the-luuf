@@ -93,7 +93,7 @@ const CreateToken = () => {
             id: uuidv4(),
             name: tokenName,
             description: tokenDescription,
-            image: `https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/${uploadImage.raw.name}`,
+            image: `https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/${uploadImage.raw.namecollectionPfp.raw.name.toLowerCase()}`,
             edition: tokenSupply,
             creator: accountName,
             owner: "",
@@ -450,12 +450,26 @@ const CreateToken = () => {
                         </div>
                     </div>
                     <div className="select-collection">
-                        <h1>Choose Collection</h1>
+                        <Row justify="space-between">
+                            <Col>
+                                <h1>Choose Collection</h1>
+                            </Col>
+                            <Col>
+                                <Button
+                                    type="primary"
+                                    icon={<PlusOutlined />}
+                                    style={{ borderRadius: 8 }}
+                                    onClick={() => {
+                                        setVisibleModal(true);
+                                    }}
+                                ></Button>
+                            </Col>
+                        </Row>
                         <Divider style={{ margin: "16px 0" }} />
                         <div className="collections">
                             <Row gutter={[32, 32]} style={{ padding: 20 }}>
                                 {Array.from(new Set(userCollections)).map((row, index) => (
-                                    <Col span={8} key={row.id}>
+                                    <Col span={6} key={row.id}>
                                         <div
                                             className={`medium-card-block ${collectionSelected === index ? "selected" : ""}`}
                                             onClick={() => {
@@ -473,6 +487,15 @@ const CreateToken = () => {
                                         </div>
                                     </Col>
                                 ))}
+                                <Col span={6}>
+                                    <a href={`/${accountName}/collections/createCollection`}>
+                                        <div className="  medium-card-block create-collection-button">
+                                            <div className="title">
+                                                <h3>Create Collection</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </Col>
                             </Row>
                         </div>
                     </div>

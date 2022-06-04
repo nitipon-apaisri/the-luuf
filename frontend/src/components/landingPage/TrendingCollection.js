@@ -21,7 +21,7 @@ const TrendingCollection = () => {
                     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                         {trendingCollections.map((row, index) => (
                             <Col span={8} key={row.name}>
-                                <a href={`/${row.createdBy}/collection/${row.name}`}>
+                                <a href={`/${row.createdBy}/collections/${row.name}`}>
                                     <div className="medium-card-block">
                                         <div className="medium-card-cover" style={{ backgroundImage: `url(${row.collectionCover})` }}></div>
                                         <div className="medium-card-profile">

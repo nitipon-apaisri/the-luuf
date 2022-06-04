@@ -21,6 +21,7 @@ const getTopCollections = () => {
 };
 const createCollection = (collectionData) => {
     db.createCollection(collectionData);
+    return collectionData;
 };
 module.exports = {
     getACollection,
