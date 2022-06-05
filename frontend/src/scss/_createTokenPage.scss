@@ -180,7 +180,6 @@
         }
         .token-form {
             @extend .card;
-            margin-top: 40px;
             padding: 40px;
             background: #fbfdff;
             .inner-form {
@@ -247,7 +246,6 @@
         }
         .select-collection {
             @extend .card;
-            margin-top: 40px;
             padding: 40px;
             background: #fbfdff;
             h1 {

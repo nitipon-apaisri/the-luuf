@@ -843,7 +843,6 @@
   color: #000;
 }
 .create-token-page .token-contents .token-form {
-  margin-top: 40px;
   padding: 40px;
   background: #fbfdff;
 }
@@ -905,7 +904,6 @@
   min-height: 120px;
 }
 .create-token-page .token-contents .select-collection {
-  margin-top: 40px;
   padding: 40px;
   background: #fbfdff;
 }
