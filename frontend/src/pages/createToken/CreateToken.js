@@ -79,7 +79,7 @@ const CreateToken = () => {
     };
     const uploadImageToStorage = async () => {
         const image = uploadImage.raw;
-        const { data, error } = await supabase.storage.from("images").upload(`token-images/${uploadImage.raw.name.toLowerCase()}`, image);
+        const { data, error } = await supabase.storage.from("images").upload(`token-images/${uploadImage.raw.name}`, image);
         if (error) {
             throw error;
         }
@@ -93,7 +93,7 @@ const CreateToken = () => {
             id: uuidv4(),
             name: tokenName,
             description: tokenDescription,
-            image: `https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/${uploadImage.raw.namecollectionPfp.raw.name.toLowerCase()}`,
+            image: `https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/${uploadImage.raw.name}`,
             edition: tokenSupply,
             creator: accountName,
             owner: "",
@@ -345,6 +345,57 @@ const CreateToken = () => {
                         </Col>
                     </Row>
                     <Divider />
+                    <div className="select-collection">
+                        <Row justify="space-between">
+                            <Col>
+                                <h1>Choose Collection</h1>
+                            </Col>
+                            <Col>
+                                <Button
+                                    type="primary"
+                                    icon={<PlusOutlined />}
+                                    style={{ borderRadius: 8 }}
+                                    onClick={() => {
+                                        setVisibleModal(true);
+                                    }}
+                                ></Button>
+                            </Col>
+                        </Row>
+                        <Divider style={{ margin: "16px 0" }} />
+                        <div className="collections">
+                            <Row gutter={[32, 32]} style={{ padding: 20 }}>
+                                {Array.from(new Set(userCollections)).map((row, index) => (
+                                    <Col span={6} key={row.id}>
+                                        <div
+                                            className={`medium-card-block ${collectionSelected === index ? "selected" : ""}`}
+                                            onClick={() => {
+                                                setTokenCollection(row.name);
+                                                setCollectionSelected(index);
+                                            }}
+                                        >
+                                            <div className="medium-card-cover" style={{ backgroundImage: `url(${row.collectionCover})` }}></div>
+                                            <div className="medium-card-profile">
+                                                <img src={row.collectionLogo} alt="pfp" />
+                                                <div className="medium-card-name">
+                                                    <h5>{row.name}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                ))}
+                                <Col span={6}>
+                                    <a href={`/${accountName}/collections/createCollection`}>
+                                        <div className="  medium-card-block create-collection-button">
+                                            <div className="title">
+                                                <h3>Create Collection</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </Col>
+                            </Row>
+                        </div>
+                    </div>
+                    <Divider />
                     <div className="token-form">
                         <div className="inner-form">
                             <div className="top-content">
@@ -379,7 +430,7 @@ const CreateToken = () => {
                                                 </Form.Item>
                                             </Col>
                                             <Col span={12}>
-                                                <Form.Item name="supply" label="Supply" style={{ marginBottom: 0 }}>
+                                                <Form.Item name="supply" label="Supply" style={{ marginBottom: 0 }} rules={[{ required: true, message: "Please input supply" }]}>
                                                     <Input
                                                         onChange={(e) => {
                                                             setTokenSupply(e.target.value);
@@ -449,61 +500,13 @@ const CreateToken = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="select-collection">
-                        <Row justify="space-between">
-                            <Col>
-                                <h1>Choose Collection</h1>
-                            </Col>
-                            <Col>
-                                <Button
-                                    type="primary"
-                                    icon={<PlusOutlined />}
-                                    style={{ borderRadius: 8 }}
-                                    onClick={() => {
-                                        setVisibleModal(true);
-                                    }}
-                                ></Button>
-                            </Col>
-                        </Row>
-                        <Divider style={{ margin: "16px 0" }} />
-                        <div className="collections">
-                            <Row gutter={[32, 32]} style={{ padding: 20 }}>
-                                {Array.from(new Set(userCollections)).map((row, index) => (
-                                    <Col span={6} key={row.id}>
-                                        <div
-                                            className={`medium-card-block ${collectionSelected === index ? "selected" : ""}`}
-                                            onClick={() => {
-                                                setTokenCollection(row.name);
-                                                setCollectionSelected(index);
-                                            }}
-                                        >
-                                            <div className="medium-card-cover" style={{ backgroundImage: `url(${row.collectionCover})` }}></div>
-                                            <div className="medium-card-profile">
-                                                <img src={row.collectionLogo} alt="pfp" />
-                                                <div className="medium-card-name">
-                                                    <h5>{row.name}</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                ))}
-                                <Col span={6}>
-                                    <a href={`/${accountName}/collections/createCollection`}>
-                                        <div className="  medium-card-block create-collection-button">
-                                            <div className="title">
-                                                <h3>Create Collection</h3>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </Col>
-                            </Row>
-                        </div>
-                    </div>
                     <Divider />
                     <Row justify="end">
-                        <Button type="primary" onClick={createToken} className="create-token-button">
-                            Create
-                        </Button>
+                        {tokenSupply !== 0 && tokenCollection !== "" && tokenName !== "" && (
+                            <Button type="primary" onClick={createToken} className="create-token-button">
+                                Create
+                            </Button>
+                        )}
                     </Row>
                 </div>
             </section>

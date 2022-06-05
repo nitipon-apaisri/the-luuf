@@ -114,7 +114,12 @@ const TokenPage = () => {
                                                                             }, 0);
                                                                             return royaltiesSummarizedtoken;
                                                                         }
-                                                                        return token.tradeInfo.loyalties[0].royalty;
+                                                                        if (token.tradeInfo.loyalties.length < 1) {
+                                                                            return 0;
+                                                                        }
+                                                                        if (token.tradeInfo.loyalties.length === 1) {
+                                                                            return token.tradeInfo.loyalties[0].royalty;
+                                                                        }
                                                                     })()}
                                                                     %
                                                                 </h4>
