@@ -186,9 +186,11 @@ const CreateCollection = () => {
                             </Row>
                         </Form>
                         <Row justify="end">
-                            <Button type="primary" className="create-token-button" onClick={createCollection}>
-                                Create
-                            </Button>
+                            {collectionName !== "" && (
+                                <Button type="primary" className="create-token-button" onClick={createCollection}>
+                                    Create
+                                </Button>
+                            )}
                         </Row>
                     </div>
                 </div>
