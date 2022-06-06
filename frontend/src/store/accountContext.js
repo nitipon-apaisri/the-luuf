@@ -15,9 +15,11 @@ const AccountProvider = (props) => {
         })
             .then((wallet) => {
                 console.log(wallet.data);
+                return wallet.data;
             })
             .catch((err) => {
                 console.log(err.response.data.error);
+                return err.response.data.error;
             });
     };
     const signIn = (signInInfo) => {

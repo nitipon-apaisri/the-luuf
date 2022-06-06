@@ -7,6 +7,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo/logo.svg";
 import { AccountContext } from "../store/accountContext";
+import axios from "axios";
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 const MainLayout = ({ children }) => {
@@ -20,6 +21,7 @@ const MainLayout = ({ children }) => {
         labelCol: { span: 8 },
         wrapperCol: { span: 24 },
     };
+
     const popOverContent = () => {
         return (
             <div className="popover-content">
@@ -55,12 +57,32 @@ const MainLayout = ({ children }) => {
         }, 300);
     };
     const createAWallet = (e) => {
-        accountContext.createWallet(e);
-        setSelectAction(true);
-        setTimeout(() => {
-            form.resetFields();
-            setModalVisible(false);
-        }, 300);
+        axios({
+            method: "post",
+            url: "http://localhost:4200/createWallet",
+            data: {
+                walletAddress: e.walletAddress.toLowerCase(),
+                walletPassword: e.walletPassword,
+            },
+        })
+            .then((wallet) => {
+                setSelectAction(true);
+                setTimeout(() => {
+                    form.resetFields();
+                    setModalVisible(false);
+                }, 300);
+            })
+            .catch((err) => {
+                console.log(err.response.data.error);
+                return err.response.data.error;
+            });
+        // accountContext.createWallet(e);
+
+        // setSelectAction(true);
+        // setTimeout(() => {
+        //     form.resetFields();
+        //     setModalVisible(false);
+        // }, 300);
     };
     const onCancel = () => {
         setModalVisible(false);
