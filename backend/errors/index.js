@@ -31,10 +31,10 @@ class InvalidBody extends ErrorManager {
     }
 }
 
-class ExistingToken extends ErrorManager {
+class ExistingWallet extends ErrorManager {
     constructor() {
         super();
-        this.message = "Alread has token";
+        this.message = "Wallet Existed";
         this.errorCode = 400;
     }
 }
@@ -44,6 +44,6 @@ module.exports = {
     InvalidBalance,
     InvalidAddress,
     InvalidBody,
-    ExistingToken,
+    ExistingWallet,
     Unauthorized,
 };

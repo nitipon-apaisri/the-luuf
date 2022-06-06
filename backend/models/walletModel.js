@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require("uuid");
 const db = require("../db/wallets");
-const { Unauthorized, InvalidAddress } = require("../errors");
+const { Unauthorized, InvalidAddress, ExistingWallet } = require("../errors");
 const createWallet = (walletAddress, walletPassword) => {
     const walletModel = {
         id: uuidv4(),
@@ -44,9 +44,9 @@ const createWallet = (walletAddress, walletPassword) => {
     });
     if (isWalletExisting === false) {
         db.addWallet(walletModel);
-        return { msg: "Wallet Created", data: walletModel };
+        return walletModel;
     } else {
-        return "Wallet Existing";
+        throw new ExistingWallet();
     }
 };
 const getAWallet = (walletAddress) => {
