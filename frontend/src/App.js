@@ -8,6 +8,7 @@ import AccountPage from "./pages/account/AccountView";
 import CollectionView from "./pages/collection/CollectionView";
 import CreateToken from "./pages/createToken/CreateToken";
 import CreateCollection from "./pages/createCollection/CreateCollection";
+import Explorer from "./pages/explorer/Explorer";
 const App = () => {
     return (
         <>
@@ -20,6 +21,7 @@ const App = () => {
                     <Route path="/:accountName/collections/:collectionName" element={<CollectionView />} />
                     <Route path="/:accountName/createToken" element={<CreateToken />} />
                     <Route path="/:accountName/collections/createCollection" element={<CreateCollection />} />
+                    <Route path="/explorer" element={<Explorer />} />
                 </Routes>
             </div>
         </>

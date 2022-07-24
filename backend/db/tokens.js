@@ -149,6 +149,30 @@ const mockTokens = [
             { type: "season", value: "2" },
         ],
     },
+    {
+        id: uuidv4(),
+        name: "A Normal Life - Pride",
+        description:
+            "ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet ",
+        image: "https://pfjrjbqogbhegczbokwr.supabase.co/storage/v1/object/public/images/token-images/pride.jpg",
+        edition: 1,
+        creator: "nitipon-apaisri",
+        owner: "nitipon-apaisri",
+        collection: "A Normal Life",
+        chain: "Near",
+        tradeInfo: {
+            sellStatus: true,
+            price: 8,
+            loyalties: [{ account: "kamwoo", value: 10 }],
+        },
+        metadata: { contractAddress: "...", tokenId: "...", edition: "...", blockchain: "...", ipfs: "..." },
+        // "tradeHistory": [{...},{...},{...}],
+        arttributes: [
+            { type: "character", value: "Joker" },
+            { type: "status", value: "Positive" },
+            { type: "season", value: "2" },
+        ],
+    },
 ];
 const addMockTokens = () => {
     if (tokens.length === 0) {

@@ -207,8 +207,8 @@ const MainLayout = ({ children }) => {
                     </div>
                     <ul>
                         <li>
-                            <Link to={"/"}>
-                                <h4>Explore</h4>
+                            <Link to={"/explorer"}>
+                                <h4>Explorer</h4>
                             </Link>
                         </li>
                         <li>
